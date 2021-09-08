@@ -1,3 +1,4 @@
+#!/bin/python3
 # Created by Jacobus Burger (2021)
 #
 # Info:
@@ -15,9 +16,6 @@
 #   Once it has completed (it can take a while on very large batches) it will
 #   produce an output file containing the summary of each symbol and it's
 #   cumulative frequency in the heap.
-
-
-#!/bin/python3
 from collections import Counter
 
 programming_symbols = [
