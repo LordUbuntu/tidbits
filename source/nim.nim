@@ -3,7 +3,7 @@
 #   The game of nim, written in nim. This was a rewrite of an older
 #   version I deleted back in 2019 and consequently is much better than
 #   the old version. This rewrite was commissioned for my favourite class
-#   (a programming language class).
+#   (a class about programming languages).
 import rdstdin, strutils, strformat
 
 var 
