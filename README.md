@@ -1,6 +1,13 @@
 # TidBits
 
-This is a repository I made to archive small scripts and other little tidbits from my 6+ years of programming and other computer related (mis)adventures. This collection is but the tip of the metaphorical iceberg as a lot of things I've written aren't or won't be included. The scripts herein are not all that grand, but maybe you'll find something of note in this mixed bag. Do with the contents as you please, maybe you'll find something to inspire you, to tear apart, to use, or perhaps you'll simply enjoy having a gander at the software bazaar before you. Regardless, I hope you enjoy the journey.
+## Description
 
-Each file has a name that should hopefully be self explanatory.
-Each file will have a description of what it is and what it is for.
+This repository is my personal wilderness of code. It is a repository of random programs and other small tidbits of programming that I've done since at least 2017. Exploring will give you a chance to see the various random things I've done.
+Please, have a browse and enjoy!
+
+## Notes
+
+Each file has a name that should be self explanatory.
+Each file will have a description of what it is.
+Each file is a single self-contained program.
+Each file has the potential to gain its own repo.
