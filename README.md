@@ -7,6 +7,6 @@ Please, have a browse and enjoy!
 
 ## Notes
 
-Each file has a name that should be self explanatory.
-Each file will have a description of what it is.
-Each file has the potential to gain its own repo.
+* Each file has a name that should be self explanatory.
+* Each file will have a description of what it is.
+* Each file has the potential to gain its own repo.
