@@ -12,7 +12,10 @@ composure = [
     "angry",
     "greedy",
     "friendly",
-    "generous"
+    "generous",
+    "funny",
+    "busy",
+    "happy"
 ]
 
 creature = [
@@ -21,30 +24,68 @@ creature = [
     "bee",
     "bird",
     "snake",
-    "computer"
+    "computer",
+    "flamingo",
+    "flea",
+    "tree",
+    "dragon"
 ]
 
-skill = [
+occupation = [
     "ninja",
     "wizard",
     "sewer worker",
     "astrofreighter",
-    "hacker"
+    "hacker",
+    "carpenter",
+    "mathematician",
+    "boxer",
+    "time traveler",
+    "mecha mechanic",
+    "EVA Pilot",
+    "astronaught",
+    "linguist",
+    "robot ethicist",
+    "python programmer"
 ]
 
 strength = [
-    "slenderperson",
-    "bodybuilder",
-    "spinach-eater"
+    "twig",
+    "serpent",
+    "rebar",
+    "slenderman",
+    "log",
+    "statue",
+    "collosus",
+    "moutain"
+]
+
+quest = [
+    "themselves",
+    "an ancient dragon",
+    "a city",
+    "a building",
+    "a serpent",
+    "a beehive",
+    "the cosmos",
+    "monsieur ubu",
+    "the towers of hanoi",
+    "a planet",
+    "a long forgotten language",
+    "a friendly robot singing \"Hello World\"",
+    "the collatz conjecture",
+    "the world"
 ]
 
 def describe():
     print(
-        "A {} {} {} built like a {}".format(
+        "A {} {} {} built like a {}, on a quest to save {}".format(
             choice(composure),
             choice(creature),
-            choice(skill),
-            choice(strength)),
+            choice(occupation),
+            choice(strength),
+            choice(quest)
+        ),
         end=' '
     )
 
