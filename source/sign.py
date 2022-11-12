@@ -5,28 +5,33 @@
 #   Enjoy!
 
 
-def sign_delta(symbol: str, height: int):
+def sign_delta(char: str, height: int):
     for row in range(height):
         # create spaces on left
         for _ in range(height - row):
             print(" ", end="")
-        # print symbol on row
+        # print char on row
         for _ in range(row + 1):
-            print(" ", end=symbol)
+            print(" ", end=char)
         print()
 
 
-def sign_chi(symbol: str, height: int):
+def sign_chi(char: str, height: int):
     for row in range((height * 2) + 1):
         # print horizontal, middle
         if row >= height and row < height + 1:
             for _ in range(2):
-                print(f"{symbol*(height*2)}{symbol*2}")
+                print(f"{char*(height*2)}{char*2}")
         # print vertical, ends
         else:
-            print(" "*height, end=f"{symbol*2}\n")
+            print(" "*height, end=f"{char*2}\n")
     print()
 
+
+def sign_sq(char: str, height: int):
+    for row in range(height):
+        print(char * height)
+    print()
 
 
 if __name__ == '__main__':
@@ -34,3 +39,5 @@ if __name__ == '__main__':
     sign_delta(".", 5)
     print("chi")
     sign_chi("#", 3)
+    print("sq")
+    sign_sq("*", 5)
