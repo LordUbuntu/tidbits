@@ -15,7 +15,8 @@ composure = [
     "generous",
     "funny",
     "busy",
-    "happy"
+    "happy",
+    "strange",
 ]
 
 creature = [
