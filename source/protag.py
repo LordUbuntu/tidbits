@@ -47,14 +47,15 @@ occupation = [
     "astronaught",
     "linguist",
     "robot ethicist",
-    "python programmer"
+    "python programmer",
+    "roboticist",
 ]
 
 strength = [
     "twig",
-    "serpent",
-    "rebar",
-    "slenderman",
+    "snake",
+    "steel rod",
+    "slender guy",
     "log",
     "statue",
     "collosus",
@@ -75,7 +76,9 @@ quest = [
     "a long forgotten language",
     "a friendly robot singing \"Hello World\"",
     "the collatz conjecture",
-    "the world"
+    "the world",
+    "the number 42",
+    "the light at the end of the tunnel"
 ]
 
 def describe():
