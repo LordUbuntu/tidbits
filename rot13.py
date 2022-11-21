@@ -20,7 +20,7 @@ def rotN(data: str) -> str:
 
 
 if __name__ == '__main__':
-    string = input()
+    string = input().strip()
+    print("note: whitespaces removed")
     print(rot13(string))
-    print(rotN(string))
     print(rotN(string))
