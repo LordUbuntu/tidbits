@@ -4,8 +4,11 @@
 #   Code golf to print vapour-ware strings eg "h e l l o"
 
 def vapourize(sentence):
-    return " ".join([*sentence])
+    return ' '.join([*sentence])
 
+
+def VAPOURIZE(sentence):
+    return ' '.join([*sentence.upper()])
 
 if __name__ == '__main__':
     sentence = input()
