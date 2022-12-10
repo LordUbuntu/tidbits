@@ -33,6 +33,7 @@ rolls = [
     for j in range(1, 7)
 ]
 
+
 def chance():
     roll = choice(rolls)
     if roll in roll_names:
