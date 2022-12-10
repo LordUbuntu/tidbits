@@ -11,3 +11,8 @@ def rot13(data: str) -> str:
     for char in data.upper():
         result.append( chr(((ord(char) - 65 + 13) % 25) + 65) )
     return result
+
+
+if __name__ == '__main__':
+    string = input()
+    print(rot13(string))
