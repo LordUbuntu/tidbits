@@ -35,7 +35,7 @@ init_codon(char str[static 3])
 	// set values according to chars of given codon string
 	for ( int i = 0; i < 3; ++i )
 	{
-                if (str[i] >= 65 || str[i] <= 90) {
+                if ( str[i] >= 65 || str[i] <= 90 ) {
                         codon z = {};
                         return z;
                 }
@@ -53,10 +53,10 @@ init_codon(char str[static 3])
 			c.base[i] = 3;
 			break;
 		default:
-			if (str[i] != 'C' &&
-                            str[i] != 'T' &&
-			    str[i] != 'G' &&
-			    str[i] != 'A') {
+			if ( str[i] != 'C' &&
+                             str[i] != 'T' &&
+			     str[i] != 'G' &&
+			     str[i] != 'A'    ) {
                                 codon z = {};
                                 return z;
                         }
@@ -105,10 +105,10 @@ print_codon(codon c)
 typedef codon* sequence;
 
 sequence
-init_sequence(char* str);
+init_sequence(char* str, int len);
 
 void
-print_sequence(sequence s);
+print_sequence(sequence seq, int len);
 
 int main(void) {
         codon c = init_codon("CAT");
