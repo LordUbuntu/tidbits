@@ -5,9 +5,6 @@
  *   space-efficient manner.
  */
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <assert.h>
 
 /* GENE SEQUENCE EXAMPLE
    This file acts as an example of representing 4 genetic bases
@@ -24,9 +21,6 @@
    a binary value.
  */
 
-#define OK 0
-#define ERR 1
-
 // codon data structure
 typedef struct Codon {
 	unsigned char base[3];
@@ -41,7 +35,10 @@ init_codon(char str[static 3])
 	// set values according to chars of given codon string
 	for ( int i = 0; i < 3; ++i )
 	{
-		assert ( str[i] >= 65 || str[i] <= 90 );
+                if (str[i] >= 65 || str[i] <= 90) {
+                        codon z = {};
+                        return z;
+                }
 		switch ( str[i] ) {
 		case 'C':
 			c.base[i] = 0;
@@ -56,10 +53,13 @@ init_codon(char str[static 3])
 			c.base[i] = 3;
 			break;
 		default:
-			assert ( str[i] == 'C' ||
-			         str[i] == 'T' ||
-			         str[i] == 'G' ||
-			         str[i] == 'A');
+			if (str[i] != 'C' &&
+                            str[i] != 'T' &&
+			    str[i] != 'G' &&
+			    str[i] != 'A') {
+                                codon z = {};
+                                return z;
+                        }
 			break;
 		}
 	}
@@ -92,7 +92,7 @@ print_codon(codon c)
 			str[i] = 'A';
 			break;
 		default:
-			exit(ERR);
+                        str[i] = '?';
 			break;
 		}
 
