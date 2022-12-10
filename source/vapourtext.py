@@ -13,3 +13,4 @@ def VAPOURIZE(sentence):
 if __name__ == '__main__':
     sentence = input()
     print(vapourize(sentence))
+    print(VAPOURIZE(sentence))
