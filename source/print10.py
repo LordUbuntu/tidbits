@@ -4,6 +4,6 @@
 #   The famous Commodor 64 Basic program that generated a neat pattern
 #   Done in python.
 from random import choice
-char = ["\\", "\/"]
+char = [r"\", r"/"]
 while True:
     print(choice(char), end="")
