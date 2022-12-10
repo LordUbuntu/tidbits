@@ -12,3 +12,17 @@ def recursive_even(n):
     if n == 1 or n == -1:
         return "Odd"
     return recursive_even(n - 2)
+
+
+def iterative_even(n):
+    for i in range(0, n + 1, 2):
+        if i == n:
+            return "Even"
+    return "Odd"
+
+
+def membership_even(n):
+    even_numbers = [i for i in range(0, n + 1, 2)]
+    if n in even_numbers:
+        return "Even"
+    return "Odd"
