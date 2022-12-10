@@ -1,6 +1,6 @@
 ; Jacobus Burger (2022)
 ; Info:
-;   multiply two numbers together in ASM without using mul opcode
+;   multiply two numbers together in ASM without using mul opcode (in theory)
 
 ; define two numbers to start with
 section .rodata
