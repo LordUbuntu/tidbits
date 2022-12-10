@@ -102,10 +102,6 @@ print_codon(codon c)
 	printf("%s\n", str);
 }
 
-
-
-
-
 typedef codon* sequence;
 
 sequence
@@ -113,3 +109,8 @@ init_sequence(char* str);
 
 void
 print_sequence(sequence s);
+
+int main(void) {
+        codon c = init_codon("CAT");
+        print_codon(c);
+}
