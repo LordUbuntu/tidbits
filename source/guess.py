@@ -7,6 +7,7 @@ if __name__ == '__main__':
         guess = int(input("Guess a number: "))
         if guess == number:
             print("You did it!")
+            break
         if guess > number:
             print("Higher...")
         if guess < number:
