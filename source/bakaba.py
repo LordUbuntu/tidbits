@@ -10,8 +10,9 @@
 
 
 def bakaba(repetitions, string):
-    ka = string[2 : len(string) - 2]
-    return string[:2] + ka * repetitions + string[len(string) - 2 :]
+    cap = string[0:2]
+    pattern = string[2 : len(string) - 2]
+    return cap + (pattern * repetitions) + cap
 
 
 if __name__ == "__main__":
