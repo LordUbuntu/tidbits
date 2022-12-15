@@ -11,3 +11,12 @@ cards = [card for card in range(13)]
 # Club, Heart, Clover, Diamond
 # 0,    1,     2,      3
 suits = [suit for suit in range(4)]
+
+
+def game(draws: int):
+    pass
+
+
+if __name__ == '__main__':
+    draws = int(input("How many times do you want to draw? "))
+    game(draws)
