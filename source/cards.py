@@ -1,6 +1,7 @@
 # Jacobus Burger (2022)
 # Info:
 #   A card game where you win if you pull an ace of clubs!
+from random import choice, randint
 
 
 # each card and suit can be represented as an index and value
@@ -13,7 +14,7 @@ cards = [card for card in range(13)]
 suits = [suit for suit in range(4)]
 
 
-def print_card(card, suit: int):
+def show_card(card, suit: int):
     string = ""
 
     # determine the card type
@@ -46,7 +47,13 @@ def print_card(card, suit: int):
 
 
 def game(draws: int):
-    pass
+    guess = [randint(len(cards)), randint(len(suits))]  # [card, suit]
+    for _ in range(draws):
+        card, suit = choice(cards), choice(suits)
+        print(show_card(card, suit))
+        if card == guess[0] and suit == guess[1]:
+            print("Congatrulaions! You got the winning card!\n\n")
+            quit()
 
 
 if __name__ == '__main__':
