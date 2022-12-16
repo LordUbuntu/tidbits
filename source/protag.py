@@ -17,6 +17,8 @@ composure = [
     "busy",
     "happy",
     "strange",
+    "quarky",
+    "bitter"
 ]
 
 creature = [
@@ -29,7 +31,12 @@ creature = [
     "flamingo",
     "flea",
     "tree",
-    "dragon"
+    "dragon",
+    "planet",
+    "elf",
+    "basilisk",
+    "balrog",
+    "quantum soup"
 ]
 
 occupation = [
@@ -49,17 +56,24 @@ occupation = [
     "robot ethicist",
     "python programmer",
     "roboticist",
+    "quantum physicist",
+    "pen pusher",
+    "spearman",
+    "sniper",
+    "genius"
 ]
 
 strength = [
     "twig",
+    "sprig",
     "snake",
     "steel rod",
-    "slender guy",
     "log",
     "statue",
     "collosus",
-    "moutain"
+    "moutain",
+    "TNT",
+    "Atom bomb"
 ]
 
 quest = [
@@ -78,7 +92,11 @@ quest = [
     "the collatz conjecture",
     "the world",
     "the number 42",
-    "the light at the end of the tunnel"
+    "the light at the end of the tunnel",
+    "a bird",
+    "their long lost nickel",
+    "the platonic forms",
+    "a time travelling caveman"
 ]
 
 def describe():
