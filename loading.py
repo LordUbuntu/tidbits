@@ -14,11 +14,10 @@ def percent(speed):
 
 def loading(speed):
     for i in range(101):
-        print("Loading" + ('.' * (i % 3)), end='')
-        print('\r', end='')
+        print("Loading{}".format('.' * (i % 4)), end='\r', flush=True)
         sleep(1 / speed)
 
 
 if __name__ == '__main__':
-    percent(10)
-    loading(10)
+    percent(50)
+    loading(50)
