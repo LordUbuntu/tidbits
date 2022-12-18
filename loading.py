@@ -10,3 +10,10 @@ def percent(speed):
         print(f"{i}%", end='')
         print('\r', end='')
         sleep(1 / speed)
+
+
+def loading(speed):
+    for i in range(101):
+        print("Loading" + ('.' * i % 3), end='')
+        print('\r', end='')
+        sleep(1 / speed)
