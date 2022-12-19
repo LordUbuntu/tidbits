@@ -10,12 +10,14 @@ def percent(speed):
         print(f"{i}%", end='')
         print('\r', end='')
         sleep(1 / speed)
+    print()
 
 
 def loading(speed):
     for i in range(101):
         print("Loading{}".format('.' * (i % 4)), end='\r', flush=True)
         sleep(1 / speed)
+    print()
 
 
 def spin(speed):
@@ -23,6 +25,7 @@ def spin(speed):
         phase = ["\\", "|", "/", "-"]
         print(phase[i % 4], end='\r')
         sleep(1 / speed)
+    print()
 
 
 if __name__ == '__main__':
