@@ -18,6 +18,14 @@ def loading(speed):
         sleep(1 / speed)
 
 
+def spin(speed):
+    for i in range(101):
+        phase = ["\\", "|", "/", "-"]
+        print(phase[i % 4], end='\r')
+        sleep(1 / speed)
+
+
 if __name__ == '__main__':
-    percent(50)
-    loading(50)
+    percent(30)
+    loading(30)
+    spin(30)
