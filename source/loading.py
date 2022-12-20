@@ -28,7 +28,16 @@ def spin(speed):
     print()
 
 
+def orb(speed):
+    for i in range(101):
+        phase = ['.', 'o', 'O']
+        print(phase[i % 3], end='\r')
+        sleep(1 / speed)
+    print()
+
+
 if __name__ == '__main__':
     percent(30)
     loading(30)
     spin(30)
+    orb(30)
