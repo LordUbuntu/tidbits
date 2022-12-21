@@ -45,11 +45,13 @@ if __name__ == '__main__':
                 (4) O
             """
     ))
+    speed = int(input("What speed? "))
     if choice == 1:
-        percent(30)
+        percent(speed)
     if choice == 2:
-        loading(30)
+        loading(speed)
     if choice == 3:
-        spin(30)
+        spin(speed)
     if choice == 4:
-        orb(30)
+        orb(speed)
+
