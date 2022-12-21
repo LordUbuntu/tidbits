@@ -21,23 +21,35 @@ def loading(speed):
 
 
 def spin(speed):
+    phase = ["\\", "|", "/", "-"]
     for i in range(101):
-        phase = ["\\", "|", "/", "-"]
         print(phase[i % 4], end='\r')
         sleep(1 / speed)
     print()
 
 
 def orb(speed):
+    phase = ['.', 'o', 'O']
     for i in range(101):
-        phase = ['.', 'o', 'O']
         print(phase[i % 3], end='\r')
         sleep(1 / speed)
     print()
 
 
 if __name__ == '__main__':
-    percent(30)
-    loading(30)
-    spin(30)
-    orb(30)
+    choice = int(input(
+            """Choose animation:
+                (1) %
+                (2) loading...
+                (3) /
+                (4) O
+            """
+    ))
+    if choice == 1:
+        percent(30)
+    if choice == 2:
+        loading(30)
+    if choice == 3:
+        spin(30)
+    if choice == 4:
+        orb(30)
