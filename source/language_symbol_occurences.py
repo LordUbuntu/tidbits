@@ -18,44 +18,46 @@
 #   cumulative frequency in the heap.
 from collections import Counter
 
-programming_symbols = [
-    '+', '-', '=', '_',
-    '!', '`', '~', '@',
-    '#', '$', '%', '*',
-    '|', '<', '(', '[',
-    '{', '}', ']', ')',
-    '>', ';', ':', "'",
-    '"', '?', '/', '\\',
-    ',', '.', '^', '&'
-]
-total_symbols = 0
-occurences = Counter([])
+
+def count_symbols(filename: str):
+    programming_symbols = [
+        '+', '-', '=', '_',
+        '!', '`', '~', '@',
+        '#', '$', '%', '*',
+        '|', '<', '(', '[',
+        '{', '}', ']', ')',
+        '>', ';', ':', "'",
+        '"', '?', '/', '\\',
+        ',', '.', '^', '&'
+    ]
+    total_symbols = 0
+    occurences = Counter([])
 
 # list files to parse though
-files = [file.strip("\n") for file in open("files.txt", "r").readlines()]
+    files = [file.strip("\n") for file in open(filename, "r").readlines()]
 
 # count occurences in each file
-for file in files:
-    try:
-        with open(file, "r") as f:
-            symbols = [
-                char
-                for line in f.readlines()
-                for char in line
-                if char in programming_symbols
-            ]
-            total_symbols += len(symbols)
-            occurences += Counter(symbols)
-    except UnicodeDecodeError:
-        continue
-    except FileNotFoundError:
-        continue
+    for file in files:
+        try:
+            with open(file, "r") as f:
+                symbols = [
+                    char
+                    for line in f.readlines()
+                    for char in line
+                    if char in programming_symbols
+                ]
+                total_symbols += len(symbols)
+                occurences += Counter(symbols)
+        except UnicodeDecodeError:
+            continue
+        except FileNotFoundError:
+            continue
 
 # output results
-for symbol, occurence in occurences.items():
-    print("%i => %s (%03f%%)" % (
-            occurence,
-            symbol,
-            (occurence / total_symbols) * 100
+    for symbol, occurence in occurences.items():
+        print("%i => %s (%03f%%)" % (
+                occurence,
+                symbol,
+                (occurence / total_symbols) * 100
+            )
         )
-    )
