@@ -3,6 +3,7 @@
 #   Varous random CLI loading animations done to get an idea of how they make
 #   stuff update in place on the command line.
 from time import sleep
+from os import get_terminal_size as term_size
 
 
 def percent(speed):
@@ -44,6 +45,14 @@ def sweep(speed):
     print()
 
 
+def bar(speed):
+    for i in range(0, 101):
+        if i < term_size()[0]:
+            print(('=' * i) + '>', end='\r')
+        sleep(1 / speed)
+    print()
+
+
 if __name__ == '__main__':
     while True:
         choice = int(input(
@@ -53,6 +62,7 @@ if __name__ == '__main__':
                     (3) spin
                     (4) orb
                     (5) sweep
+                    (6) progress bar
                 """
         ))
         speed = int(input("What speed? "))
@@ -66,3 +76,5 @@ if __name__ == '__main__':
             orb(speed)
         if choice == 5:
             sweep(speed)
+        if choice == 6:
+            bar(speed)
