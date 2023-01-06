@@ -1,6 +1,6 @@
 # Jacobus Burger (2022)
 # I thought about exotic ways of doing a simple evenness test in python
-# Might add more
+
 
 def index_even(n):
     return ["Even", "Odd"][n % 2]
@@ -26,3 +26,12 @@ def membership_even(n):
     if n in even_numbers:
         return "Even"
     return "Odd"
+
+
+def curry_even(n):
+    # npm joke
+    def is_odd(n):
+        def is_even(n):
+            return n % 2 == 0
+        return is_even
+    return "Even" if is_odd(n)(n) == True else "Odd"
