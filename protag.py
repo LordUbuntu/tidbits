@@ -28,21 +28,29 @@ composure = [
 ]
 
 creature = [
-    "human",
-    "cat",
+    "balrog",
+    "basilisk",
     "bee",
     "bird",
-    "snake",
+    "bottle of water",
+    "calculus textbook",
+    "cat",
     "computer",
+    "dragon",
+    "elf",
+    "eraser with a face drawn on it",
     "flamingo",
     "flea",
-    "tree",
-    "dragon",
+    "flying tree",
+    "gingerbread man",
+    "human",
+    "leopard",
+    "pixar lamp",
     "planet",
-    "elf",
-    "basilisk",
-    "balrog",
-    "quantum soup"
+    "quantum soup",
+    "snake",
+    "the color red",
+    "tree",
 ]
 
 occupation = [
