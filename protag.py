@@ -86,16 +86,16 @@ occupation = [
 ]
 
 strength = [
-    "twig",
-    "sprig",
-    "snake",
-    "steel rod",
-    "log",
-    "statue",
-    "collosus",
-    "moutain",
+    "Atom bomb",
     "TNT",
-    "Atom bomb"
+    "collosus",
+    "log",
+    "moutain",
+    "snake",
+    "sprig",
+    "statue",
+    "steel rod",
+    "twig",
 ]
 
 quest = [
