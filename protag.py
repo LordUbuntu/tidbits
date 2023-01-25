@@ -5,20 +5,26 @@
 from random import choice
 
 composure = [
-    "stalward",
-    "anxious",
-    "brave",
-    "vitriolic",
+    "adventurous",
     "angry",
-    "greedy",
-    "friendly",
-    "generous",
-    "funny",
+    "anxious",
+    "artistic",
+    "bitter",
+    "brave",
     "busy",
+    "erroneous",
+    "friendly",
+    "funny",
+    "generous",
+    "greedy",
     "happy",
-    "strange",
+    "melancholic",
+    "peaceful",
     "quarky",
-    "bitter"
+    "spontaneous",
+    "stalward",
+    "strange",
+    "vitriolic",
 ]
 
 creature = [
