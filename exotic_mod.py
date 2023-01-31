@@ -35,3 +35,9 @@ def curry_even(n):
             return n % 2 == 0
         return is_even
     return "Even" if is_odd(n)(n) == True else "Odd"
+
+
+def not_odd(n):
+    if n % 2 != 1:
+        return "Even"
+    return "Odd"
