@@ -16,6 +16,16 @@ def sign_delta(char: str, height: int):
         print()
 
 
+def sign_del(char: str, height: str):
+    for row in range(height):
+        # reverse order of spaces on left, to produce reverse delta
+        for _ in range(row + 1):
+            print(" ", end="")
+        for _ in range(height - row):
+            print(" ", end=char)
+        print()
+
+
 def sign_chi(char: str, height: int):
     for row in range((height * 2) + 1):
         # print horizontal, middle
