@@ -53,6 +53,14 @@ def bar(speed):
     print()
 
 
+def bounce(speed):
+    phase = [".", "o"]
+    for i in range(0, 101):
+        print(phase[i % 2], end='\r')
+        sleep(1 / speed)
+    print()
+
+
 if __name__ == '__main__':
     while True:
         choice = int(input(
@@ -63,6 +71,7 @@ if __name__ == '__main__':
                     (4) orb
                     (5) sweep
                     (6) progress bar
+                    (7) Bounce
                 """
         ))
         speed = int(input("What speed? "))
@@ -78,3 +87,5 @@ if __name__ == '__main__':
             sweep(speed)
         if choice == 6:
             bar(speed)
+        if choice == 7:
+            bounce(speed)
