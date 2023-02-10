@@ -31,12 +31,11 @@ def snake():
               curses.color_pair(fruit_color))
 
     # counter to alternate snake colour between yello and blue
-    snake_color = 0  # 0 is yellow, 1 is blue
+    stripe_color = 0  # 0 is yellow, 1 is blue
 
     curr_key = curses.KEY_RIGHT
     while True:
-        # end if
-        # snake bites itself
+        # end if snake bites itself
         if snake[0] in snake[1:]:
             break
         # snake is out of bounds
@@ -48,17 +47,17 @@ def snake():
                   int(food[1]),
                   fruit_char,
                   curses.color_pair(fruit_color))
-        if snake_color == 0:
+        if stripe_color == 0:
             win.addch(int(snake[0][0]),
                       int(snake[0][1]),
                       snake_char,
-                      curses.color_pair(snake_color_Y))
+                      curses.color_pair(stripe_color_Y))
         else:
             win.addch(int(snake[0][0]),
                       int(snake[0][1]),
                       snake_char,
-                      curses.color_pair(snake_color_B))
-        snake_color = (snake_color + 1) % 2
+                      curses.color_pair(stripe_color_B))
+        stripe_color = (stripe_color + 1) % 2
 
         # get next key
         next_key = win.getch()
@@ -111,13 +110,13 @@ if __name__ == '__main__':
     blank_char = " "
     fruit_color = 2
     fruit_char = "*"
-    snake_color_Y = 3
-    snake_color_B = 4
+    stripe_color_Y = 3
+    stripe_color_B = 4
     snake_char = "#"
     curses.init_pair(blank_color, curses.COLOR_BLACK, curses.COLOR_BLACK)
     curses.init_pair(fruit_color, curses.COLOR_RED, curses.COLOR_BLACK)
-    curses.init_pair(snake_color_Y, curses.COLOR_YELLOW, curses.COLOR_BLACK)
-    curses.init_pair(snake_color_B, curses.COLOR_BLUE, curses.COLOR_BLACK)
+    curses.init_pair(stripe_color_Y, curses.COLOR_YELLOW, curses.COLOR_BLACK)
+    curses.init_pair(stripe_color_B, curses.COLOR_BLUE, curses.COLOR_BLACK)
 
     # initialize game window
     height, width = stdscr.getmaxyx()
