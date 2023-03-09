@@ -25,6 +25,9 @@ composure = [
     "stalward",
     "strange",
     "vitriolic",
+    "hyperactive",
+    "serendipitous",
+    "eccentric"
 ]
 
 creature = [
@@ -45,7 +48,7 @@ creature = [
     "gingerbread man",
     "human",
     "leopard",
-    "pixar lamp",
+    "lamp",
     "planet",
     "quantum soup",
     "snake",
