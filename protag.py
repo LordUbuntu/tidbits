@@ -54,6 +54,15 @@ creature = [
     "snake",
     "the color red",
     "tree",
+    "painting",
+    "don quixote",
+    "horse",
+    "fortress",
+    "flower",
+    "supercomputer",
+    "calculator",
+    "moth",
+    "butterfly"
 ]
 
 occupation = [
