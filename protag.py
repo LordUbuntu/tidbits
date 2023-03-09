@@ -156,7 +156,7 @@ quest = [
 
 def describe():
     print(
-        "A {} {} {} built like a {}, on a quest to save {}".format(
+        "A {} {} working as a {} and built like a {} on a quest to save {}".format(
             choice(composure),
             choice(creature),
             choice(occupation),
