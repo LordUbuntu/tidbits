@@ -76,6 +76,7 @@ occupation = [
     "genius",
     "hacker",
     "hole digger",
+    "hole filler",
     "librarian",
     "linguist",
     "mathematician",
@@ -95,6 +96,17 @@ occupation = [
     "tea enthusiast",
     "time traveler",
     "wizard",
+    "bioethicist",
+    "geologist",
+    "historian",
+    "therapist",
+    "conman",
+    "author",
+    "tea farmer",
+    "goat milker",
+    "hunter",
+    "smith",
+    "necromancer"
 ]
 
 strength = [
