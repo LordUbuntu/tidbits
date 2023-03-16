@@ -8,3 +8,9 @@ def rloop(i = 0, f, *args):
         return
     f(args[0])
     return rloop(i - 1, f, *args[1:])
+
+
+def iloop(i = 0, f, *args):
+    while i > 0:
+        f(args[0])
+        args = args[1:]
