@@ -13,8 +13,9 @@
    than 2 bits at one time.
    Ex:
    {C, T, G, A} == {0x0, 0x1, 0x2, 0x3}
-   ATG|ATC|ACC|CTG
-   312|310|300|012
+    A T G| A T C| A C C| C T G
+    3 1 2| 3 1 0| 3 0 0| 0 1 2
+   110110|110100|110000|000110
 
 
    Thanks to T for inspiring the idea to represent each codon with
@@ -22,95 +23,32 @@
  */
 
 // codon data structure
-typedef struct Codon {
-	unsigned char base[3];
+typedef struct BASE { unsigned char b : 2; } base;
+
+typedef struct CODON {
+        base base[3];
 } codon;
 
-codon
-init_codon(char str[static 3])
-{
-	// create inital empty codon
-	codon c = {};
-
-	// set values according to chars of given codon string
-	for ( int i = 0; i < 3; ++i )
-	{
-                if ( str[i] >= 65 || str[i] <= 90 ) {
-                        codon z = {};
-                        return z;
+// convert a string into the packed bit nucleotide representation (PBNR)
+int
+nucleotide(char *string, base *dest, size_t length) {
+        for (size_t i = 0; i < length; i++) {
+                switch (string[i]) {
+                        case 'C':
+                                dest[i] = (base){0};
+                                break;
+                        case 'T':
+                                dest[i] = (base){1};
+                                break;
+                        case 'G':
+                                dest[i] = (base){2};
+                                break;
+                        case 'A':
+                                dest[i] = (base){3};
+                                break;
+                        default:
+                                return 1;
                 }
-		switch ( str[i] ) {
-		case 'C':
-			c.base[i] = 0;
-			break;
-		case 'T':
-			c.base[i] = 1;
-			break;
-		case 'G':
-			c.base[i] = 2;
-			break;
-		case 'A':
-			c.base[i] = 3;
-			break;
-		default:
-			if ( str[i] != 'C' &&
-                             str[i] != 'T' &&
-			     str[i] != 'G' &&
-			     str[i] != 'A'    ) {
-                                codon z = {};
-                                return z;
-                        }
-			break;
-		}
-	}
-
-	// return codon struct
-	return c;
-}
-
-void
-print_codon(codon c)
-{
-	// create initial empty string
-	char str[3] = "   ";
-
-	// set its values
-	for ( int i = 0; i < 3; ++i )
-	{
-		switch ( c.base[i] )
-		{
-		case 0:
-			str[i] = 'C';
-			break;
-		case 1:
-			str[i] = 'T';
-			break;
-		case 2:
-			str[i] = 'G';
-			break;
-		case 3:
-			str[i] = 'A';
-			break;
-		default:
-                        str[i] = '?';
-			break;
-		}
-
-	}
-
-	// print it
-	printf("%s\n", str);
-}
-
-typedef codon* sequence;
-
-sequence
-init_sequence(char* str, int len);
-
-void
-print_sequence(sequence seq, int len);
-
-int main(void) {
-        codon c = init_codon("CAT");
-        print_codon(c);
+        }
+        return 0;
 }
