@@ -5,6 +5,7 @@
  *   space-efficient manner.
  */
 #include <stdio.h>
+#include <string.h>
 
 /* GENE SEQUENCE EXAMPLE
    This file acts as an example of representing 4 genetic bases
@@ -30,8 +31,7 @@ typedef struct CODON {
 } codon;
 
 // convert a string into the packed bit nucleotide representation (PBNR)
-int
-nucleotide(char *string, base *dest, size_t length) {
+int nucleotide(char *string, base *dest, size_t length) {
         for (size_t i = 0; i < length; i++) {
                 switch (string[i]) {
                         case 'C':
@@ -51,4 +51,18 @@ nucleotide(char *string, base *dest, size_t length) {
                 }
         }
         return 0;
+}
+
+
+int main(void) {
+        char *string;
+        scanf("%ms", &string);
+        size_t length = strlen(string);
+
+        base seq[length];
+        nucleotide(string, seq, length);
+
+        for (int i = 0; i < length; i++)
+                printf("%i %c, ", seq[i], string[i]);
+        puts("");
 }
