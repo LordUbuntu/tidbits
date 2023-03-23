@@ -25,37 +25,40 @@
  */
 
 // imagine each codon as a byte with 4 2bit packed numbers representing CATG
-// functions to deal with bit packing
-typedef uint8_t BASE;
-#define set_base(codon, value, offset) \
-        codon |= ((uint8_t)value << (2 * offset))
-
-// some neat tricks that are realized is that by taking the nand or xor we can
-// determine mismatches of the entire sequence in one operation.
-
-// codon data structure
-typedef struct BASE { unsigned char b : 2; }__attribute__((packed)) base;
-
-typedef base *codon;
+// these definitions help with bit pairs and bit packing action
+typedef uint8_t base;
+typedef base *dna;
+#define set_base(sequence, value, offset) \
+        sequence |= ((uint8_t)value << (2 * offset))
+#define get_base(sequence, offset) \
+        ((uint8_t)0b11 << (2 * offset)) >> (2 * offset)
+#define clr_base(sequence, offset) \
+        sequence &= ~((uint8_t)0b11 << (2 * offset))
 
 // convert a string into the packed bit nucleotide representation (PBNR)
-int nucleotide(char *string, base *dest, size_t length) {
+int nucleotide(char *string, base sequence, size_t length) {
+        return 0;
+}
+
+// show a representation of the current sequence
+// note: if sequence == CAT (001101), length == 3
+int print_sequence(base sequence, size_t length) {
         for (size_t i = 0; i < length; i++) {
-                switch (string[i]) {
-                        case 'C':
-                                dest[i] = (base){0};
+                switch (get_base(sequence, i)) {
+                        case 0:
+                                printf("C");
                                 break;
-                        case 'T':
-                                dest[i] = (base){1};
+                        case 1:
+                                printf("T");
                                 break;
-                        case 'G':
-                                dest[i] = (base){2};
+                        case 2:
+                                printf("G");
                                 break;
-                        case 'A':
-                                dest[i] = (base){3};
+                        case 3:
+                                printf("A");
                                 break;
                         default:
-                                return 1;
+                                return -1;
                 }
         }
         return 0;
@@ -63,17 +66,7 @@ int nucleotide(char *string, base *dest, size_t length) {
 
 
 int main(void) {
-/*
         char *string;
         scanf("%ms", &string);
         size_t length = strlen(string);
-
-        base seq[length];
-        nucleotide(string, seq, length);
-
-        printf("str: %s %ul %ul.\nseq: %ul %ul\n", string, sizeof(string), sizeof(char), sizeof(seq), sizeof(base));
-        for (int i = 0; i < length; i++)
-                printf("%i %c, ", seq[i], string[i]);
-        puts("");
-*/
 }
