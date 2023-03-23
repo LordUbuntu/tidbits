@@ -5,6 +5,7 @@
  *   space-efficient manner.
  */
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
 
 /* GENE SEQUENCE EXAMPLE
@@ -23,12 +24,19 @@
    a binary value.
  */
 
-// codon data structure
-typedef struct BASE { unsigned char b : 2; } base;
+// imagine each codon as a byte with 4 2bit packed numbers representing CATG
+// functions to deal with bit packing
+typedef uint8_t BASE;
+#define set_base(codon, value, offset) \
+        codon |= ((uint8_t)value << (2 * offset))
 
-typedef struct CODON {
-        base base[3];
-} codon;
+// some neat tricks that are realized is that by taking the nand or xor we can
+// determine mismatches of the entire sequence in one operation.
+
+// codon data structure
+typedef struct BASE { unsigned char b : 2; }__attribute__((packed)) base;
+
+typedef base *codon;
 
 // convert a string into the packed bit nucleotide representation (PBNR)
 int nucleotide(char *string, base *dest, size_t length) {
@@ -55,6 +63,7 @@ int nucleotide(char *string, base *dest, size_t length) {
 
 
 int main(void) {
+/*
         char *string;
         scanf("%ms", &string);
         size_t length = strlen(string);
@@ -62,7 +71,9 @@ int main(void) {
         base seq[length];
         nucleotide(string, seq, length);
 
+        printf("str: %s %ul %ul.\nseq: %ul %ul\n", string, sizeof(string), sizeof(char), sizeof(seq), sizeof(base));
         for (int i = 0; i < length; i++)
                 printf("%i %c, ", seq[i], string[i]);
         puts("");
+*/
 }
