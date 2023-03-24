@@ -35,8 +35,27 @@ typedef base *dna;
 #define clr_base(sequence, offset) \
         sequence &= ~((uint8_t)0b11 << (2 * offset))
 
+// todo: modify these to iterate and work on whole DNA sequences (packed bases)
 // convert a string into the packed bit nucleotide representation (PBNR)
 int nucleotide(char *string, base sequence, size_t length) {
+        for (size_t i = 0; i < length; i++) {
+                switch (string[i]) {
+                        case 'C':
+                                set_base(sequence, 0b00, i);
+                                break;
+                        case 'T':
+                                set_base(sequence, 0b01, i);
+                                break;
+                        case 'G':
+                                set_base(sequence, 0b10, i);
+                                break;
+                        case 'A':
+                                set_base(sequence, 0b11, i);
+                                break;
+                        default:
+                                return 1;
+                }
+        }
         return 0;
 }
 
@@ -58,7 +77,7 @@ int print_sequence(base sequence, size_t length) {
                                 printf("A");
                                 break;
                         default:
-                                return -1;
+                                return 1;
                 }
         }
         return 0;
@@ -66,7 +85,11 @@ int print_sequence(base sequence, size_t length) {
 
 
 int main(void) {
-        char *string;
-        scanf("%ms", &string);
-        size_t length = strlen(string);
+        char *string = "CATG";
+        size_t length = 4;
+
+        base seq;
+        int status = nucleotide(string, seq, length);
+        status = print_sequence(seq, length);
+        return status;
 }
