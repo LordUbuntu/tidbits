@@ -33,7 +33,7 @@
 
 // macro functions to manipulate packed 2bit words of each byte of bases
 #define set_base(bases, value, offset) \
-        bases |= ((uint8_t)value << (2 * offset))
+        bases = bases | ((uint8_t)value << (2 * offset))
 #define get_base(bases, offset) \
         ((uint8_t)0b11 << (2 * offset)) >> (2 * offset)
 #define clr_base(bases, offset) \
@@ -88,37 +88,10 @@ char *unpack(const fbase bases) {
         return string;
 }
 
-// show a representation of the current sequence
-// note: if sequence == CAT (001101), length == 3
-int print_sequence(base sequence, size_t length) {
-        for (size_t i = 0; i < length; i++) {
-                switch (get_base(sequence, i)) {
-                        case 0:
-                                printf("C");
-                                break;
-                        case 1:
-                                printf("T");
-                                break;
-                        case 2:
-                                printf("G");
-                                break;
-                        case 3:
-                                printf("A");
-                                break;
-                        default:
-                                return 1;
-                }
-        }
-        return 0;
-}
 
 
 int main(void) {
-        char *string = "CATG";
-        size_t length = 4;
-
-        base seq;
-        int status = nucleotide(string, seq, length);
-        status = print_sequence(seq, length);
-        return status;
+        char *string = "CTGA";
+        fbase bases = pack(string);
+        printf("%s, %x\n", string, bases);
 }
