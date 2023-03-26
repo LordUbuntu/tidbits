@@ -35,7 +35,7 @@
 #define set_base(bases, value, offset) \
         bases = bases | ((uint8_t)value << (2 * offset))
 #define get_base(bases, offset) \
-        ((uint8_t)0b11 << (2 * offset)) >> (2 * offset)
+        (bases & ((uint8_t)0b11 << (2 * offset))) >> (2 * offset)
 #define clr_base(bases, offset) \
         bases &= ~((uint8_t)0b11 << (2 * offset))
 // helper types
@@ -94,4 +94,6 @@ int main(void) {
         char *string = "CTGA";
         fbase bases = pack(string);
         printf("%s, %x\n", string, bases);
+        char *res = unpack(bases);
+        printf("%s, %x, %s\n", string, bases, res);
 }
