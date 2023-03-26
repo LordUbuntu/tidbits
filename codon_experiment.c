@@ -36,13 +36,9 @@
         bases = bases | ((uint8_t)value << (2 * offset))
 #define get_base(bases, offset) \
         (bases & ((uint8_t)0b11 << (2 * offset))) >> (2 * offset)
-#define clr_base(bases, offset) \
-        bases &= ~((uint8_t)0b11 << (2 * offset))
 // helper types
 typedef uint8_t fbase;      // each byte of 4 bases
 typedef fbase *dna;         // a sequence of bytes of 4 bases each
-
-// helper functions
 
 // function to pack 4 char substring into a four-base byte
 fbase pack(const char string[4]) {
@@ -91,9 +87,10 @@ char *unpack(const fbase bases) {
 
 
 int main(void) {
+        // TODO - write functions to operate on packed dna sequences
         char *string = "CTGA";
         fbase bases = pack(string);
-        printf("%s, %x\n", string, bases);
+        printf("%s, %x, %s\n", string, bases, "____");
         char *res = unpack(bases);
         printf("%s, %x, %s\n", string, bases, res);
 }
