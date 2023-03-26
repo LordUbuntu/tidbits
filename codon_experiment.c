@@ -65,6 +65,27 @@ fbase pack(const char string[4]) {
         return bases;
 }
 
+char *unpack(const fbase bases) {
+        static char string[4] = "____";
+        for (size_t i = 0; i < 4; i++) {
+                switch (get_base(bases, i)) {
+                        case 0b00:
+                                string[i] = 'C';
+                                break;
+                        case 0b01:
+                                string[i] = 'T';
+                                break;
+                        case 0b10:
+                                string[i] = 'G';
+                                break;
+                        case 0b11:
+                                string[i] = 'A';
+                                break;
+                }
+        }
+        return string;
+}
+
 // show a representation of the current sequence
 // note: if sequence == CAT (001101), length == 3
 int print_sequence(base sequence, size_t length) {
