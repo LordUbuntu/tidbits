@@ -14,7 +14,7 @@
    DNA bases. This allows each base to be represented with no more
    than 2 bits at one time.
    Ex:
-   {C, T, G, A} == {0x0, 0x1, 0x2, 0x3}
+   {C, T, G, A} == {0b00, 0b01, 0b10, 0b11}
     A T G| A T C| A C C| C T G
     3 1 2| 3 1 0| 3 0 0| 0 1 2
    110110|110100|110000|000110
@@ -22,41 +22,47 @@
 
    Thanks to T for inspiring the idea to represent each codon with
    a binary value.
+
+   The design I've improved on is to have 4 bases represented as
+   a set of 4 2bit numbers packed in a single uint8 byte. Then, we
+   can represent 4 times the number of bases that a string would
+   be able to represent, and then DNA is an array of these packed
+   4-base nucleotide subsequences.
  */
 
-// imagine each codon as a byte with 4 2bit packed numbers representing CATG
-// these definitions help with bit pairs and bit packing action
-typedef uint8_t base;
-typedef base *dna;
-#define set_base(sequence, value, offset) \
-        sequence |= ((uint8_t)value << (2 * offset))
-#define get_base(sequence, offset) \
-        ((uint8_t)0b11 << (2 * offset)) >> (2 * offset)
-#define clr_base(sequence, offset) \
-        sequence &= ~((uint8_t)0b11 << (2 * offset))
 
-// todo: modify these to iterate and work on whole DNA sequences (packed bases)
-// convert a string into the packed bit nucleotide representation (PBNR)
-int nucleotide(char *string, base sequence, size_t length) {
-        for (size_t i = 0; i < length; i++) {
+// macro functions to manipulate packed 2bit words of each byte of bases
+#define set_base(bases, value, offset) \
+        bases |= ((uint8_t)value << (2 * offset))
+#define get_base(bases, offset) \
+        ((uint8_t)0b11 << (2 * offset)) >> (2 * offset)
+#define clr_base(bases, offset) \
+        bases &= ~((uint8_t)0b11 << (2 * offset))
+// helper types
+typedef uint8_t fbase;      // each byte of 4 bases
+typedef fbase *dna;         // a sequence of bytes of 4 bases each
+
+
+// helper functions to pack/unpack base subsequences
+fbase pack(const char string[4]) {
+        static fbase bases = 0b00000000;
+        for (size_t i = 0; i < 4; i++) {
                 switch (string[i]) {
                         case 'C':
-                                set_base(sequence, 0b00, i);
+                                set_base(bases, 0b00, i);
                                 break;
                         case 'T':
-                                set_base(sequence, 0b01, i);
+                                set_base(bases, 0b01, i);
                                 break;
                         case 'G':
-                                set_base(sequence, 0b10, i);
+                                set_base(bases, 0b10, i);
                                 break;
                         case 'A':
-                                set_base(sequence, 0b11, i);
+                                set_base(bases, 0b11, i);
                                 break;
-                        default:
-                                return 1;
                 }
         }
-        return 0;
+        return bases;
 }
 
 // show a representation of the current sequence
