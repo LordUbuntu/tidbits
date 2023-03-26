@@ -42,8 +42,9 @@
 typedef uint8_t fbase;      // each byte of 4 bases
 typedef fbase *dna;         // a sequence of bytes of 4 bases each
 
+// helper functions
 
-// helper functions to pack/unpack base subsequences
+// function to pack 4 char substring into a four-base byte
 fbase pack(const char string[4]) {
         static fbase bases = 0b00000000;
         for (size_t i = 0; i < 4; i++) {
@@ -65,6 +66,7 @@ fbase pack(const char string[4]) {
         return bases;
 }
 
+// function to unpack 4 char substring from a four-base byte
 char *unpack(const fbase bases) {
         static char string[4] = "____";
         for (size_t i = 0; i < 4; i++) {
