@@ -86,23 +86,23 @@ char *unpack(const fbase bases) {
 }
 
 // function to convert a string to a dna sequence
-void string_to_sequence(char *string, fbase *sequence, size_t length) {
+void string_to_sequence(char *string, fbase *sequence, size_t sequence_length) {
         char substring[4];
-        for (size_t i = 0; i < length; i++) {
+        for (size_t i = 0; i < sequence_length; i++) {
                 // go 4 chars at a time to pack into each sequence element
                 memcpy(substring, string + (4 * i), 4);
                 sequence[i] = pack(substring);
         }
 }
 
-char *sequence_to_string(fbase *sequence, char *string, size_t length);
+void sequence_to_string(fbase *sequence, char *string, size_t sequence_length) {
+        // TODO - unpack sequence back into string
+}
 
 
 int main(void) {
-        // TODO - write functions to operate on packed dna sequences
         fbase sequence[2];
-        // dna sequence = (dna) calloc(2, sizeof(fbase));
-        char string[8] = "CTGACTGA";    // CTGA CTGA
-        string_to_sequence(string, sequence, 2);
-        printf("%lu %lu, %lu %lu\n", sizeof(char), sizeof(string), sizeof(fbase), sizeof(sequence));
+        char start[8] = "CTGACTGA";    // CTGA CTGA
+        string_to_sequence(start, sequence, 2);
+        printf("%s %lu %lu, %i,%i %lu %lu\n", start, sizeof(char), sizeof(start), sequence[0], sequence[1], sizeof(fbase), sizeof(sequence));
 }
