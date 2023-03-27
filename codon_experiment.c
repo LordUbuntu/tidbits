@@ -39,6 +39,7 @@
         (bases & ((uint8_t)0b11 << (2 * offset))) >> (2 * offset)
 // helper types
 typedef uint8_t fbase;      // each byte of 4 bases
+enum base { C, T, G, A };
 
 // function to pack 4 char substring into a four-base byte
 fbase pack(const char string[4]) {
@@ -46,16 +47,16 @@ fbase pack(const char string[4]) {
         for (size_t i = 0; i < 4; i++) {
                 switch (string[i]) {
                         case 'C':
-                                set_base(bases, 0b00, i);
+                                set_base(bases, C, i);
                                 break;
                         case 'T':
-                                set_base(bases, 0b01, i);
+                                set_base(bases, T, i);
                                 break;
                         case 'G':
-                                set_base(bases, 0b10, i);
+                                set_base(bases, G, i);
                                 break;
                         case 'A':
-                                set_base(bases, 0b11, i);
+                                set_base(bases, A, i);
                                 break;
                 }
         }
@@ -67,16 +68,16 @@ char *unpack(const fbase bases) {
         static char string[4] = "____";
         for (size_t i = 0; i < 4; i++) {
                 switch (get_base(bases, i)) {
-                        case 0b00:
+                        case C:
                                 string[i] = 'C';
                                 break;
-                        case 0b01:
+                        case T:
                                 string[i] = 'T';
                                 break;
-                        case 0b10:
+                        case G:
                                 string[i] = 'G';
                                 break;
-                        case 0b11:
+                        case A:
                                 string[i] = 'A';
                                 break;
                 }
@@ -91,9 +92,7 @@ void string_to_sequence(char *string, fbase *sequence, size_t length) {
                 // go 4 chars at a time to pack into each sequence element
                 memcpy(substring, string + (4 * i), 4);
                 sequence[i] = pack(substring);
-                printf("%s %s %i", substring, string, sequence[i]);
         }
-        puts("\n\n");
 }
 
 char *sequence_to_string(fbase *sequence, char *string, size_t length);
