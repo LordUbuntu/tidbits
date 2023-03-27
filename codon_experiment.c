@@ -5,6 +5,7 @@
  *   space-efficient manner.
  */
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
 
@@ -38,7 +39,6 @@
         (bases & ((uint8_t)0b11 << (2 * offset))) >> (2 * offset)
 // helper types
 typedef uint8_t fbase;      // each byte of 4 bases
-typedef fbase *dna;         // a sequence of bytes of 4 bases each
 
 // function to pack 4 char substring into a four-base byte
 fbase pack(const char string[4]) {
@@ -85,16 +85,25 @@ char *unpack(const fbase bases) {
 }
 
 // function to convert a string to a dna sequence
-dna string_to_dna(char *string, dna sequence, size_t length);
+void string_to_sequence(char *string, fbase *sequence, size_t length) {
+        char substring[4];
+        for (size_t i = 0; i < length; i++) {
+                // go 4 chars at a time to pack into each sequence element
+                memcpy(substring, string + (4 * i), 4);
+                sequence[i] = pack(substring);
+                printf("%s %s %i", substring, string, sequence[i]);
+        }
+        puts("\n\n");
+}
 
-char *dna_to_string(dna sequence, char *string, size_t length);
+char *sequence_to_string(fbase *sequence, char *string, size_t length);
 
 
 int main(void) {
         // TODO - write functions to operate on packed dna sequences
-        char *string = "CTGA";
-        fbase bases = pack(string);
-        printf("%s, %x, %s\n", string, bases, "____");
-        char *res = unpack(bases);
-        printf("%s, %x, %s\n", string, bases, res);
+        fbase sequence[2];
+        // dna sequence = (dna) calloc(2, sizeof(fbase));
+        char string[8] = "CTGACTGA";    // CTGA CTGA
+        string_to_sequence(string, sequence, 2);
+        printf("%lu %lu, %lu %lu\n", sizeof(char), sizeof(string), sizeof(fbase), sizeof(sequence));
 }
