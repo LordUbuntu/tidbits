@@ -84,6 +84,10 @@ char *unpack(const fbase bases) {
         return string;
 }
 
+// function to convert a string to a dna sequence
+dna string_to_dna(char *string, dna sequence, size_t length);
+
+char *dna_to_string(dna sequence, char *string, size_t length);
 
 
 int main(void) {
