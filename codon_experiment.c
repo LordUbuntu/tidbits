@@ -87,47 +87,37 @@ char *unpack(const fbase bases) {
 
 // function to convert a string to a dna sequence
 void string_to_sequence(const char *string, fbase *sequence, size_t sequence_length) {
-        puts("strtoseq");
         char substring[4] = "____";
         for (size_t i = 0; i < sequence_length; i++) {
                 // copy substring from string
-                for (size_t j = 0; j < 4; j++) {
-                        substring[j] = string[(4 * i) + j];
-                        printf("%c, %c\n", substring[j], string[(4 * i) + j]);
-                }
+                memcpy(substring, (string + (4 * i)), 4);
+                // for (size_t j = 0; j < 4; j++) substring[j] = string[4 * i + j];
+                substring[4] = '\0';  // terminate string
                 // pack substring into sequence byte
                 sequence[i] = pack(substring);
-                printf("%s %s -> %i\n", substring, string, sequence[i]);
         }
 }
 
 // function to convert a dna sequence to a string
 void sequence_to_string(const fbase *sequence, char *string, size_t sequence_length) {
-        puts("seqtostr");
         char *substring = "____";
         for (size_t i = 0; i < sequence_length; i++) {
                 // unpack sequence byte into substring
                 substring = unpack(sequence[i]);
                 // copy substring into string
-                for (size_t j = 0; j < 4; j++) {
-                        // this might be by reference instead of 
-                        string[(4 * i) + j] = substring[j];
-                        printf("%c, %c\n", substring[j], string[(4 * i) + j]);
-                }
-                printf("%s %s <- %i\n", substring, string, sequence[i]);
+                memcpy((string + (4 * i)), substring, 4);
+                // for (size_t j = 0; j < 4; j++) string[(4 * i) + j] = substring[j];
+                string[4 * sequence_length] = '\0';  // terminate string
         }
 }
 
 
 int main(void) {
         fbase sequence[2];
-        char start[8] = "CTGACTGA";
-        string_to_sequence(start, sequence, 2);
+        char start[8] = "CTGACTTC";
         string_to_sequence(start, sequence, 2);
         printf("%s %lu %lu -> %i %i %lu %lu\n", start, sizeof(char), sizeof(start), sequence[0], sequence[1], sizeof(fbase), sizeof(sequence));
-        char end[8] = "________";
         char test[8] = "________";
-        sequence_to_string(sequence, end, 2);
         sequence_to_string(sequence, start, 2);
-        printf("%i %i %lu %lu -> %s %s %s\n", sequence[0], sequence[1], sizeof(fbase), sizeof(sequence), start, end, test);
+        printf("%i %i %lu %lu -> %s %s\n", sequence[0], sequence[1], sizeof(fbase), sizeof(sequence), start, test);
 }
