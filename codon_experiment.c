@@ -87,24 +87,35 @@ char *unpack(const fbase bases) {
 
 // function to convert a string to a dna sequence
 void string_to_sequence(const char *string, fbase *sequence, size_t sequence_length) {
-        char substring[4];
+        puts("strtoseq");
+        char substring[4] = "____";
         for (size_t i = 0; i < sequence_length; i++) {
-                memcpy(substring, string + (4 * i), 4);
+                // copy substring from string
+                for (size_t j = 0; j < 4; j++) {
+                        substring[j] = string[(4 * i) + j];
+                        printf("%c, %c\n", substring[j], string[(4 * i) + j]);
+                }
+                // pack substring into sequence byte
                 sequence[i] = pack(substring);
+                printf("%s %s -> %i\n", substring, string, sequence[i]);
         }
 }
 
 // function to convert a dna sequence to a string
 void sequence_to_string(const fbase *sequence, char *string, size_t sequence_length) {
-        // why does this mutate start even though end was fed in?
-        char *substring;
+        puts("seqtostr");
+        char *substring = "____";
         for (size_t i = 0; i < sequence_length; i++) {
+                // unpack sequence byte into substring
                 substring = unpack(sequence[i]);
-                memcpy(string + (4 * i), substring, 4);
+                // copy substring into string
+                for (size_t j = 0; j < 4; j++) {
+                        // this might be by reference instead of 
+                        string[(4 * i) + j] = substring[j];
+                        printf("%c, %c\n", substring[j], string[(4 * i) + j]);
+                }
+                printf("%s %s <- %i\n", substring, string, sequence[i]);
         }
-        // TODO - fix broken side-effect behaviour
-        // HINT - voodoo effect, the more independent variables used, the  more repetition in the original string
-        //              (maybe it's extending start somehow)?
 }
 
 
@@ -117,6 +128,6 @@ int main(void) {
         char end[8] = "________";
         char test[8] = "________";
         sequence_to_string(sequence, end, 2);
-        sequence_to_string(sequence, test, 2);
-        printf("%s %lu %lu -> %i %i %lu %lu -> %s %lu %lu\n", start, sizeof(char), sizeof(start), sequence[0], sequence[1], sizeof(fbase), sizeof(sequence), end, sizeof(char), sizeof(end));
+        sequence_to_string(sequence, start, 2);
+        printf("%i %i %lu %lu -> %s %s %s\n", sequence[0], sequence[1], sizeof(fbase), sizeof(sequence), start, end, test);
 }
