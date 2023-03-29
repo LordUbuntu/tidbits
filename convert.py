@@ -11,6 +11,11 @@ import re
 from sys import argv
 
 
+def fahrenheit_to_celsius(f, c):
+    return (f - 32) * (5/9)
+
+
+
 def convert(from_unit, to_unit: str, value: float) -> float:
     """
     converts a given measure of one unit to another using ratios between units.
