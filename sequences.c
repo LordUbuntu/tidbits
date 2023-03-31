@@ -29,6 +29,8 @@
    can represent 4 times the number of bases that a string would
    be able to represent, and then DNA is an array of these packed
    4-base nucleotide subsequences.
+
+   Note that with this current packing scheme the estimated byte to base pair ratio would be 4bp:1byte. So that means roughly 4kbp in 1kb (not bad).
  */
 
 
