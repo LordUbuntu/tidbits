@@ -114,6 +114,23 @@ void sequence_to_string(const fbase *sequence, char *string, size_t sequence_len
 }
 
 
+
+
+
+// I suspect that memcpy is causing trouble through pointer stuff
+void show_mem(const void *array, size_t length) {
+        for (size_t i = 0; i < length; i++) {
+                printf("|(%i) %x|", array, array);
+        }
+        puts("");
+}
+
+
+
+
+
+
+
 int main(void) {
         fbase sequence[2];
         char start[8] = "CTGAAGTC";
@@ -122,4 +139,8 @@ int main(void) {
         char test[8] = "________";
         sequence_to_string(sequence, start, 2);
         printf("%i %i %lu %lu -> %s %s\n", sequence[0], sequence[1], sizeof(fbase), sizeof(sequence), start, test);
+
+        show_mem(sequence, 2);
+        show_mem(start, 8);
+        show_mem(test, 8);
 }
