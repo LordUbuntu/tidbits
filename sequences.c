@@ -92,7 +92,7 @@ void string_to_sequence(const char *string, fbase *sequence, size_t sequence_len
         char substring[5] = "____\0";
         for (size_t i = 0; i < sequence_length; i++) {
                 // copy substring from string
-                memcpy(substring, (string + (4 * i)), 5);
+                memcpy(substring, (string + (4 * i)), 3);
                 // for (size_t j = 0; j < 4; j++) substring[j] = string[4 * i + j];
                 substring[4] = '\0';  // terminate string
                 // pack substring into sequence byte
@@ -105,9 +105,9 @@ void sequence_to_string(const fbase *sequence, char *string, size_t sequence_len
         char substring[5] = "____\0";
         for (size_t i = 0; i < sequence_length; i++) {
                 // unpack sequence byte into substring
-                memcpy(substring, unpack(sequence[i]), 5);
+                memcpy(substring, unpack(sequence[i]), 3);
                 // copy substring into string
-                memcpy((string + (4 * i)), substring, 5);
+                memcpy((string + (4 * i)), substring, 3);
                 // for (size_t j = 0; j < 4; j++) string[(4 * i) + j] = substring[j];
                 string[4 * sequence_length + 1] = '\0';  // terminate string
         }
@@ -118,9 +118,9 @@ void sequence_to_string(const fbase *sequence, char *string, size_t sequence_len
 
 
 // I suspect that memcpy is causing trouble through pointer stuff
-void show_mem(const void *array, size_t length) {
+void show_addr(const char *array, size_t length) {
         for (size_t i = 0; i < length; i++) {
-                printf("|(%i) %x|", array, array);
+                printf("|%u %x|", *(array + i), (array + i));
         }
         puts("");
 }
@@ -134,13 +134,18 @@ void show_mem(const void *array, size_t length) {
 int main(void) {
         fbase sequence[2];
         char start[8] = "CTGAAGTC";
+        char test[8] = "________";
+
+        show_addr(sequence, 2);
+        show_addr(start, 8);
+        show_addr(test, 8);
+
         string_to_sequence(start, sequence, 2);
         printf("%s %lu %lu -> %i %i %lu %lu\n", start, sizeof(char), sizeof(start), sequence[0], sequence[1], sizeof(fbase), sizeof(sequence));
-        char test[8] = "________";
         sequence_to_string(sequence, start, 2);
         printf("%i %i %lu %lu -> %s %s\n", sequence[0], sequence[1], sizeof(fbase), sizeof(sequence), start, test);
 
-        show_mem(sequence, 2);
-        show_mem(start, 8);
-        show_mem(test, 8);
+        show_addr(sequence, 2);
+        show_addr(start, 8);
+        show_addr(test, 8);
 }
