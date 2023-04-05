@@ -1,16 +1,14 @@
 #!/bin/python3
 # Created by Jacobus Burger (2022)
 # Info:
-#   I wanted to draw a shape out of ASCII characters.
+#   I wanted to draw shapes out of ASCII characters.
 #   Enjoy!
 
 
 def sign_delta(char: str, height: int):
     for row in range(height):
-        # create spaces on left
         for _ in range(height - row):
             print(" ", end="")
-        # print char on row
         for _ in range(row + 1):
             print(" ", end=char)
         print()
@@ -18,7 +16,6 @@ def sign_delta(char: str, height: int):
 
 def sign_del(char: str, height: str):
     for row in range(height):
-        # reverse order of spaces on left, to produce reverse delta
         for _ in range(row + 1):
             print(" ", end="")
         for _ in range(height - row):
@@ -28,11 +25,9 @@ def sign_del(char: str, height: str):
 
 def sign_chi(char: str, height: int):
     for row in range((height * 2) + 1):
-        # print horizontal, middle
         if row >= height and row < height + 1:
             for _ in range(2):
                 print(f"{char*(height*2)}{char*2}")
-        # print vertical, ends
         else:
             print(" "*height, end=f"{char*2}\n")
     print()
