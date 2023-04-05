@@ -36,6 +36,16 @@ void map(int (*f)(int, int), int *A, int *B, int *C, size_t length) {
                 C[i] = (*f)(A[i], B[i]);
 }
 
+int reduce(int (*f)(int, int), int *A, size_t length) {
+        static int accumulator = -1;
+        if (length == 0)
+                return accumulator;
+        accumulator = A[0];
+        for (size_t i = 1; i < length; i++)
+                accumulator = (*f)(accumulator, A[i]);
+        return accumulator;
+}
+
 
 int main(void) {
         int A[5] = {1, 2, 3, 4, 5};
@@ -60,4 +70,6 @@ int main(void) {
         printf("%c: %i %i %i %i %i\n", 'A', A[0], A[1], A[2], A[3], A[4]);
         printf("%c: %i %i %i %i %i\n", 'B', B[0], B[1], B[2], B[3], B[4]);
         printf("%c: %i %i %i %i %i\n\n", 'C', C[0], C[1], C[2], C[3], C[4]);
+
+        printf("reduce sum of A: %i\n", reduce(&sum, A, 5));
 }
