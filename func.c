@@ -16,6 +16,11 @@
  * state the code will be more predictable and maintainable.
  */
 
+typedef struct {
+        char *name;
+        int total;
+} score;
+
 
 // sum of two integers
 int sum(int a, int b) {
@@ -47,6 +52,14 @@ int reduce(int (*f)(int, int), int *A, size_t length) {
 }
 
 
+score tally(const score user, int *points, size_t length) {
+        score s = {user.name, 0};
+        s.total = reduce(&sum, points, length);
+        return s;
+}
+
+
+
 int main(void) {
         int A[5] = {1, 2, 3, 4, 5};
         int B[5] = {2, 2, 2, 2, 2};
@@ -71,5 +84,9 @@ int main(void) {
         printf("%c: %i %i %i %i %i\n", 'B', B[0], B[1], B[2], B[3], B[4]);
         printf("%c: %i %i %i %i %i\n\n", 'C', C[0], C[1], C[2], C[3], C[4]);
 
-        printf("reduce sum of A: %i\n", reduce(&sum, A, 5));
+        printf("reduce sum of A: %i\n\n", reduce(&sum, A, 5));
+
+        score user = {"Jay", 0};
+        user = tally(user, A, 5);
+        printf("score of user %s: %i\n", user.name, user.total);
 }
