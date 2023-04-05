@@ -16,9 +16,16 @@
  * state the code will be more predictable and maintainable.
  */
 
-// standard function
+
+// sum of two integers
 int sum(int a, int b) {
         return a + b;
+}
+
+
+// product of two integers
+int product(int a, int b) {
+        return a * b;
 }
 
 
@@ -32,16 +39,25 @@ void map(int (*f)(int, int), int *A, int *B, int *C, size_t length) {
 
 int main(void) {
         int A[5] = {1, 2, 3, 4, 5};
-        int B[5] = {1, 1, 1, 2, 2};
+        int B[5] = {2, 2, 2, 2, 2};
         int C[5] = {0};
 
+        puts("original lists:");
         printf("%c: %i %i %i %i %i\n", 'A', A[0], A[1], A[2], A[3], A[4]);
         printf("%c: %i %i %i %i %i\n", 'B', B[0], B[1], B[2], B[3], B[4]);
         printf("%c: %i %i %i %i %i\n\n", 'C', C[0], C[1], C[2], C[3], C[4]);
 
         map(&sum, A, B, C, 5);
 
+        puts("lists with sum function:");
         printf("%c: %i %i %i %i %i\n", 'A', A[0], A[1], A[2], A[3], A[4]);
         printf("%c: %i %i %i %i %i\n", 'B', B[0], B[1], B[2], B[3], B[4]);
-        printf("%c: %i %i %i %i %i\n", 'C', C[0], C[1], C[2], C[3], C[4]);
+        printf("%c: %i %i %i %i %i\n\n", 'C', C[0], C[1], C[2], C[3], C[4]);
+
+        map(&product, A, B, C, 5);
+
+        puts("lists with product function:");
+        printf("%c: %i %i %i %i %i\n", 'A', A[0], A[1], A[2], A[3], A[4]);
+        printf("%c: %i %i %i %i %i\n", 'B', B[0], B[1], B[2], B[3], B[4]);
+        printf("%c: %i %i %i %i %i\n\n", 'C', C[0], C[1], C[2], C[3], C[4]);
 }
