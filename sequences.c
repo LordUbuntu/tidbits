@@ -41,7 +41,8 @@
         (bases & ((uint8_t)0b11 << (2 * offset))) >> (2 * offset)
 // helper types
 typedef uint8_t fbase;      // each byte of 4 bases
-enum base { C, T, G, A };
+enum base { C = 0b00, T, G, A };
+
 
 // function to pack 4 char substring into a four-base byte
 fbase pack(const char string[4]) {
@@ -65,6 +66,7 @@ fbase pack(const char string[4]) {
         return bases;
 }
 
+
 // function to unpack 4 char substring from a four-base byte
 char *unpack(const fbase bases) {
         static char string[4] = "____";
@@ -87,65 +89,42 @@ char *unpack(const fbase bases) {
         return string;
 }
 
+
 // function to convert a string to a dna sequence
 void string_to_sequence(const char *string, fbase *sequence, size_t sequence_length) {
-        char substring[5] = "____\0";
+        char substring[5];
         for (size_t i = 0; i < sequence_length; i++) {
-                // copy substring from string
-                memcpy(substring, (string + (4 * i)), 3);
-                // for (size_t j = 0; j < 4; j++) substring[j] = string[4 * i + j];
-                substring[4] = '\0';  // terminate string
-                // pack substring into sequence byte
+                memcpy(substring, (string + (4 * i)), 4);
                 sequence[i] = pack(substring);
         }
 }
 
+
 // function to convert a dna sequence to a string
 void sequence_to_string(const fbase *sequence, char *string, size_t sequence_length) {
-        char substring[5] = "____\0";
-        for (size_t i = 0; i < sequence_length; i++) {
-                // unpack sequence byte into substring
-                memcpy(substring, unpack(sequence[i]), 3);
-                // copy substring into string
-                memcpy((string + (4 * i)), substring, 3);
-                // for (size_t j = 0; j < 4; j++) string[(4 * i) + j] = substring[j];
-                string[4 * sequence_length + 1] = '\0';  // terminate string
-        }
+        for (size_t i = 0; i < sequence_length; i++)
+                memcpy((string + (4 * i)), unpack(sequence[i]), 4);
 }
-
-
-
-
-
-// I suspect that memcpy is causing trouble through pointer stuff
-void show_addr(const char *array, size_t length) {
-        for (size_t i = 0; i < length; i++) {
-                printf("|%u %x|", *(array + i), (array + i));
-        }
-        puts("");
-}
-
-
 
 
 
 
 
 int main(void) {
-        fbase sequence[2];
-        char start[8] = "CTGAAGTC";
-        char test[8] = "________";
+        // note to self:
+        //      ALWAYS give an array at least 1 more than the number of printible chars it is expected to contain.
+        //      char start[8] = "CTGACTGA" implcitly concatenates onto the next string in memory because the 8th and final segment of the
+        //      string becomes 'A' instead of '\0'.
+        char start[9] = "CTTCCTGA";
+        char end[9] = "________";
+        fbase sequence[2] = {0};
 
-        show_addr(sequence, 2);
-        show_addr(start, 8);
-        show_addr(test, 8);
-
+        // FIXME some strings don't convert back correctly, sequence value's not recorded right for some 4-char strings
         string_to_sequence(start, sequence, 2);
-        printf("%s %lu %lu -> %i %i %lu %lu\n", start, sizeof(char), sizeof(start), sequence[0], sequence[1], sizeof(fbase), sizeof(sequence));
-        sequence_to_string(sequence, start, 2);
-        printf("%i %i %lu %lu -> %s %s\n", sequence[0], sequence[1], sizeof(fbase), sizeof(sequence), start, test);
 
-        show_addr(sequence, 2);
-        show_addr(start, 8);
-        show_addr(test, 8);
+        printf("%i %i %lu %lu -> %s %s\n", sequence[0], sequence[1], sizeof(fbase), sizeof(sequence), start, end);
+
+        sequence_to_string(sequence, end, 2);
+
+        printf("%s %s %lu %lu -> %i %i\n", start, end, sizeof(start), sizeof(end), sequence[0], sequence[1]);
 }
