@@ -111,20 +111,13 @@ void sequence_to_string(const fbase *sequence, char *string, size_t sequence_len
 
 
 int main(void) {
-        // note to self:
-        //      ALWAYS give an array at least 1 more than the number of printible chars it is expected to contain.
-        //      char start[8] = "CTGACTGA" implcitly concatenates onto the next string in memory because the 8th and final segment of the
-        //      string becomes 'A' instead of '\0'.
         char start[9] = "CTTCCTGA";
         char end[9] = "________";
         fbase sequence[2] = {0};
 
         // FIXME some strings don't convert back correctly, sequence value's not recorded right for some 4-char strings
         string_to_sequence(start, sequence, 2);
-
         printf("%i %i %lu %lu -> %s %s\n", sequence[0], sequence[1], sizeof(fbase), sizeof(sequence), start, end);
-
         sequence_to_string(sequence, end, 2);
-
         printf("%s %s %lu %lu -> %i %i\n", start, end, sizeof(start), sizeof(end), sequence[0], sequence[1]);
 }
