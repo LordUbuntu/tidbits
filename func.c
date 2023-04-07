@@ -16,26 +16,22 @@
  * state the code will be more predictable and maintainable.
  */
 
-typedef struct {
-        char *name;
-        int total;
-} score;
 
 
-// sum of two integers
+
+
+// standard functions
+
 int sum(int a, int b) {
         return a + b;
 }
 
-
-// product of two integers
 int product(int a, int b) {
         return a * b;
 }
 
+// higher order functions
 
-// higher order function
-// assumes both A and B are length long and stores result in C
 void map(int (*f)(int, int), int *A, int *B, int *C, size_t length) {
         for (size_t i = 0; i < length; i++)
                 C[i] = (*f)(A[i], B[i]);
@@ -52,11 +48,23 @@ int reduce(int (*f)(int, int), int *A, size_t length) {
 }
 
 
+
+
+
+// demo of ADT's
+
+typedef struct {
+        char *name;
+        int total;
+} score;
+
 score tally(const score user, int *points, size_t length) {
         score s = {user.name, 0};
         s.total = reduce(&sum, points, length);
         return s;
 }
+
+
 
 
 
