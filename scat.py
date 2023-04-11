@@ -26,3 +26,13 @@ def scat(string: str) -> str:
         'w': "wee",
         'z': "zap"
     }
+    result = []
+    i = 0
+    while i < len(string):
+        phrase = scats.get(string[i], None)
+        if phrase is not None:
+            result.append(phrase)
+        else:
+            result.append(string[i])
+        i += 1
+    return result
