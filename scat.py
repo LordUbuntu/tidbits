@@ -35,4 +35,9 @@ def scat(string: str) -> str:
         else:
             result.append(string[i])
         i += 1
-    return result
+    return ''.join(result)
+
+
+if __name__ == '__main__':
+    string = input("gimmie a phrase: ").lower()
+    print(scat(string))
