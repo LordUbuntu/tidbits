@@ -4,6 +4,8 @@
 #   stuff update in place on the command line.
 from time import sleep
 from os import get_terminal_size as term_size
+from string import ascii_letters
+from random import choices
 
 
 def percent(speed):
@@ -61,6 +63,13 @@ def bounce(speed):
     print()
 
 
+def glitch(speed):
+    for i in range(0, 101):
+        print(''.join(choices(ascii_letters, k=term_size()[0]//4)), end='\r')
+        sleep(1 / speed)
+    print()
+
+
 if __name__ == '__main__':
     while True:
         choice = int(input(
@@ -71,7 +80,8 @@ if __name__ == '__main__':
                     (4) orb
                     (5) sweep
                     (6) progress bar
-                    (7) Bounce
+                    (7) bounce
+                    (8) glitch
                 """
         ))
         speed = int(input("What speed? "))
@@ -89,3 +99,5 @@ if __name__ == '__main__':
             bar(speed)
         if choice == 7:
             bounce(speed)
+        if choice == 8:
+            glitch(speed)
