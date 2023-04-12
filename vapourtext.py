@@ -13,8 +13,13 @@ def VAPOURIZE(sentence):
     return ' '.join([*sentence.upper()])
 
 
+def VaPoUrIzE(sentence):
+    return ' '.join([sentence[i].upper() if i % 2 else sentence[i].lower() for i in range(len(sentence))])
+
+
 def random_vapourize(sentence):
     return ' '.join([char if rnd(0, 1) else char.lower() for char in sentence.upper()])
+
 
 if __name__ == '__main__':
     sentence = input()
