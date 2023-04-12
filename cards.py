@@ -30,10 +30,10 @@ def get_card():
 
 def game(draws: int):
     answer = ' '.join([choice(cards), "of", choice(suits)])
-    print("=== Winning Card is ", answer, "===")
+    print("=== Winning Card is", answer, "===")
     for _ in range(draws):
         card = get_card()
-        print("You got ", card)
+        print("You got", card)
         if card == answer:
             print("You won!!")
             break
