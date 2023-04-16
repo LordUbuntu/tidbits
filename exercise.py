@@ -10,16 +10,25 @@ from random import choice, randint
 EXERCISES = [
     # legs
     "Pistols",
+    "Box Squat",
+    "Bulgarian Split Squat",
+    "Sumo Deadlift",
+    "Romanian Deadlift",
 ]
 
 
 def exercise():
     return ' '.join(
         [
-            randint(1,5),      # number of sets
+            str(randint(1,5)),  # number of sets
             "by",
-            randint(1,15),       # number of reps
+            str(randint(1,15)), # number of reps
             "of",
             choice(EXERCISES)   # exercise
         ]
     )
+
+
+if __name__ == '__main__':
+    for i in range(randint(1, 3)):
+        print(exercise())
