@@ -10,10 +10,14 @@ from random import choice, randint
 EXERCISES = [
     # legs
     "Pistols",
-    "Box Squat",
     "Bulgarian Split Squat",
     "Sumo Deadlift",
     "Romanian Deadlift",
+    # Arms
+    "Bicep Curl",
+    "Tricep Curl",
+    "Tricep Dip",
+    "Shoulder Press",
 ]
 
 
