@@ -1,13 +1,12 @@
 # Jacobus Burger (2023)
 # Info:
-#   Approximate PI with a monte-carlo simulaton.
-#   Supposing an n by n square around a circle of radius n, the ratio
-#   of random dots in the circle to dots in the square times 4.
+#   A bunch of turtle graphics goofing
 from math import sqrt
 from random import randint as rand
 import turtle
 
 
+# monte carlo turtle simulation
 def simulate(n):
     # box is -100 to 100 on x and y
     square_dots = 0
@@ -35,6 +34,9 @@ def simulate(n):
     turtle.exitonclick()
 
 
-if __name__ == '__main__':
-    n = int(input("how many dots to approximate with? "))
-    simulate(n)
+# draw a spiral going out from the inside
+def spiral():
+    turtle.home()
+    for i in range(100):
+        turtle.forward(i)
+        turtle.left(15)
