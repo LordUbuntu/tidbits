@@ -16,8 +16,12 @@ EXERCISES = [
     # Arms
     "Bicep Curl",
     "Tricep Curl",
-    "Tricep Dip",
+    "Skull Crushers",
     "Shoulder Press",
+    # Core
+    "Crunches",
+    "Leg Raises",
+    "Dragon Flag",
 ]
 
 
