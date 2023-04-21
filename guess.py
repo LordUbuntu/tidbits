@@ -2,9 +2,10 @@ from random import randint as rand
 
 
 if __name__ == '__main__':
-    number = rand(1, 100)
+    low, high = rand(1, 100), rand(2, 200)
+    number = rand(low, high)
     while True:
-        guess = int(input("Guess a number: "))
+        guess = int(input("Guess a number between {} and {}: ".format(low, high)))
         if guess == number:
             print("You did it!")
             break
