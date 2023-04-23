@@ -70,6 +70,13 @@ def glitch(speed):
     print()
 
 
+def scroll(speed):
+    for i in range(0, 101):
+        print(('_' * (i % 3)) + ' '.join('='*(term_size()[0]//4)), end='\r')
+        sleep(1 / speed)
+    print()
+
+
 if __name__ == '__main__':
     while True:
         choice = int(input(
@@ -82,6 +89,7 @@ if __name__ == '__main__':
                     (6) progress bar
                     (7) bounce
                     (8) glitch
+                    (9) scroll
                 """
         ))
         speed = int(input("What speed? "))
@@ -101,3 +109,5 @@ if __name__ == '__main__':
             bounce(speed)
         if choice == 8:
             glitch(speed)
+        if choice == 9:
+            scroll(speed)
