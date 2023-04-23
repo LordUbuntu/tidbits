@@ -15,8 +15,10 @@
  */
 #define set_base(bases, value, offset) \
         bases = bases | ((uint8_t)value << (2 * offset))
+
 #define get_base(bases, offset) \
         (bases & ((uint8_t)0b11 << (2 * offset))) >> (2 * offset)
+
 int get_bool(int offset, int pack)
 {
         return (pack & (1 << offset)) >> offset;
