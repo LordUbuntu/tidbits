@@ -40,6 +40,7 @@ def spiral():
     for i in range(100):
         turtle.forward(i)
         turtle.left(15)
+    turtle.exitonclick()
 
 
 # draw a circle without using circle
@@ -48,3 +49,13 @@ def circle():
     for i in range(360):
         turtle.forward(1)
         turtle.left(1)
+    turtle.exitonclick()
+
+
+def line():
+#   This is it, somebody has to draw the line somewhere!!1! >:(
+#   Sorry :^) (not sorry).
+    turtle.hideturtle()
+    turtle.pencolor("red")
+    turtle.forward(100)
+    turtle.exitonclick()
