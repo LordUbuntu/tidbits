@@ -40,3 +40,11 @@ def spiral():
     for i in range(100):
         turtle.forward(i)
         turtle.left(15)
+
+
+# draw a circle without using circle
+def circle():
+    turtle.home()
+    for i in range(360):
+        turtle.forward(1)
+        turtle.left(1)
