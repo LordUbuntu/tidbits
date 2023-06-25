@@ -77,19 +77,30 @@ def scroll(speed):
     print()
 
 
+def rotate(speed):
+    message = "Loading...          "
+    for i in range(0, 101):
+        print(message, end='\r') 
+        sleep(1 / speed)
+        # rotate text by 1
+        message = message[-1] + message[:-1]
+    print()
+
+
 if __name__ == '__main__':
     while True:
         choice = int(input(
                 """Choose animation:
-                    (1) percent
-                    (2) loading
-                    (3) spin
-                    (4) orb
-                    (5) sweep
-                    (6) progress bar
-                    (7) bounce
-                    (8) glitch
-                    (9) scroll
+                    (1)  percent
+                    (2)  loading
+                    (3)  spin
+                    (4)  orb
+                    (5)  sweep
+                    (6)  progress bar
+                    (7)  bounce
+                    (8)  glitch
+                    (9)  scroll
+                    (10) rotate
                 """
         ))
         speed = int(input("What speed? "))
@@ -111,3 +122,5 @@ if __name__ == '__main__':
             glitch(speed)
         if choice == 9:
             scroll(speed)
+        if choice == 10:
+            rotate(speed)
