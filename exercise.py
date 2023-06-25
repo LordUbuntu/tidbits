@@ -9,17 +9,18 @@ from random import choice, randint
 
 EXERCISES = [
     # legs
-    "Pistols",
+    "Pistol Squats",
     "Bulgarian Split Squat",
-    "Sumo Deadlift",
-    "Romanian Deadlift",
+    "Sumo Squat",
+    "Romanian Squat",
     # Arms
-    "Bicep Curl",
-    "Tricep Curl",
-    "Skull Crushers",
-    "Shoulder Press",
+    "Diamond Pushup",
+    "Tricep Dips",
+    "Archer Pushup",
+    "Handstand Pushup",
     # Core
-    "Crunches",
+    "RDL Plank",
+    "V Sit",
     "Leg Raises",
     "Dragon Flag",
 ]
@@ -38,5 +39,4 @@ def exercise():
 
 
 if __name__ == '__main__':
-    for i in range(randint(1, 3)):
-        print(exercise())
+    print(exercise())
