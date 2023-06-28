@@ -27,17 +27,15 @@ def scat(string: str) -> str:
         'z': "zap"
     }
     result = []
-    i = 0
-    while i < len(string):
+    for i in range(len(string)):
         phrase = scats.get(string[i], None)
         if phrase is not None:
             result.append(phrase)
         else:
             result.append(string[i])
-        i += 1
     return ''.join(result)
 
 
 if __name__ == '__main__':
-    string = input("gimmie a phrase: ").lower()
+    string = input("gimmie a rhyme: ").lower()
     print(scat(string))
