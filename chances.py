@@ -5,27 +5,27 @@
 from random import choice
 
 roll_names = {
-    (1, 1): "snake eyes",
-    (1, 2): "ace deuce",
+    (1, 1): "snake eyes 🐍",
+    (1, 2): "ace deuce ♠",
     (2, 2): "hard four",
     (1, 3): "easy four",
-    (2, 3): "fever five",
+    (2, 3): "fever five 🕺",
     (3, 3): "hard six",
-    (1, 4): "fever five",
+    (1, 4): "fever five 🕺",
     (2, 4): "easy six",
-    (3, 4): "natural",
+    (3, 4): "natural 🦉",
     (4, 4): "hard eight",
     (1, 5): "easy six",
-    (2, 5): "natural",
+    (2, 5): "natural 🦉",
     (3, 5): "easy eight",
     (4, 5): "nine",
     (5, 5): "hard ten",
-    (1, 6): "natural",
+    (1, 6): "natural 🦉",
     (2, 6): "easy eight",
     (3, 6): "nine",
     (4, 6): "easy ten",
-    (5, 6): "yo",
-    (6, 6): "boxcars"
+    (5, 6): "yo 🤩",
+    (6, 6): "boxcars 🚂"
 }
 rolls = [
     (i, j)
