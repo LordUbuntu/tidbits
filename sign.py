@@ -52,5 +52,5 @@ if __name__ == '__main__':
     sign_chi("#", 3)
     print("sq")
     sign_sq("*", 5)
-    print("zero")
+    print("disc")
     sign_disc("-", 3)
