@@ -41,7 +41,7 @@ def sign_sq(char: str, height: int):
 
 def sign_disc(char: str, radius: int):
     from math import sin
-    for row in range(radius):
+    for row in range(radius + 1):
         print(" "*int(radius * sin(row)), end=f"{char}\n")
 
 
