@@ -39,6 +39,12 @@ def sign_sq(char: str, height: int):
     print()
 
 
+def sign_disc(char: str, radius: int):
+    from math import sin
+    for row in range(radius):
+        print(" "*int(radius * sin(row)), end=f"{char}\n")
+
+
 if __name__ == '__main__':
     print("delta")
     sign_delta(".", 5)
@@ -46,3 +52,5 @@ if __name__ == '__main__':
     sign_chi("#", 3)
     print("sq")
     sign_sq("*", 5)
+    print("zero")
+    sign_disc("-", 3)
