@@ -5,7 +5,7 @@
 #   with a classic "I use arch btw" statement. Ended up with this silly
 #   little script.
 def main():
-    symbol = input() or ''
+    symbol = input() or 'arch '
     print(f"I use {symbol} btw ;)")
 
 
