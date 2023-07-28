@@ -5,6 +5,12 @@
 #   Enjoy!
 
 
+def sign_pythagoras(char: str, height: int):
+    for row in range(1, height + 1):
+        print(char*row)
+    print()
+
+
 def sign_delta(char: str, height: int):
     for row in range(height):
         for _ in range(height - row):
@@ -46,11 +52,13 @@ def sign_disc(char: str, radius: int):
 
 
 if __name__ == '__main__':
+    print("pythagoras")
+    sign_pythagoras("-", 3)
     print("delta")
     sign_delta(".", 5)
     print("chi")
     sign_chi("#", 3)
     print("sq")
     sign_sq("*", 5)
-    print("disc")
+    print("zero")
     sign_disc("-", 3)
