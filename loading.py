@@ -87,6 +87,19 @@ def rotate(speed):
     print()
 
 
+def fira(speed):
+    message = '\uee00' + ('\uee01' * 8) + '\uee02' + ' '
+    message = list(message)
+    offset = 0
+    for i in range(0, 101):
+        if i % 10 == 0:
+            message[offset] = chr(ord(message[offset]) + 3)
+            offset += 1
+        print(''.join(message), end='\r')
+        sleep(1 / speed)
+    print()
+
+
 if __name__ == '__main__':
     while True:
         choice = int(input(
@@ -101,6 +114,7 @@ if __name__ == '__main__':
                     (8)  glitch
                     (9)  scroll
                     (10) rotate
+                    (11) fira code progress bar (need font)
                 """
         ))
         speed = int(input("What speed? "))
@@ -124,3 +138,5 @@ if __name__ == '__main__':
             scroll(speed)
         if choice == 10:
             rotate(speed)
+        if choice == 11:
+            fira(speed)
