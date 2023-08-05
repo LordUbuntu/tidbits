@@ -100,6 +100,14 @@ def fira(speed):
     print()
 
 
+def alphabet(speed):
+    letters = itertools.cycle(string.ascii_letters)
+    for i in range(0, 101):
+        print(next(letters), end='\r')
+        sleep(1 / speed)
+    print()
+
+
 if __name__ == '__main__':
     while True:
         choice = int(input(
@@ -115,6 +123,7 @@ if __name__ == '__main__':
                     (9)  scroll
                     (10) rotate
                     (11) fira code progress bar (need font)
+                    (12) alphabet soup
                 """
         ))
         speed = int(input("What speed? "))
@@ -140,3 +149,5 @@ if __name__ == '__main__':
             rotate(speed)
         if choice == 11:
             fira(speed)
+        if choice == 12:
+            alphabet(speed)
