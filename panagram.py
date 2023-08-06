@@ -11,6 +11,7 @@ def basic_panagram():
     "The five boxing wizards jump quickly.",
     "Jackdaws love my big sphinx of quartz.",
     "Pack my box with five dozen liquor jugs.",
+    "Amazingly few discotheques provide jukeboxes.",
   ]
   return choice(PANAGRAMS)
 
