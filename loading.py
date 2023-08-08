@@ -5,6 +5,7 @@
 from time import sleep
 from os import get_terminal_size as term_size
 from string import ascii_letters
+from itertools import cycle
 from random import choices
 
 
@@ -88,6 +89,7 @@ def rotate(speed):
 
 
 def fira(speed):
+    """note: this requires fira code font to work"""
     message = '\uee00' + ('\uee01' * 8) + '\uee02' + ' '
     message = list(message)
     offset = 0
@@ -101,9 +103,17 @@ def fira(speed):
 
 
 def alphabet(speed):
-    letters = itertools.cycle(string.ascii_letters)
+    letters = cycle(ascii_letters)
     for i in range(0, 101):
         print(next(letters), end='\r')
+        sleep(1 / speed)
+    print()
+
+
+# a cheap tqdm imitation 😃
+def tqdm(speed):
+    for i in range(0, 101):
+        print("{:<3}% |{:<10}|".format(i, ('█'*(i//10) + ' '*(10 - (i//10)))), end='\r')
         sleep(1 / speed)
     print()
 
@@ -124,6 +134,7 @@ if __name__ == '__main__':
                     (10) rotate
                     (11) fira code progress bar (need font)
                     (12) alphabet soup
+                    (13) not tqdm
                 """
         ))
         speed = int(input("What speed? "))
@@ -151,3 +162,5 @@ if __name__ == '__main__':
             fira(speed)
         if choice == 12:
             alphabet(speed)
+        if choice == 13:
+            tqdm(speed)
