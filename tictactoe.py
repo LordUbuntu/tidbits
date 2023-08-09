@@ -38,9 +38,9 @@ def winner(gamestate):
             if all(state == 2 for state in gamestate[i * 3 : i * 3 + 3]):
                 return 2
             # check for a column line
-            if all(state == 1 for state in gamestate[i * 3 :: 3]):
+            if all(state == 1 for state in gamestate[i :: 3]):
                 return 1
-            if all(state == 2 for state in gamestate[i * 3 :: 3]):
+            if all(state == 2 for state in gamestate[i :: 3]):
                 return 2
 
 
