@@ -25,9 +25,13 @@ def display(gamestate):
 
 
 def main():
+    gamestate = [0] * 9
     while True:
         # update screen
+        display(gamestate)
         # get user input
+        X = int(input("Where should X go? "))
         # get enemy input
+        O = bot_move(gamestate)
         # check for winners
-            # announce winners and end
+        game_win(gamestate)
