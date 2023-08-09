@@ -24,6 +24,26 @@ def display(gamestate):
     print("\n\n")
 
 
+def winner(gamestate):
+    # if no line, return 0
+    # if X line, return 1
+    # if O line, return 2
+    # for each row
+    for i in range(3):
+        # for each column
+        for j in range(3):
+            # check for a row line
+            if all(state == 1 for state in gamestate[i * 3 : i * 3 + 3]):
+                return 1
+            if all(state == 2 for state in gamestate[i * 3 : i * 3 + 3]):
+                return 2
+            # check for a column line
+            if all(state == 1 for state in gamestate[i * 3 :: 2]):
+                return 1
+            if all(state == 2 for state in gamestate[i * 3 :: 2]):
+                return 2
+
+
 def main():
     gamestate = [0] * 9
     while True:
