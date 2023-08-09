@@ -30,18 +30,23 @@ def winner(gamestate):
     # if O line, return 2
     # for each row
     for i in range(3):
-        # for each column
-        for j in range(3):
-            # check for a row line
-            if all(state == 1 for state in gamestate[i * 3 : i * 3 + 3]):
-                return 1
-            if all(state == 2 for state in gamestate[i * 3 : i * 3 + 3]):
-                return 2
-            # check for a column line
-            if all(state == 1 for state in gamestate[i :: 3]):
-                return 1
-            if all(state == 2 for state in gamestate[i :: 3]):
-                return 2
+        # I love snake lang 🐍
+        # check for a row line
+        if all(state == 1 for state in gamestate[i * 3 : i * 3 + 3]):
+            return 1
+        if all(state == 2 for state in gamestate[i * 3 : i * 3 + 3]):
+            return 2
+        # check for a column line
+        if all(state == 1 for state in gamestate[i :: 3]):
+            return 1
+        if all(state == 2 for state in gamestate[i :: 3]):
+            return 2
+        # check for a diagonal line
+        if all(state == 1 for state in gamestate[i :: 4]):
+            return 1
+        for all(state == 2 for state in gamestate[i :: 4]):
+            return 2
+    return 0
 
 
 def main():
@@ -54,4 +59,4 @@ def main():
         # get enemy input
         O = bot_move(gamestate)
         # check for winners
-        game_win(gamestate)
+        winner(gamestate)
