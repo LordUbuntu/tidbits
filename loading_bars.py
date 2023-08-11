@@ -125,7 +125,14 @@ def animals(speed):
         print(''.join(choices(animals, k=term_size()[0]//4)), end='\r')
         sleep(1 / speed)
     print()
-        
+
+
+# waddle animal in a promenade across the terminal
+def promenade(speed, animal='🐧'):
+    for i in range(0, 101):
+        print(' ' * (term_size()[0] - (i + 1)) + animal, end='\r')
+        sleep(1 / speed)
+    print()
 
 
 if __name__ == '__main__':
@@ -146,6 +153,7 @@ if __name__ == '__main__':
                     (12) alphabet soup
                     (13) not tqdm
                     (14) animals
+                    (15) promenade
                 """
         ))
         speed = int(input("What speed? "))
@@ -177,3 +185,5 @@ if __name__ == '__main__':
             tqdm(speed)
         if choice == 14:
             animals(speed)
+        if choice == 15:
+            promenade(speed)
