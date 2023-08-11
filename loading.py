@@ -118,6 +118,16 @@ def tqdm(speed):
     print()
 
 
+# show a bunch of animals randomly
+def animals(speed):
+    animals = ['🦄', '🐏', '🦩', '🐧', '🐍', '🐢', '🐙', '🦋']
+    for i in range(0, 101):
+        print(choices(animals, k=term_size()[0]//4), end='\r')
+        sleep(1 / speed)
+    print()
+        
+
+
 if __name__ == '__main__':
     while True:
         choice = int(input(
@@ -164,3 +174,5 @@ if __name__ == '__main__':
             alphabet(speed)
         if choice == 13:
             tqdm(speed)
+        if choice == 14:
+            animals(speed)
