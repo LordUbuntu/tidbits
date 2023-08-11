@@ -122,7 +122,7 @@ def tqdm(speed):
 def animals(speed):
     animals = ['🦄', '🐏', '🦩', '🐧', '🐍', '🐢', '🐙', '🦋']
     for i in range(0, 101):
-        print(choices(animals, k=term_size()[0]//4), end='\r')
+        print(''.join(choices(animals, k=term_size()[0]//4)), end='\r')
         sleep(1 / speed)
     print()
         
@@ -145,6 +145,7 @@ if __name__ == '__main__':
                     (11) fira code progress bar (need font)
                     (12) alphabet soup
                     (13) not tqdm
+                    (14) animals
                 """
         ))
         speed = int(input("What speed? "))
