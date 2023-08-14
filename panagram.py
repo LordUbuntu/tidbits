@@ -13,6 +13,7 @@ def basic_panagram():
     "Pack my box with five dozen liquor jugs.",
     "Amazingly few discotheques provide jukeboxes.",
     "Brawny gods just flocked up to quiz and vex him.",
+    "The quick onyx goblin jumps over the lazy dwarf.",
   ]
   return choice(PANAGRAMS)
 
