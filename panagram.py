@@ -14,6 +14,7 @@ def basic_panagram():
     "Amazingly few discotheques provide jukeboxes.",
     "Brawny gods just flocked up to quiz and vex him.",
     "The quick onyx goblin jumps over the lazy dwarf.",
+    "Six big devils from Japan quickly forgot how to waltz.",
   ]
   return choice(PANAGRAMS)
 
