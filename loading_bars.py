@@ -135,6 +135,11 @@ def parade(speed, animal='🐧'):
     print()
 
 
+# float a banana across the screen
+def banana(speed):
+    parade(speed, animal='🍌')
+
+
 if __name__ == '__main__':
     while True:
         choice = int(input(
@@ -154,6 +159,7 @@ if __name__ == '__main__':
                     (13) not tqdm
                     (14) animals
                     (15) parade
+                    (16) banana
                 """
         ))
         speed = int(input("What speed? "))
@@ -187,3 +193,5 @@ if __name__ == '__main__':
             animals(speed)
         if choice == 15:
             parade(speed)
+        if choice == 16:
+            banana(speed)
