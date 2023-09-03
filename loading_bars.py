@@ -137,7 +137,10 @@ def parade(speed, animal='🐧'):
 
 # float a banana across the screen
 def banana(speed):
-    parade(speed, animal='🍌')
+    for i in range(0, 101):
+        print(' ' * (term_size()[0] - (i + 1)) + animal, end='\r')
+        sleep(1 / speed)
+    print()
 
 
 if __name__ == '__main__':
