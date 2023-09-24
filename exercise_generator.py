@@ -7,6 +7,9 @@
 from random import choice, randint
 
 
+# TODO:
+# - add exercises besides bodyweight
+# - add drop sets and other types of sets
 EXERCISES = [
     # Legs
     "Pistol Squats",
