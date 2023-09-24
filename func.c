@@ -21,22 +21,18 @@
 
 
 // standard functions
-
 int sum(int a, int b) {
         return a + b;
 }
-
 int product(int a, int b) {
         return a * b;
 }
 
 // higher order functions
-
 void map(int (*f)(int, int), int *A, int *B, int *C, size_t length) {
         for (size_t i = 0; i < length; i++)
                 C[i] = (*f)(A[i], B[i]);
 }
-
 int reduce(int (*f)(int, int), int *A, size_t length) {
         accumulator = A[0];
         for (size_t i = 1; i < length; i++)
@@ -49,32 +45,27 @@ int reduce(int (*f)(int, int), int *A, size_t length) {
 
 
 // demo of ADT's
-
 typedef struct {
         char *id;
         unsigned health;
         int speed;
         int x, y;
 } player;
-
 player move(player p, int delta) {
         // the power of pass-by-value
         p.speed += delta;
         return p;
 }
-
 player damage(player p, int points) {
         if (points > p.health)
                 p.health = 0;
         p.health -= points;
         return p;
 }
-
 typedef struct {
         char *name;
         int total;
 } score;
-
 score tally(const score user, int *points, size_t length) {
         score s = {user.name, 0};
         s.total = reduce(&sum, points, length);
