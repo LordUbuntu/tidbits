@@ -3,6 +3,11 @@
 #include <stdio.h>
 
 
+// this can be reduced to a macro for convenience
+// 0 for big endian, 1 for little endian
+#define END(UI) ((char*)&UI)  // note: takes unsigned int as argument
+
+
 int main(void) {
         /* Explanation:
          *      Knowing how big and little endianness work in a register,
