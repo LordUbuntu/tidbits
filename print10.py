@@ -7,6 +7,8 @@ from random import choice
 
 
 def print10(chars):
+    if chars == []:
+        chars = [r'\', r'/']
     while True:
         print(choice(chars), end="")
 
