@@ -38,9 +38,6 @@ void map(int (*f)(int, int), int *A, int *B, int *C, size_t length) {
 }
 
 int reduce(int (*f)(int, int), int *A, size_t length) {
-        static int accumulator = -1;
-        if (length == 0)
-                return accumulator;
         accumulator = A[0];
         for (size_t i = 1; i < length; i++)
                 accumulator = (*f)(accumulator, A[i]);
