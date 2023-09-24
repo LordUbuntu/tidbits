@@ -8,7 +8,7 @@ from random import choice, randint
 
 
 EXERCISES = [
-    # legs
+    # Legs
     "Pistol Squats",
     "Bulgarian Split Squat",
     "Sumo Squat",
@@ -18,6 +18,7 @@ EXERCISES = [
     "Tricep Dips",
     "Archer Pushup",
     "Handstand Pushup",
+    "Handstand Shoulder Dip",
     # Core
     "RDL Plank",
     "V Sit",
