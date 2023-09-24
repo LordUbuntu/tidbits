@@ -2,10 +2,7 @@
 # A program that converts a normal sentence into pig latin
 
 def pig(sentence: str) -> str:
-    result = []
-    for word in sentence.split():
-        result.append(word[1:] + word[0] + "ay")
-    return ' '.join(result)
+    return ' '.join(word[1:]+word[0]+"ay" for word in sentence.split())
 
 
 if __name__ == '__main__':
