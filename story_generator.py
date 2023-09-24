@@ -27,7 +27,12 @@ composure = [
     "vitriolic",
     "hyperactive",
     "serendipitous",
-    "eccentric"
+    "eccentric",
+    "stoic",
+    "careful",
+    "chaotic",
+    "clumsy",
+    "talented",
 ]
 
 creature = [
@@ -62,7 +67,10 @@ creature = [
     "supercomputer",
     "calculator",
     "moth",
-    "butterfly"
+    "butterfly",
+    "farmer",
+    "computer virus",
+    "teacup",
 ]
 
 occupation = [
