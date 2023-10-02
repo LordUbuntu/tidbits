@@ -2,6 +2,7 @@
 # The game of Tic Tac Toe on CLI
 # I felt this wasn't sufficient on its own to justify a repository.
 from os import system, name
+from random import randint as random
 
 
 def display(gamestate):
@@ -58,9 +59,14 @@ def main():
         # get player move and set tile to X if open (otherwise skip turn)
         X = int(input("Where should X go? "))
         gamestate[X - 1] = 1 if gamestate[X - 1] == 0 else gamestate[X - 1]
-        # select first open tile and set as enemy O
-        O = next(filter(lambda v: v[1] != 1 and v[1] != 2, enumerate(gamestate)))[0]
-        gamestate[O] = 2
+        # select random open tile and make O's move
+        for _ in range(9**2):
+            O = random(0, 8)
+            if gamestate[O] == 1 or gamestate[O] == 2:
+                continue
+            else:
+                gamestate[O] = 2
+                break
 
 
 if __name__ == '__main__':
