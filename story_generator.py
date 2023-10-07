@@ -131,16 +131,19 @@ occupation = [
 ]
 
 strength = [
-    "Atom bomb",
-    "TNT",
+    "Nuke",
+    "Stick of Dynamite",
+    "Gunpowder Keg",
+    "Mountain",
     "Collosus",
-    "Log",
-    "Moutain",
-    "Snake",
-    "Sprig",
-    "Statue",
-    "Steel rod",
-    "Twig",
+    "Bear",
+    "Strongman",
+    "Serpent",
+    "Athlete",
+    "Steel Rod",
+    "Dry Twig",
+    "Rubber Hose",
+    "Glass Rod",
 ]
 
 quest = [
@@ -173,6 +176,10 @@ quest = [
     "their long lost nickel",
     "their long lost twin",
     "themselves",
+    "the mother of computing science",
+    "the sun",
+    "a serpinsky triangle",
+    "reverse polish notation",
 ]
 
 def describe():
