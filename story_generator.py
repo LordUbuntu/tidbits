@@ -33,6 +33,11 @@ composure = [
     "chaotic",
     "clumsy",
     "talented",
+    "georgeous",
+    "sneaky",
+    "sly",
+    "clever",
+    "mischevious",
 ]
 
 creature = [
