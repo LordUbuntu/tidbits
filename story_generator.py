@@ -76,6 +76,10 @@ creature = [
     "farmer",
     "computer virus",
     "teacup",
+    "owl",
+    "guitar",
+    "trumpet",
+    "mutant",
 ]
 
 occupation = [
@@ -119,7 +123,11 @@ occupation = [
     "goat milker",
     "hunter",
     "smith",
-    "necromancer"
+    "necromancer",
+    "magician",
+    "bank teller",
+    "mechanic",
+    "office worker",
 ]
 
 strength = [
