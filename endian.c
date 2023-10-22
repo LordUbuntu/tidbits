@@ -8,6 +8,16 @@
 #define END(UI) ((char*)&UI)  // note: takes unsigned int as argument
 
 
+// or represented as a function
+int little_endian() {
+        unsigned int i = 0x0D;
+        if ((char*)&i)
+                return 1;
+        else
+                return 0;
+}
+
+
 int main(void) {
         /* Explanation:
          *      Knowing how big and little endianness work in a register,
@@ -21,9 +31,19 @@ int main(void) {
          *      that would mean a value of 0. In little endian, that would
          *      mean whatever value we assigned to that first byte (to i).
          */
+        // this can be inlined
         unsigned int i = 0x0D;
         if ((char*)&i)
                 puts("Little Endian!");
         else
                 puts("Biggle Endian!");
+        
+        // or made a function
+        if (little_endian())
+                puts("Little Endian!");
+        else
+                puts("Biggle Endian!");
+
+        // or made a macro
+        END(i) ? puts("Little Endian!") : puts("Biggle Endian!");
 }
