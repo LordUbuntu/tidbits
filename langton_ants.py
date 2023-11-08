@@ -6,10 +6,10 @@ from time import sleep
 from itertools import cycle
 import curses
 from curses import wrapper
-SPEED = 0.02  # seconds per step
+SPEED = 0.001  # seconds per step
 DIRECTIONS = cycle([[1, 0],[0, 1],[-1, 0],[0, -1]])  # R, D, L, U clockwise
-STATE_TRANSITIONS = {  # character and associated action, add your own!
-            # see: https://en.wikipedia.org/wiki/Langton%27s_ant
+STATE_TRANSITIONS = {   # current state and associated state transition
+                        # see: https://en.wikipedia.org/wiki/Langton%27s_ant
     ' ': ('@', 'R'),
     '@': ('+', 'L'),
     '+': (' ', 'R'),
