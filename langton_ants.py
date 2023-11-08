@@ -3,9 +3,10 @@
 
 from random import randint
 from time import sleep
+from itertools import cycle
 import curses
 from curses import wrapper
-SPEED = 0.5
+SPEED = 0.02  # seconds per step
 
 
 def main(stdscr):
@@ -15,6 +16,9 @@ def main(stdscr):
     # NOTE: recall taylor series for sin, turning left or right can boil
     # down to [i % 2, (i + 1) % 2] for left, [(i + 1) % 2, i % 2] for right,
     # i just need to figure out how to get correct sign at each point.
+    # TODO: represent direction as a cycle, just increment each time. If you want to
+    # turn left, then increment by 3 instead, thus "rotating" the 4-cycle, with no
+    # need for a variable to track direction or whatever
     direction = [
         # [dx, dy]
         [1, 0],
@@ -28,25 +32,21 @@ def main(stdscr):
         current_character = chr(stdscr.inch(ant_position[1], ant_position[0]) & 0xFF)
         # invert it and turn right or left
         if current_character == ' ':
-            stdscr.addch(ant_position[1], ant_position[0], '@')  # dig
+            stdscr.addch(ant_position[1], ant_position[0], '@')
             current_direction = (current_direction + 1) % 4  # turn right
         elif current_character == '@':
-            stdscr.addch(ant_position[1], ant_position[0], ' ')  # undig
+            stdscr.addch(ant_position[1], ant_position[0], '+')
             current_direction = (current_direction - 1) % 4  # turn left
+        elif current_character == '+':
+            stdscr.addch(ant_position[1], ant_position[0], ' ')
+            current_direction = (current_direction + 1) % 4  # turn right
         # update screen
         sleep(SPEED)
         stdscr.refresh()
         # move to next position
-        # NOTE: gets stuck on the edge, figure out a way to wraparound
-        if ant_position[0] + direction[current_direction][0] < 0 \
-                or ant_position[0] + direction[current_direction][0] > curses.COLS:
-            pass
-        if ant_position[1] + direction[current_direction][1] < 0 \
-                or ant_position[1] + direction[current_direction][1] > curses.LINES:
-            pass
         ant_position = [
-            ant_position[0] + direction[current_direction][0],
-            ant_position[1] + direction[current_direction][1],
+            (ant_position[0] + direction[current_direction][0]) % curses.COLS,
+            (ant_position[1] + direction[current_direction][1]) % curses.LINES,
         ]
 
 
