@@ -7,14 +7,15 @@ from itertools import cycle
 import curses
 from curses import wrapper
 SPEED = 0.02  # seconds per step
-
-
+DIRECTIONS = cycle([[1, 0],[0, 1],[-1, 0],[0, -1]])  # R, D, L, U clockwise
 ACTION = {  # character and associated action, add your own!
             # see: https://en.wikipedia.org/wiki/Langton%27s_ant
     ' ': ('@', 'R'),
     '@': ('+', 'L'),
     '+': (' ', 'R'),
 }
+
+
 # state change of automata based on current tile state
 def step(symbol: str, direction: list):
     # get next action
@@ -22,24 +23,11 @@ def step(symbol: str, direction: list):
     # change position
     # TODO: use cycle here instead
     next_direction = [0, 0]
-    if rotation == 'R':
-        if direction == [1, 0]:
-            next_direction = [0, 1]
-        if direction == [0, 1]:
-            next_direction = [-1, 0]
-        if direction == [-1, 0]:
-            next_direction = [0, -1]
-        if direction == [0, -1]:
-            next_direction = [1, 0]
-    elif rotation == 'L':
-        if direction == [1, 0]:
-            next_direction = [0, -1]
-        if direction == [0, -1]:
-            next_direction = [-1, 0]
-        if direction == [-1, 0]:
-            next_direction = [0, 1]
-        if direction == [0, 1]:
-            next_direction = [1, 0]
+    if rotation == 'R':   # CW
+        next_direction = next(DIRECTIONS)
+    elif rotation == 'L': # CCW
+        for _ in range(3):  # 3 forward on a 4-cycle is the same as 1 backward
+            next_direction = next(DIRECTIONS)
     # return state change tuple
     return (next_symbol, next_direction)
 
