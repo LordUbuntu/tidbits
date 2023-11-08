@@ -8,7 +8,7 @@ import curses
 from curses import wrapper
 SPEED = 0.02  # seconds per step
 DIRECTIONS = cycle([[1, 0],[0, 1],[-1, 0],[0, -1]])  # R, D, L, U clockwise
-ACTION = {  # character and associated action, add your own!
+STATE_TRANSITIONS = {  # character and associated action, add your own!
             # see: https://en.wikipedia.org/wiki/Langton%27s_ant
     ' ': ('@', 'R'),
     '@': ('+', 'L'),
@@ -17,59 +17,38 @@ ACTION = {  # character and associated action, add your own!
 
 
 # state change of automata based on current tile state
-def step(symbol: str, direction: list):
+def next_state(symbol: str, move: list):
     # get next action
-    next_symbol, rotation = ACTION.get(symbol)
+    next_symbol, rotation = STATE_TRANSITIONS.get(symbol)
     # change position
-    # TODO: use cycle here instead
-    next_direction = [0, 0]
+    next_move = [0, 0]
     if rotation == 'R':   # CW
-        next_direction = next(DIRECTIONS)
+        next_move = next(DIRECTIONS)
     elif rotation == 'L': # CCW
         for _ in range(3):  # 3 forward on a 4-cycle is the same as 1 backward
-            next_direction = next(DIRECTIONS)
+            next_move = next(DIRECTIONS)
     # return state change tuple
-    return (next_symbol, next_direction)
+    return (next_symbol, next_move)
 
 
 def main(stdscr):
     # begin program
     stdscr.refresh()
     ant_position = [randint(0, curses.COLS), randint(0, curses.LINES)]
-    # NOTE: recall taylor series for sin, turning left or right can boil
-    # down to [i % 2, (i + 1) % 2] for left, [(i + 1) % 2, i % 2] for right,
-    # i just need to figure out how to get correct sign at each point.
-    # TODO: represent direction as a cycle, just increment each time. If you want to
-    # turn left, then increment by 3 instead, thus "rotating" the 4-cycle, with no
-    # need for a variable to track direction or whatever
-    direction = [
-        # [dx, dy]
-        [1, 0],
-        [0, 1],
-        [-1, 0],
-        [0, -1],
-    ] # 0-r, 1-d, 2-l, 3-u
-    current_direction = 0
+    move = [1, 0]
     while True:
         # get current character
-        current_character = chr(stdscr.inch(ant_position[1], ant_position[0]) & 0xFF)
-        # invert it and turn right or left
-        if current_character == ' ':
-            stdscr.addch(ant_position[1], ant_position[0], '@')
-            current_direction = (current_direction + 1) % 4  # turn right
-        elif current_character == '@':
-            stdscr.addch(ant_position[1], ant_position[0], '+')
-            current_direction = (current_direction - 1) % 4  # turn left
-        elif current_character == '+':
-            stdscr.addch(ant_position[1], ant_position[0], ' ')
-            current_direction = (current_direction + 1) % 4  # turn right
+        symbol = chr(stdscr.inch(ant_position[1], ant_position[0]) & 0xFF)
+        # update state of automata
+        symbol, move = next_state(symbol, move)
         # update screen
-        sleep(SPEED)
+        stdscr.addch(ant_position[1], ant_position[0], symbol)
         stdscr.refresh()
+        sleep(SPEED)
         # move to next position
         ant_position = [
-            (ant_position[0] + direction[current_direction][0]) % curses.COLS,
-            (ant_position[1] + direction[current_direction][1]) % curses.LINES,
+            (ant_position[0] + move[0]) % curses.COLS,
+            (ant_position[1] + move[1]) % curses.LINES,
         ]
 
 
