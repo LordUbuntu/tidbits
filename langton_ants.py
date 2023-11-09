@@ -10,9 +10,10 @@ SPEED = 0.001  # seconds per step
 DIRECTIONS = cycle([[1, 0],[0, 1],[-1, 0],[0, -1]])  # R, D, L, U clockwise
 STATE_TRANSITIONS = {   # current state and associated state transition
                         # see: https://en.wikipedia.org/wiki/Langton%27s_ant
-    ' ': ('@', 'R'),
+    ' ': ('@', 'L'),
     '@': ('+', 'L'),
-    '+': (' ', 'R'),
+    '+': ('.', 'R'),
+    '.': (' ', 'R'),
 }
 
 
