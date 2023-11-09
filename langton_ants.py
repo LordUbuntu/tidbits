@@ -1,11 +1,10 @@
 # Jacobus Burger (2023)
 # A demo of Langton's Ants in NCurses
 
+
 from random import randint
 from time import sleep
 from itertools import cycle
-import curses
-from curses import wrapper
 SPEED = 0.001  # seconds per step
 DIRECTIONS = cycle([[1, 0],[0, 1],[-1, 0],[0, -1]])  # R, D, L, U clockwise
 STATE_TRANSITIONS = {   # current state and associated state transition
@@ -32,7 +31,18 @@ def next_state(symbol: str, move: list):
     return (next_symbol, next_move)
 
 
-def main(stdscr):
+# TODO: switch to rendering with pygame for better and more grid tiles
+import pygame
+SCREEN_DIMENSION = (640,480)
+def grid():
+    pygame.init()
+    screen = pygame.display.set_mode(SCREEN_DIMENSION)
+    pygame.display.set_caption("Langton's Ant")
+
+
+import curses
+from curses import wrapper
+def curse(stdscr):
     # begin program
     stdscr.refresh()
     ant_position = [randint(0, curses.COLS), randint(0, curses.LINES)]
@@ -53,6 +63,7 @@ def main(stdscr):
         ]
 
 
-
+# TODO: command line switch for curses and pygame graphics mode
+# TODO: checks to error out if curses or pygame unavailable
 if __name__ == "__main__":
-    wrapper(main)
+    wrapper(curse)
