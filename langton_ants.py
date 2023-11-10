@@ -10,8 +10,8 @@ DIRECTIONS = cycle([[1, 0],[0, 1],[-1, 0],[0, -1]])  # R, D, L, U clockwise
 STATE_TRANSITIONS = {   # current state and associated state transition
                         # see: https://en.wikipedia.org/wiki/Langton%27s_ant
     ' ': ('@', 'L'),
-    '@': ('+', 'L'),
-    '+': ('.', 'R'),
+    '@': ('+', 'R'),
+    '+': ('.', 'L'),
     '.': (' ', 'R'),
 }
 
@@ -32,17 +32,22 @@ def next_state(symbol: str, move: list):
 
 
 # TODO: switch to rendering with pygame for better and more grid tiles
-import pygame
-SCREEN_DIMENSION = (640,480)
-def grid():
+def pygame_ants():
+    import pygame
+    SCREEN_DIMENSION = (640,480)
+    WHITE, RED = (255,255,255), (255,0,0)
     pygame.init()
     screen = pygame.display.set_mode(SCREEN_DIMENSION)
+    screen.fill(WHITE)
     pygame.display.set_caption("Langton's Ant")
+    pygame.draw.rect(screen, RED, (30, 30, 60, 60))
+    pygame.display.flip()
+    sleep(5)
 
 
 import curses
 from curses import wrapper
-def curse(stdscr):
+def ncurses_ants(stdscr):
     # begin program
     stdscr.refresh()
     ant_position = [randint(0, curses.COLS), randint(0, curses.LINES)]
@@ -66,4 +71,8 @@ def curse(stdscr):
 # TODO: command line switch for curses and pygame graphics mode
 # TODO: checks to error out if curses or pygame unavailable
 if __name__ == "__main__":
-    wrapper(curse)
+    option = int(input("curses (0) or pygame (1)? "))
+    if option == 0:
+        wrapper(ncurses_ants)
+    if option == 1:
+        pygame_ants()
