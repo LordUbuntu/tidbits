@@ -1,5 +1,5 @@
 # Jacobus Burger (2023)
-# A demo of Langton's Ants in NCurses
+# A demo of Langton's Ants
 
 
 from random import randint
@@ -37,19 +37,26 @@ def next_state(symbol: str, move: list):
 
 # TODO: switch to rendering with pygame for better and more grid tiles
 def pygame_ants():
-    # setup
     import pygame
-    SCREEN_DIMENSION = (480,480)
+
+    # define data
+    SCREEN_DIMENSION = (512,512)
     WHITE = (255,255,255)
     BLACK = (0,0,0)
     RED = (255,0,0)
     GREEN = (0,255,0)
     BLUE = (0,0,255)
+    TILES = 16  # tiles^2 == total tiles
     tile_data = {
         # (x,y): symbol
         (0, 0): SYM2,
     }
+    ant_position = [TILES // 2, TILES // 2]
+    move = [1, 0]
+
+    # initialize pygame
     pygame.init()
+    pygame.time.Clock().tick(1)  # fps
     screen = pygame.display.set_mode(SCREEN_DIMENSION)
     screen.fill(WHITE)
     pygame.display.set_caption("Langton's Ant")
@@ -66,25 +73,52 @@ def pygame_ants():
             return BLUE
         return WHITE
 
-    # 16x16 grid of tiles on a 480x480 pixel screen
-    def draw_grid(tile_data):
-        for i in range(16):
-            for j in range(16):
-                pygame.draw.rect(screen, tile_color(tile_data.get((i,j))), (i * 30, j * 30, 30, 30), 0)
-                pygame.draw.rect(screen, BLACK, (i * 30, j * 30, 30, 30), 1)
+    # draw a grid of tiles with colors based on tile_data
+    #   scale refers to how far we zoom out.
+    #   scale == 1 is a 16x16 grid
+    #   scale == 2 is a 32x32 grid
+    #   etc.
+    def draw_grid(tile_data, tiles: int = 1):
+        tile_size = SCREEN_DIMENSION[0] // tiles
+        for i in range(tiles):
+            for j in range(tiles):
+                pygame.draw.rect(
+                    screen,
+                    tile_color(tile_data.get((i,j))),
+                    (i * tile_size, j * tile_size, tile_size * tiles, tile_size * tiles),
+                    0)
+                if tiles < 64:
+                    pygame.draw.rect(
+                        screen,
+                        BLACK,
+                        (i * tile_size, j * tile_size, tile_size * tiles, tile_size * tiles),
+                        1)
 
     # run
     running = True
     while running:
+        # deal with state
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     running = False
-        draw_grid(tile_data)
+        # get current character
+        symbol = tile_data.get((ant_position[0], ant_position[1]))
+        if symbol is None:
+            symbol = SYM1
+        # update state of automata
+        symbol, move = next_state(symbol, move)
+        # update screen
+        draw_grid(tile_data, TILES)
         pygame.display.flip()
-        # sleep(5)
+        # move to next position
+        ant_position = [
+            (ant_position[0] + move[0]) % TILES,
+            (ant_position[1] + move[1]) % TILES,
+        ]
+        print(symbol, move, ant_position, tile_data)
     pygame.quit()
 
 
