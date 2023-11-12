@@ -7,12 +7,16 @@ from time import sleep
 from itertools import cycle
 SPEED = 0.001  # seconds per step
 DIRECTIONS = cycle([[1, 0],[0, 1],[-1, 0],[0, -1]])  # R, D, L, U clockwise
+SYM1 = ' '
+SYM2 = '@'
+SYM3 = '+'
+SYM4 = '.'
 STATE_TRANSITIONS = {   # current state and associated state transition
                         # see: https://en.wikipedia.org/wiki/Langton%27s_ant
-    ' ': ('@', 'L'),
-    '@': ('+', 'R'),
-    '+': ('.', 'L'),
-    '.': (' ', 'R'),
+    SYM1: (SYM2, 'L'),
+    SYM2: (SYM3, 'R'),
+    SYM3: (SYM4, 'L'),
+    SYM4: (SYM1, 'R'),
 }
 
 
@@ -39,20 +43,34 @@ def pygame_ants():
     WHITE = (255,255,255)
     BLACK = (0,0,0)
     RED = (255,0,0)
-    tile_data = [
-        # x, y, symbol
-        [0, 0, '@'],
-    ]
+    GREEN = (0,255,0)
+    BLUE = (0,0,255)
+    tile_data = {
+        # (x,y): symbol
+        (0, 0): SYM2,
+    }
     pygame.init()
     screen = pygame.display.set_mode(SCREEN_DIMENSION)
     screen.fill(WHITE)
     pygame.display.set_caption("Langton's Ant")
 
+    # get color from tile symbol
+    def tile_color(symbol):
+        if symbol == SYM1:
+            return BLACK
+        if symbol == SYM2:
+            return RED
+        if symbol == SYM3:
+            return GREEN
+        if symbol == SYM4:
+            return BLUE
+        return WHITE
+
     # 16x16 grid of tiles on a 480x480 pixel screen
-    def draw_grid(tile_data: list):
+    def draw_grid(tile_data):
         for i in range(16):
             for j in range(16):
-                pygame.draw.rect(screen, RED, (i * 30, j * 30, 30, 30), 0)
+                pygame.draw.rect(screen, tile_color(tile_data.get((i,j))), (i * 30, j * 30, 30, 30), 0)
                 pygame.draw.rect(screen, BLACK, (i * 30, j * 30, 30, 30), 1)
 
     # run
