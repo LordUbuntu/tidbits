@@ -33,21 +33,45 @@ def next_state(symbol: str, move: list):
 
 # TODO: switch to rendering with pygame for better and more grid tiles
 def pygame_ants():
+    # setup
     import pygame
-    SCREEN_DIMENSION = (640,480)
-    WHITE, RED = (255,255,255), (255,0,0)
+    SCREEN_DIMENSION = (480,480)
+    WHITE = (255,255,255)
+    BLACK = (0,0,0)
+    RED = (255,0,0)
+    tile_data = [
+        # x, y, symbol
+        [0, 0, '@'],
+    ]
     pygame.init()
     screen = pygame.display.set_mode(SCREEN_DIMENSION)
     screen.fill(WHITE)
     pygame.display.set_caption("Langton's Ant")
-    pygame.draw.rect(screen, RED, (30, 30, 60, 60))
-    pygame.display.flip()
-    sleep(5)
+
+    # 16x16 grid of tiles on a 480x480 pixel screen
+    def draw_grid(tile_data: list):
+        for i in range(16):
+            for j in range(16):
+                pygame.draw.rect(screen, RED, (i * 30, j * 30, 30, 30), 0)
+                pygame.draw.rect(screen, BLACK, (i * 30, j * 30, 30, 30), 1)
+
+    # run
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
+                    running = False
+        draw_grid(tile_data)
+        pygame.display.flip()
+        # sleep(5)
+    pygame.quit()
 
 
-import curses
-from curses import wrapper
 def ncurses_ants(stdscr):
+    import curses
     # begin program
     stdscr.refresh()
     ant_position = [randint(0, curses.COLS), randint(0, curses.LINES)]
@@ -68,11 +92,10 @@ def ncurses_ants(stdscr):
         ]
 
 
-# TODO: command line switch for curses and pygame graphics mode
-# TODO: checks to error out if curses or pygame unavailable
 if __name__ == "__main__":
     option = int(input("curses (0) or pygame (1)? "))
     if option == 0:
+        from curses import wrapper
         wrapper(ncurses_ants)
     if option == 1:
         pygame_ants()
