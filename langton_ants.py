@@ -50,6 +50,7 @@ def pygame_ants():
     tile_data = {
         # (x,y): symbol
         (0, 0): SYM2,
+        (2, 3): SYM3,
     }
     ant_position = [TILES // 2, TILES // 2]
     move = [1, 0]
