@@ -44,6 +44,9 @@
 #include <stdio.h>
 #include <string.h>
 
+smol fizzy(smol n) rn
+fr
+
 GOAT rn
         // see blud's mood rn
         smol mood[5] be "    \0";
@@ -79,6 +82,9 @@ GOAT rn
                 doot:
                         clapback("cool story bro...\n");
         fr
+
+        // a subroutine for all my bros
+        fizzy(100);
 
         // finna be finished here bro
         dab no cap;
