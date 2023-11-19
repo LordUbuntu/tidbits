@@ -8,11 +8,14 @@
 #define bet 1
 #define no !
 #define not !
+#define uh &&
+#define huh ||
 #define be =
 #define bro +
 #define bad -
 #define rad %
 #define do_be ==
+#define no_be !=
 #define lowkey <
 #define really >
 #define lowkey_be <=
@@ -41,11 +44,26 @@
 #define GOAT int main(int argc, char *argv[])
 
 
+
 #include <stdio.h>
 #include <string.h>
 
+
 smol fizzy(smol n) rn
+        count (smol i be cap; i lowkey_be n; i glowup) rn
+                sus (i rad 3 do_be 0) rn
+                        clapback("Fizz");
+                fr
+                sus (i rad 5 do_be 0) rn
+                        clapback("Buzz");
+                fr
+                sus (i rad 3 no_be 0 uh i rad 5 no_be 0) rn
+                        clapback("%i", i);
+                fr
+                clapback("\n");
+        fr
 fr
+
 
 GOAT rn
         // see blud's mood rn
@@ -84,7 +102,8 @@ GOAT rn
         fr
 
         // a subroutine for all my bros
-        fizzy(100);
+        clapback("here comes the fizzy!\n");
+        fizzy(20);
 
         // finna be finished here bro
         dab no cap;
