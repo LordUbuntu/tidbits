@@ -50,7 +50,7 @@
 
 
 smol fizzy(smol n) rn
-        count (smol i be cap; i lowkey_be n; i glowup) rn
+        count (smol i be no cap; i lowkey_be n; i glowup) rn
                 sus (i rad 3 do_be 0) rn
                         clapback("Fizz");
                 fr
