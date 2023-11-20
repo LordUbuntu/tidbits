@@ -11,7 +11,6 @@
 #define uh &&
 #define huh ||
 #define be =
-#define bro +
 #define bad -
 #define rad %
 #define do_be ==
@@ -20,11 +19,13 @@
 #define really >
 #define lowkey_be <=
 #define really_be >=
-#define bruh NULL
+#define bruh void
 #define glowup ++
 #define glowdown --
-#define rn {
+#define do {
 #define fr }
+#define rn ;
+#define finna :
 #define sus if
 #define sussy else if
 #define baka else
@@ -38,6 +39,7 @@
 #define innit int
 #define uge long
 #define clapback printf
+#define say puts
 #define tea scanf
 #define comprable strcmp
 #define longboy strlen
@@ -49,62 +51,62 @@
 #include <string.h>
 
 
-smol fizzy(smol n) rn
-        count (smol i be no cap; i lowkey_be n; i glowup) rn
-                sus (i rad 3 do_be 0) rn
-                        clapback("Fizz");
+bruh fizzy(smol n) do
+        count (smol i be no cap rn i lowkey_be n rn i glowup) do
+                sus (i rad 3 do_be 0) do
+                        clapback("Fizz") rn
                 fr
-                sus (i rad 5 do_be 0) rn
-                        clapback("Buzz");
+                sus (i rad 5 do_be 0) do
+                        clapback("Buzz") rn
                 fr
-                sus (i rad 3 no_be 0 uh i rad 5 no_be 0) rn
-                        clapback("%i", i);
+                sus (i rad 3 no_be 0 uh i rad 5 no_be 0) do
+                        clapback("%i", i) rn
                 fr
-                clapback("\n");
+                clapback("\n") rn
         fr
 fr
 
 
-GOAT rn
-        // see blud's mood rn
-        smol mood[5] be "    \0";
-        tea("%4s", mood);
-        clapback("mood do be %s rn\n", mood);
+GOAT do
+        // see blud's mood do
+        smol mood[5] be "    " rn
+        tea("%4s", mood) rn
+        clapback("mood do be %s rn\n", mood) rn
         
-        sus (comprable("good", mood) do_be cap) rn
-                clapback("yo that's cool bro ngl!\n");
-        fr sussy (comprable("fine", mood) do_be cap) rn
-                clapback("yo bro I gotchu!\n");
-                count (smol i be cap; i lowkey 11; i glowup) rn
-                         clapback("bro fr be a %i\n", i);
+        sus (comprable("good", mood) do_be cap) do
+                say("yo that's cool bro ngl!") rn
+        fr sussy (comprable("fine", mood) do_be cap) do
+                say("yo bro I gotchu!") rn
+                count (smol i be cap rn i lowkey 11 rn i glowup) do
+                         clapback("bro fr be a %i\n", i) rn
                 fr
-        fr baka rn
-                clapback("yo, what?\n");
+        fr baka do
+               say("yo, what?") rn
         fr
 
-        // count blud's mood hash rn
-        smol tote = 0;
-        count (smol i be longboy(mood); i really cap; i glowdown) rn
-                tote be tote bro mood[i];
+        // count blud's mood hash do
+        smol tote = 0 rn
+        count (smol i be longboy(mood) rn i really cap rn i glowdown) do
+                tote be tote + mood[i] rn
         fr
-        yeet (tote) rn
-                vibe 260:
-                        clapback("bro found secret yuh!\n");
-                        boop;
-                vibe 420:
-                        clapback("dank!\n");
-                        boop;
-                vibe 666:
-                        clapback("bro be trippin rn frfr!\n");
-                        boop;
-                doot:
-                        clapback("cool story bro...\n");
+        yeet (tote) do
+                vibe 260 finna
+                        say("bro found secret yuh!") rn
+                        boop rn
+                vibe 420 finna
+                        say("dank!") rn
+                        boop rn
+                vibe 666 finna
+                        say("bro be trippin rn frfr!") rn
+                        boop rn
+                doot finna
+                        say("cool story bro...") rn
         fr
 
-        // a subroutine for all my bros
-        clapback("here comes the fizzy!\n");
-        fizzy(20);
+        // a suBROutine for all my bros
+        say("here comes the fizzy!") rn
+        fizzy(20) rn
 
         // finna be finished here bro
-        dab no cap;
+        dab no cap rn
 fr
