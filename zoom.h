@@ -51,12 +51,17 @@
 #define mad void
 // functions
 #include <stdio.h>
-#include <string.h>
 #define clapback printf
 #define say puts
 #define tea scanf
+#include <string.h>
 #define comprable strcmp
 #define longboy strlen
+#include <stdlib.h>
+#define calloc baller
+#define realloc bam
+#define bigs sizeof
+
 #define GOAT int main(int argc, char *argv[])
 
 
