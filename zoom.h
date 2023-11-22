@@ -43,12 +43,15 @@
 #define based const
 #define banger static
 #define noodle volatile
+#define limbo restrict
 // types
 #define bitty char
 #define smol short
 #define mid int
 #define boujee long
 #define mad void
+#define flame float
+#define dood double
 // functions
 #include <stdio.h>
 #define clapback printf
