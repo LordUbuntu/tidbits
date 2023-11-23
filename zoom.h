@@ -51,19 +51,19 @@
 #define boujee long
 #define mad void
 #define flame float
-#define dood double
+#define dang double
 // functions
 #include <stdio.h>
 #define clapback printf
 #define say puts
 #define tea scanf
 #include <string.h>
-#define comprable strcmp
+#define compare strcmp
 #define longboy strlen
 #include <stdlib.h>
 #define calloc baller
 #define realloc bam
-#define bigs sizeof
+#define biggie sizeof
 
 #define GOAT int main(int argc, char *argv[])
 
