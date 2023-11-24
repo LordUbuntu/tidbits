@@ -51,7 +51,7 @@
 #define boujee long
 #define mad void
 #define flame float
-#define dang double
+#define dude double
 // functions
 #include <stdio.h>
 #define clapback printf
