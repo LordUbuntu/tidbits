@@ -52,6 +52,20 @@ def circle():
     turtle.exitonclick()
 
 
+# creates patterns from cycles of unequal opposing rotation and action
+def odd():
+    turtle.home()
+    for i in range(360):
+        if i % 2 == 0:
+            turtle.forward(5)
+            turtle.right(15)
+        else:
+            turtle.forward(5)
+            turtle.left(30)
+        turtle.forward(5)
+    turtle.exitonclick()
+
+
 def line():
 #   This is it, somebody has to draw the line somewhere!!1! >:(
 #   Sorry :^) (not sorry).
