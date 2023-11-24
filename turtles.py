@@ -53,15 +53,15 @@ def circle():
 
 
 # creates patterns from cycles of unequal opposing rotation and action
-def odd():
+def odd(amplitude):
     turtle.home()
     for i in range(360):
         if i % 2 == 0:
-            turtle.forward(5)
-            turtle.right(15)
+            turtle.forward(5 * amplitude)
+            turtle.right(15 * amplitude)
         else:
-            turtle.forward(5)
-            turtle.left(30)
+            turtle.forward(5 * amplitude)
+            turtle.left(30 * amplitude)
         turtle.forward(5)
     turtle.exitonclick()
 
