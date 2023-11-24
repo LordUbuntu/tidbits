@@ -53,6 +53,12 @@ def circle():
 
 
 # creates patterns from cycles of unequal opposing rotation and action
+# noticed patterns:
+# - multiples of 6 create lines
+# - multiples of 4 create triangles
+# - others (especially primes) create spikey flowers
+# - by 25 the direction of the circles created reverses
+# - after 25 the cycle of patterns repeats
 def odd(amplitude):
     turtle.home()
     for i in range(360):
