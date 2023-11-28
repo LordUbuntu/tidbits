@@ -72,6 +72,20 @@ def odd(amplitude):
     turtle.exitonclick()
 
 
+def knight(steps):
+    turtle.home()
+    for i in range(steps):
+        if rand(0, 1):
+            turtle.forward(3)
+        else:
+            turtle.backward(3)
+        if rand(0, 1):
+            turtle.right(90)
+        else:
+            turtle.left(90)
+    turtle.exitonclick()
+
+
 def line():
 #   This is it, somebody has to draw the line somewhere!!1! >:(
 #   Sorry :^) (not sorry).
