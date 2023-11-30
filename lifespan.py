@@ -16,7 +16,7 @@ def age(birth_date):
     print(f"you have been alive for {days_alive} days")
     print(f"you have approximately {days_left} days left to live")
     print(f"you have approximately {years_left} years left to live")
-    print("make the most of it!")
+    print("make the most of it! keep growing!")
 
 
 def parse_date(user_date):
