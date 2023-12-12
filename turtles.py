@@ -86,6 +86,14 @@ def knight(steps):
     turtle.exitonclick()
 
 
+def queen(steps):
+    turtle.home()
+    for i in range(steps):
+        turtle.right(rand(0, 8) * 45)
+        turtle.forward(3)
+    turtle.exitonclick()
+
+
 def line():
 #   This is it, somebody has to draw the line somewhere!!1! >:(
 #   Sorry :^) (not sorry).
