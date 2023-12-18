@@ -2,7 +2,8 @@ from random import randint as rand
 
 
 if __name__ == '__main__':
-    low, high = rand(1, 100), rand(2, 200)
+    max = int(input("From 1 to what? "))
+    low, high = rand(1, max), rand(2, max)
     number = rand(low, high)
     while True:
         guess = int(input("Guess a number between {} and {}: ".format(low, high)))
