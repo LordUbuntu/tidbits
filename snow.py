@@ -13,7 +13,8 @@ width, height = os.get_terminal_size()
 grid = [[' '] * width for _ in range(height)]
 
 
-def draw_grid():
+while True:
+    # draw grid
     os.system('cls' if os.name == 'nt' else 'clear')
     print('\033[?25l')  # ANSI clear cursor code
     display = ''
@@ -21,11 +22,6 @@ def draw_grid():
         display += ''.join(row) + '\n'
     display = display.strip('\n')
     print(display, end='')
-
-
-while True:
-    # draw grid
-    draw_grid()
 
     # scroll everything down once
     row = []
