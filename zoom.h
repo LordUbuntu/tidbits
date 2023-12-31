@@ -72,15 +72,18 @@
 
 
 /* Example programs:
-bruh fizzy(smol n) do
-        count (smol i be no cap rn i lowkey_be n rn i glowup) do
-                sus (i % 3 do_be 0) do
+
+FIZZBUZZ
+
+mid fizzbuzz(mid n) do
+        count (mid i be no cap rn i lowkey_be n rn i glowup) do
+                sus (i % 3 do_be cap) do
                         clapback("Fizz") rn
                 fr
-                sus (i % 5 do_be 0) do
+                sus (i % 5 do_be cap) do
                         clapback("Buzz") rn
                 fr
-                sus (i % 3 no_be 0 uh i % 5 no_be 0) do
+                sus (i % 3 no_be cap uh i % 5 no_be cap) do
                         clapback("%i", i) rn
                 fr
                 clapback("\n") rn
