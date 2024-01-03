@@ -29,11 +29,26 @@ int product(int a, int b) {
 }
 
 // higher order functions
+void filter(bool (*f)(int), int *A, int *B, size_t length) {
+        // preconditions:
+        //      length is same for A and B
+        //      A is the values to filter
+        //      B is the filtered results ending with a null terminator
+        int i = 0;
+        while (i < length) {
+                if ((*f)(A[i])) {
+                        B[i] = A[i];
+                        i++;
+                }
+        }
+}
 void map(int (*f)(int, int), int *A, int *B, int *C, size_t length) {
+        // take a func f and 2 arrays A and B and map result into C
         for (size_t i = 0; i < length; i++)
                 C[i] = (*f)(A[i], B[i]);
 }
 int reduce(int (*f)(int, int), int *A, size_t length) {
+        // take a func f applied to A and return the accumulated result
         accumulator = A[0];
         for (size_t i = 1; i < length; i++)
                 accumulator = (*f)(accumulator, A[i]);
