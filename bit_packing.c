@@ -1,4 +1,5 @@
 // an experiment in bit-packing in C
+// TODO: write tests
 #include <stdio.h>
 
 
