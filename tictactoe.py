@@ -1,6 +1,7 @@
 # Jacobus Burger (2023)
 # The game of Tic Tac Toe on CLI
 # I felt this wasn't sufficient on its own to justify a repository.
+# TODO: write a pygame version
 from os import system, name
 from random import randint as random
 
@@ -57,7 +58,14 @@ def main():
             print("O WINS!!!\n\n")
             break
         # get player move and set tile to X if open (otherwise skip turn)
-        X = int(input("Where should X go? "))
+        # ensuring input is only valid
+        while True:
+            try:
+                X = int(input("Where should X go? "))
+                if X >= 1 and X <= 9:
+                    break
+            except:
+                display(gamestate)
         gamestate[X - 1] = 1 if gamestate[X - 1] == 0 else gamestate[X - 1]
         # select random open tile and make O's move
         for _ in range(9**2):
