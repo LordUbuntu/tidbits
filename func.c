@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 /* functional(ish) C programming demo
  *
@@ -41,6 +42,8 @@ void filter(bool (*f)(int), int *A, int *B, size_t length) {
                         i++;
                 }
         }
+        if (i < length - 1)
+                B[i + 1] = NULL;
 }
 void map(int (*f)(int, int), int *A, int *B, int *C, size_t length) {
         // take a func f and 2 arrays A and B and map result into C
