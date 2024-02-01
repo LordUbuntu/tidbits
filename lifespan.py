@@ -15,9 +15,9 @@ def age(birthday, expected_lifespan=80):
     weeks_left = days_left // 7
     years_left = (expected_death - today).days // 365
     print(f"you were born {years_alive} years ago")
-    print(f"you have been alive for {days_alive} days or {weeks_alive} weeks")
-    print(f"you have approximately {days_left} days / {weeks_left} weeks / {years_left} years left to live")
-    print("make the most of it! keep growing!")
+    print(f"you have been alive for {days_alive} days / {weeks_alive} weeks")
+    print(f"you have approximately {days_left} days / {weeks_left} weeks / {years_left} years left to live assuming you live for {expected_lifespan} years")
+    print(f"You've lived {today.day / expected_death.day}% of your life. Make the most of the rest, and keep growing!!")
 
 
 def parse_date(user_date):
@@ -26,8 +26,7 @@ def parse_date(user_date):
 
 def main():
     birthday = parse_date(input("when were you born (YYYY-MM-DD)? "))
-    print(birthday, type(birthday))
-    print(age(birthday))
+    age(birthday)
 
 
 if __name__ == "__main__":
