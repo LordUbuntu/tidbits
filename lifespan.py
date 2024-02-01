@@ -1,34 +1,33 @@
 #!/usr/bin/python3
 # Info:
 #   Momento mori.
-from datetime import date
+import datetime
 
 
-def age(birth_date):
+def age(birthday, expected_lifespan=80):
     # determines important info based on given age (in form YYYY-MM-DD)
-    today = date.today()
-    expected_death = date(2080, 12, 14)
-    years_alive = today.year - birth_date.year
-    days_alive = (today - birth_date).days
+    today = datetime.date.today()
+    expected_death = datetime.date(birthday.year + expected_lifespan, 12, 1)
+    years_alive = today.year - birthday.year
+    days_alive = (today - birthday).days
+    weeks_alive = days_alive // 7
     days_left = (expected_death - today).days
-    years_left = (expected_death - today).years
+    weeks_left = days_left // 7
+    years_left = (expected_death - today).days // 365
     print(f"you were born {years_alive} years ago")
-    print(f"you have been alive for {days_alive} days")
-    print(f"you have approximately {days_left} days left to live")
-    print(f"you have approximately {years_left} years left to live")
+    print(f"you have been alive for {days_alive} days or {weeks_alive} weeks")
+    print(f"you have approximately {days_left} days / {weeks_left} weeks / {years_left} years left to live")
     print("make the most of it! keep growing!")
 
 
 def parse_date(user_date):
-    # converts string of form (YYYY-MM-DD) into a datetime representation
-    L = []
-    for part in user_date.split("-"):
-        L.append(int(part))
-    return date(L[0], L[1], L[2])
+    return datetime.date.fromisoformat(user_date)
 
 
 def main():
-    age(parse_date(input("when were you born (YYYY-MM-DD)? ")))
+    birthday = parse_date(input("when were you born (YYYY-MM-DD)? "))
+    print(birthday, type(birthday))
+    print(age(birthday))
 
 
 if __name__ == "__main__":
