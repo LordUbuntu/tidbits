@@ -3,12 +3,23 @@
 #   an early convolutional neural network. This program is a replication
 #   of the basic principle of MENACE in Python 3.
 # see: https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine
+from os.path import exists
 from random import randint as rand
 import json  # for persistent memory
 
 # check if memory exists and load it in
+if exists("matchboxes.json"):
+    with open("matchboxes.json", "r") as file:
+        matchboxes = json.load(file)
 # otherwise use default empty head
-matchboxes = [[rand(0, 8) for i in range(9)]]
+else:
+    matchboxes = [[rand(0, 8) for i in range(9)]]
 
 # start the game of tic-tac-toe
     # menace goes first as O
+
+# overwrite matchbox memory
+with open("matchboxes.json", "w") as file:
+    json.dump(matchboxes, file)
+
+print(matchboxes)
