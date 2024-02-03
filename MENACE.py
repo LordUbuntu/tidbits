@@ -16,7 +16,13 @@ else:
     matchboxes = [[rand(0, 8) for i in range(9)]]
 
 # start the game of tic-tac-toe
+running = True
+move = 0
+while running:
     # menace goes first as O
+    # update board
+    # player goes next
+
 
 # overwrite matchbox memory
 with open("matchboxes.json", "w") as file:
