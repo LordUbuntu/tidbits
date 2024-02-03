@@ -20,6 +20,8 @@ running = True
 move = 0
 while running:
     # menace goes first as O
+    O = matchboxes[move][rand(0, 8)]
+    move += 1
     # update board
     # player goes next
 
