@@ -14,6 +14,15 @@ def print_board(board):
         print("-+-+-")
     print('|'.join(board[len(board) - 1]))
 
+
+def end_game():
+    # overwrite matchbox memory
+    with open("matchboxes.json", "w") as file:
+        json.dump(matchboxes, file)
+    # stop program
+    exit()
+
+
 # check if memory exists and load it in
 if exists("matchboxes.json"):
     with open("matchboxes.json", "r") as file:
@@ -28,6 +37,8 @@ running = True
 move = 0
 print(matchboxes, board)  # DEBUG
 while running:
+    print(matchboxes, board)
+
     # menace generates a new matchbox
     matchboxes.append([rand(0, 8) for i in range(9)])
     # menace goes first as O
@@ -57,13 +68,10 @@ while running:
             """))
             X -= 1
         except:
-            exit()
+            end_game()
         else:
             if board[X // 3][X % 3] == ' ':
                 empty_tile_found = True
     board[X // 3][X % 3] = 'X'
 
 
-# overwrite matchbox memory
-with open("matchboxes.json", "w") as file:
-    json.dump(matchboxes, file)
