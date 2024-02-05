@@ -37,10 +37,9 @@ running = True
 move = 0
 print(matchboxes, board)  # DEBUG
 while running:
-    print(matchboxes, board)
-
     # menace generates a new matchbox
-    matchboxes.append([rand(0, 8) for i in range(9)])
+    if move >= len(matchboxes):
+        matchboxes.append([rand(0, 8) for i in range(9)])
     # menace goes first as O
     empty_tile_found = False
     while not empty_tile_found:
