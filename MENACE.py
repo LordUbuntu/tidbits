@@ -3,6 +3,7 @@
 #   an early convolutional neural network. This program is a replication
 #   of the basic principle of MENACE in Python 3.
 # see: https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine
+from itertools import chain
 from os.path import exists
 from random import randint as rand
 import json  # for persistent memory
@@ -35,8 +36,11 @@ else:
 board = [[' '] * 3 for i in range(3)]  # _, X, or O
 running = True
 move = 0
-print(matchboxes, board)  # DEBUG
 while running:
+    # check if all tiles are filled and end game
+    if ''.join(chain.from_iterable(board)).count(' ') <= 1:
+        print("= = = TIE = = =")
+        end_game()
     # menace generates a new matchbox
     if move >= len(matchboxes):
         matchboxes.append([rand(0, 8) for i in range(9)])
@@ -51,7 +55,6 @@ while running:
     board[O // 3][O % 3] = 'O'
     # show board
     print_board(board)
-    # check if all tiles are filled and end game
     # check if any lines are made and end game
         # update weights of MENACE based on win/loss
     # player goes next
