@@ -5,7 +5,7 @@
 from random import randint
 from time import sleep
 from itertools import cycle
-SPEED = 0.001  # seconds per step
+SPEED = 0.1  # seconds per step
 DIRECTIONS = cycle([[1, 0],[0, 1],[-1, 0],[0, -1]])  # R, D, L, U clockwise
 SYM1 = ' '
 SYM2 = '@'
