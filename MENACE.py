@@ -6,6 +6,7 @@
 from itertools import chain
 from os.path import exists
 from random import randint as rand
+from random import sample, choice
 import json  # for persistent memory
 
 
@@ -24,7 +25,7 @@ def end_game():
     exit()
 
 
-# TODO: modify to work with a string array ["abcdefghi"]
+    
 def winner(gamestate):
     # if no line, return 0
     # if X line, return 1
@@ -53,6 +54,11 @@ def winner(gamestate):
 # TODO: update the way menace stores and selects data
 # - a dictionary with each board state as a string, adding new ones when encountered
 # - selecting beads and remembering which matchbox they're in, so that the same colour can be added or removed based on win/lose
+
+nboard = {
+    tuple(' ' * 9) : [sample(range(9), 9)]
+}
+print(nboard)
 
 # load memory if it exists
 if exists("matchboxes.json"):
