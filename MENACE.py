@@ -14,6 +14,11 @@ import json  # for persistent memory
 # - a dictionary with each board state as a string, adding new ones when encountered
 # - selecting beads and remembering which matchbox they're in, so that the same colour can be added or removed based on win/lose
 
+CHAR_MAP = {
+    0: ' ',
+    1: 'O',
+    2: 'X',
+}
 open_tiles = {*range(9)}  # tiles that can still be selected from
 board_state = [0] * 9
 actions = []    # A list of tuples to remember which beads were chosen
@@ -31,6 +36,17 @@ boxes = {
 }
 
 print(open_tiles, board_state, actions, boxes)
+
+
+def show_board(board_state):
+    for i in range(2):
+        print('|'.join(CHAR_MAP[num] for num in board_state[i * 3 : i * 3 + 3]))
+        print("-+-+-")
+    print('|'.join(CHAR_MAP[num] for num in board_state[6:9]))
+
+show_board(board_state)
+
+exit()
 
 
 
