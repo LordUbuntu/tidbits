@@ -6,8 +6,33 @@
 from itertools import chain
 from os.path import exists
 from random import randint as rand
-from random import sample, choice
+from random import sample, choice, choices
 import json  # for persistent memory
+
+
+# TODO: update the way menace stores and selects data
+# - a dictionary with each board state as a string, adding new ones when encountered
+# - selecting beads and remembering which matchbox they're in, so that the same colour can be added or removed based on win/lose
+
+open_tiles = {*range(9)}  # tiles that can still be selected from
+board_state = [0] * 9
+actions = []    # A list of tuples to remember which beads were chosen
+                #   from which board state. Ephemeral, lifetime is the
+                #   span of the current game only.
+                # (bead_number, board_state)
+# MENACE memory, the matchboxes.
+#   Chooses a random bead based on board state.
+#   Each bead is a number representing a possible tile, 9 choices are
+#   generated based on what tiles are open.
+# tuple: list because I want to remember board state correctly
+boxes = {
+    # how each box is generated on each new state
+    tuple(board_state): choices(board_state, k=9),
+}
+
+print(open_tiles, board_state, actions, boxes)
+
+
 
 
 def print_board(board):
@@ -51,14 +76,6 @@ def winner(gamestate):
     return 0
 
 
-# TODO: update the way menace stores and selects data
-# - a dictionary with each board state as a string, adding new ones when encountered
-# - selecting beads and remembering which matchbox they're in, so that the same colour can be added or removed based on win/lose
-
-nboard = {
-    tuple(' ' * 9) : [sample(range(9), 9)]
-}
-print(nboard)
 
 # load memory if it exists
 if exists("matchboxes.json"):
