@@ -32,7 +32,7 @@ actions = []    # A list of tuples to remember which beads were chosen
 # tuple: list because I want to remember board state correctly
 boxes = {
     # how each box is generated on each new state
-    tuple(board_state): choices(board_state, k=9),
+    tuple(board_state): choices(open_tiles, k=len(open_tiles)),
 }
 
 print(open_tiles, board_state, actions, boxes)
@@ -45,6 +45,18 @@ def show_board(board_state):
     print('|'.join(CHAR_MAP[num] for num in board_state[6:9]))
 
 show_board(board_state)
+
+# TODO:
+# - MENACE picks a move
+# - update open_tiles, board_state, actions, and generate a new element in boxes that
+# excludes occupied tiles (generate from open_tiles as many elements as len of
+# open_tiles)
+# - check for wins, ties, or losses
+#   - update menace weights based on actions and outcome
+# - while player input
+#   - clear screen
+#   - display board
+#   - get input until valid
 
 exit()
 
