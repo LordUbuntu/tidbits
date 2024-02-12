@@ -28,7 +28,8 @@ actions = []    # A list of tuples to remember which beads were chosen
 # tuple: list because I want to remember board state correctly
 matchboxes = {
     # how each box is generated on each new state
-    tuple(board_state): choices(open_tiles, k=len(open_tiles)),
+    # tuple(board_state): choices(open_tiles, k=len(open_tiles)),
+    tuple(board_state): list(range(9)),  # all tiles possible to start
 }
 
 
@@ -52,6 +53,7 @@ def show_board(board_state):
     print('|'.join(CHAR_MAP[num] for num in board_state[6:9]))
 
 
+# FIXME:
 def load_memory():
     # load memory if it exists
     if exists("matchboxes.json"):
@@ -60,11 +62,13 @@ def load_memory():
     # otherwise use default empty head
     else:
         matchboxes = {
-            tuple(board_state): choices(open_tiles, k=len(open_tiles))
+            # all tiles possible to start
+            tuple(board_state): list(range(9)),
         }
     return matchboxes
 
 
+# FIXME:
 def save_memory(matchboxes):
     with open("matchboxes.json", "w") as file:
         json.dump(matchboxes, file)
@@ -84,11 +88,9 @@ def save_memory(matchboxes):
 #   - get input until valid
 
 
+print("tiles, board, actions, matchboxes")
 print(open_tiles, board_state, actions, matchboxes)
 show_board(board_state)
-print(load_memory())
-matchboxes.update({tuple(board_state): choices(open_tiles, k=8)})
-save_memory(matchboxes)
 
 
 exit()
