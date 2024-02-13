@@ -78,7 +78,14 @@ def save_memory(matchboxes):
 #   - display board
 #   - get input until valid
 def main():
-    pass
+    game_running = True
+    while game_running:
+        # generate a matchbox if it doesn't exist for this board state
+        if board_string(board_state) not in matchboxes:
+            matchboxes.update({
+                board_string(board_state): [*open_tiles]
+            })
+        # menace picks a bead from the matchbox for the current state
 
 
 if __name__ == '__main__':
