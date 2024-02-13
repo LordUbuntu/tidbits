@@ -42,16 +42,6 @@ def show_board(board_state):
     print('|'.join(board[6:9]))
 
 
-
-
-
-print(open_tiles, board_state, actions, matchboxes)
-show_board(board_state)
-exit()
-
-
-
-# FIXME:
 def load_memory():
     # load memory if it exists
     if exists("matchboxes.json"):
@@ -59,14 +49,10 @@ def load_memory():
             matchboxes = json.load(file)
     # otherwise use default empty head
     else:
-        matchboxes = {
-            # all tiles possible to start
-            tuple(board_state): list(range(9)),
-        }
+        matchboxes = { "         ": [0, 1, 2, 3, 4, 5, 6, 7, 8] }
     return matchboxes
 
 
-# FIXME:
 def save_memory(matchboxes):
     with open("matchboxes.json", "w") as file:
         json.dump(matchboxes, file)
@@ -89,6 +75,12 @@ def save_memory(matchboxes):
 print("tiles, board, actions, matchboxes")
 print(open_tiles, board_state, actions, matchboxes)
 show_board(board_state)
+# test memory storage
+print("test memory")
+matchboxes = load_memory()
+print(matchboxes)
+matchboxes.update({"        X": [0, 1, 2, 3, 4, 5, 6, 7]})
+save_memory(matchboxes)
 
 
 exit()
