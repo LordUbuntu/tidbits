@@ -96,7 +96,9 @@ def main():
         # menace picks a bead from the matchbox for the current state
         # and action is recorded for later backpropogation
         bead = choice(matchboxes[board_string(board_state)])
-        actions.append((bead, board_state))
+        actions.append((bead, board_string(board_state)))
+        # remove from open_tiles
+        open_tiles.remove(bead)
         # menace updates board state with its move
         board_state[bead] = MENACE
         # display board
