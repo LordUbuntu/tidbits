@@ -100,10 +100,6 @@ def main():
         # display board
         show_board(board_state)
         # player takes their turn
-
-
-
-        move += 1
     # store any learned memory
     save_memory(matchboxes)
 
