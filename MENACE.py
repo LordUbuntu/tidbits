@@ -15,6 +15,12 @@ CHAR_MAP = {
     1: 'O',
     2: 'X',
 }
+
+
+def state_to_string(board_state):
+    return ''.join(CHAR_MAP[n] for n in board_state)
+
+
 open_tiles = [*range(9)]  # tiles that can still be selected from
 board_state = [0] * 9
 actions = []    # A list of tuples to remember which beads were chosen
@@ -24,8 +30,8 @@ actions = []    # A list of tuples to remember which beads were chosen
 # MENACE memory, the matchboxes.
 #   Chooses a random bead based on board state.
 #   Each bead is a number representing a possible tile, 9 choices are
-#   generated based on what tiles are open.
-# tuple: list because I want to remember board state correctly
+#   generated based on what tiles are open, basically just a range of all
+#   open spaces on novel board states
 matchboxes = {
     # how each box is generated on each new state
     # tuple(board_state): choices(open_tiles, k=len(open_tiles)),
