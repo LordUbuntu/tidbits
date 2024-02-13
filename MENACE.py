@@ -30,6 +30,7 @@ actions = []    # A list of tuples to remember which beads were chosen
 matchboxes = {
     "         ": [0, 1, 2, 3, 4, 5, 6, 7, 8],
 }
+# NOTE: interestingly, don't need to remember move order or number at all!
 
 
 def clear():
@@ -86,6 +87,16 @@ def main():
                 board_string(board_state): [*open_tiles]
             })
         # menace picks a bead from the matchbox for the current state
+        # and action is recorded for later backpropogation
+        bead = choice(matchboxes[board_string(board_state)])
+        actions.append((bead, board_state))
+        # menace updates board state with its move
+        # display board
+        # recieve player input
+
+
+
+        move += 1
 
 
 if __name__ == '__main__':
