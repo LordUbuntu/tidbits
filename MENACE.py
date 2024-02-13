@@ -95,6 +95,7 @@ def main():
         # menace updates board state with its move
         board_state[bead] = MENACE
         # display board
+        show_board(board_state)
         # player takes their turn
 
 
