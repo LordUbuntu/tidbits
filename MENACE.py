@@ -15,12 +15,6 @@ CHAR_MAP = {
     1: 'O',
     2: 'X',
 }
-
-
-def state_to_string(board_state):
-    return ''.join(CHAR_MAP[n] for n in board_state)
-
-
 open_tiles = [*range(9)]  # tiles that can still be selected from
 board_state = [0] * 9
 actions = []    # A list of tuples to remember which beads were chosen
@@ -33,30 +27,28 @@ actions = []    # A list of tuples to remember which beads were chosen
 #   generated based on what tiles are open, basically just a range of all
 #   open spaces on novel board states
 matchboxes = {
-    # how each box is generated on each new state
-    # tuple(board_state): choices(open_tiles, k=len(open_tiles)),
-    tuple(board_state): list(range(9)),  # all tiles possible to start
+    "         ": [0, 1, 2, 3, 4, 5, 6, 7, 8],
 }
 
 
-
-
-
-
-
+def board_string(board_state):
+    return ''.join(CHAR_MAP[n] for n in board_state)
 
 def show_board(board_state):
+    board = board_string(board_state)
     for i in range(2):
-        print('|'.join(CHAR_MAP[num] for num in board_state[i * 3 : i * 3 + 3]))
+        print('|'.join(board[i * 3 : i * 3 + 3]))
         print("-+-+-")
-    print('|'.join(CHAR_MAP[num] for num in board_state[6:9]))
+    print('|'.join(board[6:9]))
 
 
-def show_board(board_state):
-    for i in range(2):
-        print('|'.join(CHAR_MAP[num] for num in board_state[i * 3 : i * 3 + 3]))
-        print("-+-+-")
-    print('|'.join(CHAR_MAP[num] for num in board_state[6:9]))
+
+
+
+print(open_tiles, board_state, actions, matchboxes)
+show_board(board_state)
+exit()
+
 
 
 # FIXME:
