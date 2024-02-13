@@ -5,6 +5,7 @@
 # see: https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine
 from itertools import chain
 from os.path import exists
+from os import system, name
 from random import randint as rand
 from random import sample, choice, choices
 import json  # for persistent memory
@@ -29,6 +30,13 @@ actions = []    # A list of tuples to remember which beads were chosen
 matchboxes = {
     "         ": [0, 1, 2, 3, 4, 5, 6, 7, 8],
 }
+
+
+def clear():
+    if name == 'nt':
+        system('cls')
+    else:
+        system('clear')
 
 
 def board_string(board_state):
@@ -58,7 +66,6 @@ def save_memory(matchboxes):
         json.dump(matchboxes, file)
 
 
-
 # TODO:
 # - MENACE picks a move
 # - update open_tiles, board_state, actions, and generate a new element in boxes that
@@ -70,17 +77,9 @@ def save_memory(matchboxes):
 #   - clear screen
 #   - display board
 #   - get input until valid
+def main():
+    pass
 
 
-print("tiles, board, actions, matchboxes")
-print(open_tiles, board_state, actions, matchboxes)
-show_board(board_state)
-# test memory storage
-print("test memory")
-matchboxes = load_memory()
-print(matchboxes)
-matchboxes.update({"        X": [0, 1, 2, 3, 4, 5, 6, 7]})
-save_memory(matchboxes)
-
-
-exit()
+if __name__ == '__main__':
+    main()
