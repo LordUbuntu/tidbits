@@ -10,11 +10,13 @@ from random import randint as rand
 from random import sample, choice, choices
 import json  # for persistent memory
 
-
+NO_ONE = 0
+MENACE = 1
+PLAYER = 2
 CHAR_MAP = {
-    0: ' ',
-    1: 'O',
-    2: 'X',
+    NO_ONE: ' ',
+    MENACE: 'O',
+    PLAYER: 'X',
 }
 open_tiles = [*range(9)]  # tiles that can still be selected from
 board_state = [0] * 9
@@ -91,8 +93,9 @@ def main():
         bead = choice(matchboxes[board_string(board_state)])
         actions.append((bead, board_state))
         # menace updates board state with its move
+        board_state[bead] = MENACE
         # display board
-        # recieve player input
+        # player takes their turn
 
 
 
