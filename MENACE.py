@@ -86,6 +86,8 @@ def main():
     # start the game
     game_running = True
     while game_running:
+        # MENACE takes its turn
+
         # generate a matchbox if it doesn't exist for this board state
         if board_string(board_state) not in matchboxes:
             matchboxes.update({
@@ -99,7 +101,15 @@ def main():
         board_state[bead] = MENACE
         # display board
         show_board(board_state)
-        # player takes their turn
+
+        # Player takes their turn
+
+        # validate and retrieve player input (must be int and one of open_tiles)
+        # remove from open_tiles
+        # update board state with player move
+
+        # if len(open_tiles) <= 2, end game
+        break
     # store any learned memory
     save_memory(matchboxes)
 
