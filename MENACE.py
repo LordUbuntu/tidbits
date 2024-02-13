@@ -81,6 +81,9 @@ def save_memory(matchboxes):
 #   - display board
 #   - get input until valid
 def main():
+    # retrieve any memory if it exists
+    matchboxes = load_memory()
+    # start the game
     game_running = True
     while game_running:
         # generate a matchbox if it doesn't exist for this board state
@@ -101,6 +104,9 @@ def main():
 
 
         move += 1
+    # store any learned memory
+    save_memory(matchboxes)
+
 
 
 if __name__ == '__main__':
