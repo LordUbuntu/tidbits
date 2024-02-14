@@ -129,6 +129,7 @@ def main():
         # update board state with player move
         board_state[X] = PLAYER
 
+        # TODO:
         # CHECK FOR WIN/LOSE/TIE and backpropogate beads based on outcome
     # store any learned memory
     save_memory(matchboxes)
