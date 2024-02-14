@@ -117,8 +117,9 @@ def main():
                 -+-+-
                 7|8|9
                 """))
+                X -= 1  # correct offset
             except:
-                continue
+                exit()
             if X not in open_tiles:
                 continue
             else:
@@ -128,8 +129,7 @@ def main():
         # update board state with player move
         board_state[X] = PLAYER
 
-        # if len(open_tiles) <= 2, end game
-        break
+        # CHECK FOR WIN/LOSE/TIE and backpropogate beads based on outcome
     # store any learned memory
     save_memory(matchboxes)
 
