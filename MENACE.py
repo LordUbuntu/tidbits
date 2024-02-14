@@ -10,6 +10,7 @@ from random import randint as rand
 from random import sample, choice, choices
 import json  # for persistent memory
 
+
 NO_ONE = 0
 MENACE = 1
 PLAYER = 2
@@ -45,6 +46,7 @@ def clear():
 def board_string(board_state):
     return ''.join(CHAR_MAP[n] for n in board_state)
 
+
 def show_board(board_state):
     board = board_string(board_state)
     for i in range(2):
@@ -70,10 +72,6 @@ def save_memory(matchboxes):
 
 
 # TODO:
-# - MENACE picks a move
-# - update open_tiles, board_state, actions, and generate a new element in boxes that
-# excludes occupied tiles (generate from open_tiles as many elements as len of
-# open_tiles)
 # - check for wins, ties, or losses
 #   - update menace weights based on actions and outcome
 # - while player input
