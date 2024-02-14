@@ -104,7 +104,23 @@ def main():
 
         # Player takes their turn
 
-        # validate and retrieve player input (must be int and one of open_tiles)
+        # validate and retrieve player input
+        valid_input = False
+        while not valid_input:
+            clear()
+            show_board(board_state)
+            try:
+                X = int(input("""
+                1|2|3
+                -+-+-
+                4|5|6
+                -+-+-
+                7|8|9
+                """))
+            except:
+                continue
+            if X not in open_tiles:
+                continue
         # remove from open_tiles
         # update board state with player move
 
