@@ -99,14 +99,14 @@ def main():
         open_tiles.remove(bead)
         # menace updates board state with its move
         board_state[bead] = MENACE
-        # display board
-        show_board(board_state)
 
         # Player takes their turn
 
         # validate and retrieve player input
+        # (must be int and in open_tiles)
         valid_input = False
         while not valid_input:
+            # display board state for player
             clear()
             show_board(board_state)
             try:
@@ -121,8 +121,12 @@ def main():
                 continue
             if X not in open_tiles:
                 continue
+            else:
+                valid_input = True
         # remove from open_tiles
+        open_tiles.remove(X)
         # update board state with player move
+        board_state[X] = PLAYER
 
         # if len(open_tiles) <= 2, end game
         break
