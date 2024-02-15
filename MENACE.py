@@ -147,8 +147,16 @@ def main():
         # update board state with player move
         board_state[X] = PLAYER
 
-        # TODO:
-        # CHECK FOR WIN/LOSE/TIE and backpropogate beads based on outcome
+        win = winner(board_state)
+        # reward MENACE for winning (more of the same beads)
+        if win == MENACE:
+            continue
+        # punish MENACE for losing (remove beads from matchboxes)
+        elif win == PLAYER:
+            continue
+        # add a random bead for a tie
+        elif len(open_tiles) <= 2:
+            continue
     # store any learned memory
     save_memory(matchboxes)
 
