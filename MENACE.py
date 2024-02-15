@@ -71,6 +71,28 @@ def save_memory(matchboxes):
         json.dump(matchboxes, file)
 
 
+def winner(board_state):
+    # I love snake lang 🐍
+    for i in range(3):
+        # check for rows
+        if all(state == MENACE for state in board_state[i * 3 : i * 3 + 3]):
+            return MENACE
+        if all(state == PLAYER for state in board_state[i * 3 : i * 3 + 3]):
+            return PLAYER
+        # check for columns
+        if all(state == MENACE for state in board_state[i :: 3]):
+            return MENACE
+        if all(state == PLAYER for state in board_state[i :: 3]):
+            return PLAYER
+        # check for diagonals
+        if all(state == MENACE for state in board_state[i :: 4]):
+            return MENACE
+        if all(state == PLAYER for state in board_state[i :: 4]):
+            return PLAYER
+    return NO_ONE
+
+
+
 # TODO:
 # - check for wins, ties, or losses
 #   - update menace weights based on actions and outcome
