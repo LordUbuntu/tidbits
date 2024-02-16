@@ -11,6 +11,11 @@ from random import sample, choice, choices
 import json  # for persistent memory
 
 
+REWARD = 2
+TIE = 1
+PUNISH = 1
+
+
 NO_ONE = 0
 MENACE = 1
 PLAYER = 2
@@ -147,10 +152,15 @@ def main():
         # update board state with player move
         board_state[X] = PLAYER
 
+        # Check for winners
+
         win = winner(board_state)
         # reward MENACE for winning (more of the same beads)
         if win == MENACE:
-            continue
+            # add REWARD beads in the states that helped realize a win
+            for bead, state in actions:
+                for _ in range(REWARD):
+                    matchboxes[state].append(bead)
         # punish MENACE for losing (remove beads from matchboxes)
         elif win == PLAYER:
             continue
