@@ -161,15 +161,23 @@ def main():
             for bead, state in actions:
                 for _ in range(REWARD):
                     matchboxes[state].append(bead)
+            # show MENACE win
+            print("===== MENACE WINS =====")
+            input()
         # punish MENACE for losing (remove beads from matchboxes)
         elif win == PLAYER:
             # remove PUNISH beads in the states that realized the loss
             for bead, state in actions:
                 for _ in range(PUNISH):
                     matchboxes[state].remove(bead)
+            # show player win
+            print("===== YOU WIN =====")
+            input()
         # add a random bead for a tie
         elif len(open_tiles) <= 2:
-            continue
+            # show tie
+            print("===== TIE =====")
+            input()
     # store any learned memory
     save_memory(matchboxes)
 
