@@ -163,6 +163,7 @@ def main():
                     matchboxes[state].append(bead)
             # show MENACE win
             print("===== MENACE WINS =====")
+            break
         # punish MENACE for losing (remove beads from matchboxes)
         elif win == PLAYER:
             # remove PUNISH beads in the states that realized the loss
@@ -171,6 +172,7 @@ def main():
                     matchboxes[state].remove(bead)
             # show player win
             print("===== YOU WIN =====")
+            break
         # add a random bead for a tie
         elif len(open_tiles) <= 2:
             # add TIE beads to everything anyways
@@ -179,11 +181,10 @@ def main():
                     matchboxes[state].append(bead)
             # show tie
             print("===== TIE =====")
-        if win != NO_ONE:
-            show_board(board_state)
-            input()
-            # end the game
             break
+    # debug
+    print(board_state, open_tiles, actions, matchboxes)
+    show_board(board_state)
     # store any learned memory
     save_memory(matchboxes)
 
