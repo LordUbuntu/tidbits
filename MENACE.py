@@ -175,6 +175,10 @@ def main():
             input()
         # add a random bead for a tie
         elif len(open_tiles) <= 2:
+            # add TIE beads to everything anyways
+            for bead, state in actions:
+                for _ in range(TIE):
+                    matchboxes[state].append(bead)
             # show tie
             print("===== TIE =====")
             input()
