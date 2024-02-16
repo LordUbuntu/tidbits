@@ -157,13 +157,16 @@ def main():
         win = winner(board_state)
         # reward MENACE for winning (more of the same beads)
         if win == MENACE:
-            # add REWARD beads in the states that helped realize a win
+            # add REWARD beads in the states that realized the win
             for bead, state in actions:
                 for _ in range(REWARD):
                     matchboxes[state].append(bead)
         # punish MENACE for losing (remove beads from matchboxes)
         elif win == PLAYER:
-            continue
+            # remove PUNISH beads in the states that realized the loss
+            for bead, state in actions:
+                for _ in range(PUNISH):
+                    matchboxes[state].remove(bead)
         # add a random bead for a tie
         elif len(open_tiles) <= 2:
             continue
