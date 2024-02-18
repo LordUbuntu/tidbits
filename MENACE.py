@@ -116,7 +116,7 @@ def main():
         # show board state before
         clear()
         show_board(board_state)
-        sleep(1)
+        sleep(DELAY)
         # generate a matchbox if it doesn't exist for this board state
         if board_string(board_state) not in matchboxes:
             matchboxes.update({
