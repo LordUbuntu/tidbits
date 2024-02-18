@@ -93,11 +93,17 @@ def winner(board_state):
             return MENACE
         if all(state == PLAYER for state in board_state[i :: 3]):
             return PLAYER
-        # check for diagonals
-        if all(state == MENACE for state in board_state[i :: 4]):
-            return MENACE
-        if all(state == PLAYER for state in board_state[i :: 4]):
-            return PLAYER
+    # check for diagonals
+    #   check top-right to bottom-left
+    if all(state == MENACE for state in board_state[0 :: 4]):
+        return MENACE
+    if all(state == PLAYER for state in board_state[0 :: 4]):
+        return PLAYER
+    #   check top-left to bottom-right
+    if all(state == MENACE for state in board_state[0 : 7 : 2]):
+        return MENACE
+    if all(state == PLAYER for state in board_state[0 : 7 : 2]):
+        return PLAYER
     return NO_ONE
 
 
@@ -171,6 +177,7 @@ def main():
             for bead, state in actions:
                 for _ in range(REWARD):
                     matchboxes[state].append(bead)
+            print(board_state, winner(board_state), open_tiles)
             # show MENACE win
             print("===== MENACE WINS =====")
             break
