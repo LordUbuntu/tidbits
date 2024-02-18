@@ -3,6 +3,9 @@
 #   an early convolutional neural network. This program is a replication
 #   of the basic principle of MENACE in Python 3.
 # see: https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine
+# TODO:
+# - fix win checking order to be immediate
+# - make sure there's always 2 beads (pick random open tiles)
 from time import sleep
 from os.path import exists
 from os import system, name
