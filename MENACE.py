@@ -102,9 +102,6 @@ def winner(board_state):
 
 
 
-# TODO:
-# - check for wins, ties, or losses
-#   - update menace weights based on actions and outcome
 def main():
     # retrieve any memory if it exists
     matchboxes = load_memory()
