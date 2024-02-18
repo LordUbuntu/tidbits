@@ -112,20 +112,6 @@ def main():
     # start the game
     game_running = True
     while game_running:
-        # CHECK FOR A TIE
-        # add a random bead for a tie
-        if len(open_tiles) <= 0:
-            # show the board state
-            clear()
-            show_board(board_state)
-            # add TIE beads to everything anyways
-            for bead, state in actions:
-                for _ in range(TIE):
-                    matchboxes[state].append(bead)
-            # show tie
-            print("===== TIE =====")
-            break
-
         # MENACE TAKES ITS TURN
 
         # show board state before
@@ -212,6 +198,22 @@ def main():
             # show player win
             print("===== YOU WIN =====")
             break
+
+        # CHECK FOR A TIE
+
+        # add a random bead for a tie
+        if len(open_tiles) <= 0:
+            # show the board state
+            clear()
+            show_board(board_state)
+            # add TIE beads to everything anyways
+            for bead, state in actions:
+                for _ in range(TIE):
+                    matchboxes[state].append(bead)
+            # show tie
+            print("===== TIE =====")
+            break
+
     # store any learned memory
     save_memory(matchboxes)
 
