@@ -3,12 +3,16 @@
 #   an early convolutional neural network. This program is a replication
 #   of the basic principle of MENACE in Python 3.
 # see: https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine
+from time import sleep
 from itertools import chain
 from os.path import exists
 from os import system, name
 from random import randint as rand
 from random import sample, choice, choices
 import json  # for persistent memory
+
+
+DELAY = 0.5  # number of seconds to wait before displaying MENACE's move
 
 
 REWARD = 2
@@ -109,6 +113,10 @@ def main():
     while game_running:
         # MENACE takes its turn
 
+        # show board state before
+        clear()
+        show_board(board_state)
+        sleep(1)
         # generate a matchbox if it doesn't exist for this board state
         if board_string(board_state) not in matchboxes:
             matchboxes.update({
@@ -129,7 +137,7 @@ def main():
         # (must be int and in open_tiles)
         valid_input = False
         while not valid_input:
-            # display board state for player
+            # display board state after MENACE move before player move
             clear()
             show_board(board_state)
             try:
@@ -154,44 +162,39 @@ def main():
 
         # Check for winners
 
+
+        # show board state before winner decided or not
+        clear()
+        show_board(board_state)
+        # determine winners and train MENACE based on that
         win = winner(board_state)
-        print(board_state, win)
         # reward MENACE for winning (more of the same beads)
         if win == MENACE:
-            print("win change: \n", matchboxes)
             # add REWARD beads in the states that realized the win
             for bead, state in actions:
                 for _ in range(REWARD):
                     matchboxes[state].append(bead)
-            print(matchboxes)
             # show MENACE win
             print("===== MENACE WINS =====")
             break
         # punish MENACE for losing (remove beads from matchboxes)
         elif win == PLAYER:
-            print("lose change: \n", matchboxes)
             # remove PUNISH beads in the states that realized the loss
             for bead, state in actions:
                 for _ in range(PUNISH):
                     matchboxes[state].remove(bead)
-            print(matchboxes)
             # show player win
             print("===== YOU WIN =====")
             break
         # add a random bead for a tie
         elif len(open_tiles) <= 2:
-            print("tie change: \n", matchboxes)
             # add TIE beads to everything anyways
             for bead, state in actions:
                 for _ in range(TIE):
                     matchboxes[state].append(bead)
-            print(matchboxes)
             # show tie
             print("===== TIE =====")
             break
-    # debug
-    print(board_state, open_tiles, actions, matchboxes)
-    show_board(board_state)
     # store any learned memory
     save_memory(matchboxes)
 
