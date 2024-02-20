@@ -5,6 +5,7 @@
 # see: https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine
 # TODO:
 # - fix win checking order to be immediate
+#   order seems hard to fix, why?
 # - make sure there's always 2 beads (pick random open tiles)
 from time import sleep
 from os.path import exists
