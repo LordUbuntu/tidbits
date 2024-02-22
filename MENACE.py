@@ -108,7 +108,6 @@ def winner(board_state):
     return NO_ONE
 
 
-
 def main():
     # retrieve any memory if it exists
     matchboxes = load_memory()
