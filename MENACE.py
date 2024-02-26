@@ -43,6 +43,7 @@ actions = []    # A list of tuples to remember which beads were chosen
 matchboxes = {
     "         ": [0, 1, 2, 3, 4, 5, 6, 7, 8],
 }
+# TODO: add a way to record the number of generations the memory has trained through and display that
 # NOTE: interestingly, don't need to remember move order or number at all!
 
 
