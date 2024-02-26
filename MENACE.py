@@ -140,6 +140,11 @@ def main():
             matchboxes.update({
                 board_string(board_state): [*open_tiles]
             })
+        # generate a random bead if a matchbox is empty
+        if not matchboxes[board_string(board_state)]:
+            matchboxes.update({
+                board_string(board_state): [choice(open_tiles)]
+            })
         # menace picks a bead from the matchbox for the current state
         # and action is recorded for later backpropogation
         bead = choice(matchboxes[board_string(board_state)])
