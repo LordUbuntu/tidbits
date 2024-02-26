@@ -96,14 +96,14 @@ def winner(board_state):
             return PLAYER
     # check for diagonals
     #   check top-right to bottom-left
+    if all(state == MENACE for state in board_state[2 : 7 : 2]):
+        return MENACE
+    if all(state == PLAYER for state in board_state[2 : 7 : 2]):
+        return PLAYER
+    #   check top-left to bottom-right
     if all(state == MENACE for state in board_state[0 :: 4]):
         return MENACE
     if all(state == PLAYER for state in board_state[0 :: 4]):
-        return PLAYER
-    #   check top-left to bottom-right
-    if all(state == MENACE for state in board_state[0 : 7 : 2]):
-        return MENACE
-    if all(state == PLAYER for state in board_state[0 : 7 : 2]):
         return PLAYER
     return NO_ONE
 
