@@ -4,6 +4,8 @@
 #   version I deleted back in 2019 and consequently is much better than
 #   the old version. This rewrite was commissioned for my favourite class
 #   (a class about programming languages).
+#   This program was written once previously for fun but looked
+#   quite different at the time.
 import rdstdin, strutils, strformat
 
 var 
