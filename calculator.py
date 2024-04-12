@@ -1,4 +1,5 @@
 def calculate(s):
+    # todo: safety checks so this isn't just an interpreter
     return eval(s)
 
 
