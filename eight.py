@@ -23,7 +23,8 @@ FORTUNE = [
 def eightball(question: str) -> str:
     color = rgb(randint(0, 255), randint(0, 255), randint(0, 255))
     fortune = choice(FORTUNE)
-    
+    print("You asked {}".format(question))
+    print("Eightball says:" + color + fortune + constants.RESET)
 
 
 if __name__ == "__main__":
