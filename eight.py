@@ -1,6 +1,7 @@
 # Jacobus Burger (2024)
 # Magic eight ball on the command line!
 from color50 import rgb, constants
+from random import randint, choice
 
 FORTUNE = [
     "It is certain",
@@ -20,7 +21,9 @@ FORTUNE = [
 
 
 def eightball(question: str) -> str:
-    pass
+    color = rgb(randint(0, 255), randint(0, 255), randint(0, 255))
+    fortune = choice(FORTUNE)
+    
 
 
 if __name__ == "__main__":
