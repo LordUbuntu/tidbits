@@ -2,6 +2,7 @@
 # Magic eight ball on the command line!
 from color50 import rgb, constants
 from random import randint, choice
+from sys import argv
 
 FORTUNE = [
     "It is certain",
@@ -23,10 +24,10 @@ FORTUNE = [
 def eightball(question: str) -> str:
     color = rgb(randint(0, 255), randint(0, 255), randint(0, 255))
     fortune = choice(FORTUNE)
-    print("You asked {}".format(question))
-    print("Eightball says:" + color + fortune + constants.RESET)
+    print("You asked {}...".format(question))
+    print(color + fortune + constants.RESET)
 
 
 if __name__ == "__main__":
-    question = input()
+    question = ' '.join(argv[1:])
     eightball(question)
