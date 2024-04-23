@@ -1,5 +1,6 @@
 # Jacobus Burger (2024)
 # Magic eight ball on the command line!
+# TODO: make into a package
 from color50 import rgb, constants
 from random import randint, choice
 from sys import argv
