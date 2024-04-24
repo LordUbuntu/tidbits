@@ -8,6 +8,7 @@ from sys import argv
 FORTUNE = [
     "It is certain",
     "It is in the cards",
+    "It's in the game",
     "Yes",
     "Outlook good",
     "Signs point to yes",
@@ -15,10 +16,12 @@ FORTUNE = [
     "Ask again later",
     "Better not tell you now",
     "Concentrate and ask again",
+    "Did not hear, ask again",
     "Don't count on it",
     "My reply is no",
     "Outlook not so good",
-    "Very doubtful"
+    "Very doubtful",
+    "Not today"
 ]
 
 
