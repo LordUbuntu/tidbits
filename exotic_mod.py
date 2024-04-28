@@ -37,6 +37,11 @@ def curry_even(n):
     return "Even" if is_odd(n)(n) == True else "Odd"
 
 
+# precondition: user must know if n is even and specify ahead of time
+def insist_even(n, is_even):
+    return is_even
+
+
 def not_odd(n):
     if n % 2 != 1:
         return "Even"
