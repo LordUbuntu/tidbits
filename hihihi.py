@@ -6,4 +6,4 @@
 #   excitement from that time in a dream, and wanted to take this
 #   moment to celebrate it.
 while True:
-    print("hi", end=' ')
+    print("Hello World!", end=' ')
