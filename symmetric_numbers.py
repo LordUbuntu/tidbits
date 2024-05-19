@@ -36,4 +36,8 @@ def cleave(n):
 
 
 def is_symmetric(n):
-    pass
+    a, b = 0, 0
+    # cleave n into symmetric sides a and b
+    # geometric reverse b
+    # return comparison of a and b
+    return a == b
