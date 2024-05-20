@@ -9,22 +9,9 @@
 #   opposites, and then finally comparing that with the first half for
 #   a match.
 
-# list of symmetric opposites
-# notice that some numbers are their own symmetric opposites. This
-# relation could be graphed into a FSA
-sym = {
-    0: 0,
-    1: 1,
-    2: 5,
-    5: 2,
-    6: 9,
-    8: 8,
-    9: 6
-}
-
 
 def cleave(n):
-    """split a number into two numbers down the middle"""
+    """split a number into two numbers down the middle including the overlapping middle digit in both if its length is odd"""
     s = str(n)
     if len(s) % 2 == 0:
         a = s[:len(s) // 2]
@@ -33,6 +20,31 @@ def cleave(n):
         a = s[:len(s) // 2 + 1]
         b = s[len(s) // 2:]
     return [int(a), int(b)]
+
+
+# list of symmetric opposites
+# notice that some numbers are their own symmetric opposites. This
+# relation could be graphed into a FSA
+sym_opp = {
+    0: 0,
+    1: 1,
+    2: 5,
+    5: 2,
+    6: 9,
+    8: 8,
+    9: 6
+}
+def geometric_reverse(n):
+    """reverse a number after converting its digits to their geometric opposites"""
+    ds = [int(d) for d in str(n)]
+    # substitute digits with their symmetric opposite
+    for i in range(len(ds)):
+        if ds[i] in sym_opp:
+            ds[i] = sym_opp[ds[i]]
+    # reverse the order of the digits
+    ds.reverse()
+    # return the geometric reversed number
+    return int(''.join(map(str, ds)))
 
 
 def is_symmetric(n):
