@@ -48,8 +48,9 @@ def geometric_reverse(n):
 
 
 def is_symmetric(n):
-    a, b = 0, 0
     # cleave n into symmetric sides a and b
+    a, b = cleave(n)
     # geometric reverse b
+    b = geometric_reverse(b)
     # return comparison of a and b
     return a == b
