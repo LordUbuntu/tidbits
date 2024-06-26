@@ -11,6 +11,10 @@ import re
 from sys import argv
 
 
+def c(k):
+    """Convert from Kelvin to Celcius"""
+    pass
+
 def c(f):
     """Convert from Farenheit to Celcius"""
     return (f - 32) * (5/9)
@@ -19,6 +23,12 @@ def c(f):
 def f(c):
     """Convert from Celcius to Farenheit"""
     return c * (5/9) + 32
+
+
+def f(k):
+    """Convert from Kelvin to Farenheit"""
+    pass
+
 
 
 def kg(lb):
