@@ -30,6 +30,15 @@ def f(k):
     return (k - 273.15) * (9/5) + 32
 
 
+def k(f):
+    """Convert from Farenheit to Kelvin"""
+    return (f - 32) * (5/9) + 273.15
+
+
+def k(c):
+    """Convert from Celcius to Kelvin"""
+    return c + 273.15
+
 
 def kg(lb):
     return lb * 0.45359237
