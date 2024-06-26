@@ -13,7 +13,7 @@ from sys import argv
 
 def c(k):
     """Convert from Kelvin to Celcius"""
-    pass
+    return k - 273.15
 
 def c(f):
     """Convert from Farenheit to Celcius"""
@@ -27,7 +27,7 @@ def f(c):
 
 def f(k):
     """Convert from Kelvin to Farenheit"""
-    pass
+    return (k - 273.15) * (9/5) + 32
 
 
 
