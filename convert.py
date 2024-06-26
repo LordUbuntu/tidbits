@@ -11,9 +11,14 @@ import re
 from sys import argv
 
 
-def C(f):
+def c(f):
     """Convert from Farenheit to Celcius"""
     return (f - 32) * (5/9)
+
+
+def f(c):
+    """Convert from Celcius to Farenheit"""
+    return c * (5/9) + 32
 
 
 def kg(lb):
