@@ -3,7 +3,7 @@
 from random import choice
 
 def basic_panagram():
-    
+    """Shows one of a set of fixed panagrams"""
     PANAGRAMS = [
         "Waltz, bad nymph, for quick jigs vex.",
         "Glib jocks quiz nymph to vex dwarf.",
