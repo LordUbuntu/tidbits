@@ -2,6 +2,8 @@
 # A program that generates panagrams, maybe could be used to preview fonts without it getting boring?
 from random import choice
 
+
+# TODO: find a way to autogenerate these from dictionary files
 def basic_panagram():
     """Shows one of a set of fixed panagrams"""
     PANAGRAMS = [
