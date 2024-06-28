@@ -1,5 +1,5 @@
-# Jacobus Burger (2023)
-# Happy New Years (2023->2024)!
+# Jacobus Burger (2023) Happy New Years (2023->2024)!
+# This one prints a sequence of ascii frames representing a fiework explosion!
 from time import sleep
 from os import name, system
 from random import choice
