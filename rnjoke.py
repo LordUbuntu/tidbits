@@ -6,7 +6,11 @@ from random import choice
 
 
 def rng():
-    digits = [int(digit) if digit != '.' else 0 for digit in str(pi)]
+    digits = [
+        int(digit)
+        if digit != '.' else 0
+        for digit in str(pi)
+    ]
     return choice(digits)
 
 
