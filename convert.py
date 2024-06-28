@@ -42,3 +42,7 @@ def k(c):
 
 def kg(lb):
     return lb * 0.45359237
+
+
+def lb(kg):
+    return kg * 2.20462
