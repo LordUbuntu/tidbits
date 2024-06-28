@@ -10,4 +10,5 @@ def rng():
     return choice(digits)
 
 
-print(rng())
+if __name__ == '__main__':
+    print(rng())
