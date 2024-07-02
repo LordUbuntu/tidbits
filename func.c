@@ -19,8 +19,6 @@
 
 
 
-
-
 // standard functions
 int add(int a, int b) {
         return a + b;
@@ -34,6 +32,8 @@ int mul(int a, int b) {
 int div(int a, int b) {
         return a / b;
 }
+
+
 
 // higher order functions
 void filter(bool (*f)(int), int *A, int *B, size_t length) {
@@ -66,40 +66,6 @@ int reduce(int (*f)(int, int), int *A, size_t length) {
 
 
 
-
-
-// demo of ADT's
-typedef struct {
-        char *id;
-        unsigned health;
-        int speed;
-        int x, y;
-} player;
-player move(player p, int delta) {
-        // the power of pass-by-value
-        p.speed += delta;
-        return p;
-}
-player damage(player p, int points) {
-        if (points > p.health)
-                p.health = 0;
-        p.health -= points;
-        return p;
-}
-typedef struct {
-        char *name;
-        int total;
-} score;
-score tally(const score user, int *points, size_t length) {
-        score s = {user.name, 0};
-        s.total = reduce(&add, points, length);
-        return s;
-}
-
-
-
-
-
 int main(void) {
         // demo higher order functions
         int A[5] = {1, 2, 3, 4, 5};
@@ -128,18 +94,4 @@ int main(void) {
         printf("reduce add of A: %i\n\n", reduce(&add, A, 5));
 
 
-        // demo game with player
-        player a = {"AE13", 10, 0, 1, 1};
-        player b = move(a, 10);
-        printf("a: %s %u %i %i %i\n", a.id, a.health, a.speed, a.x, a.y);
-        printf("b: %s %u %i %i %i\n", b.id, b.health, b.speed, b.x, b.y);
-        b = move(b, 2);
-        b = damage(b, 3);
-        printf("a: %s %u %i %i %i\n", a.id, a.health, a.speed, a.x, a.y);
-        printf("b: %s %u %i %i %i\n\n", b.id, b.health, b.speed, b.x, b.y);
-
-        // demo scorekeeping with higher order functions
-        score user = {"Jay", 0};
-        user = tally(user, A, 5);
-        printf("score of user %s: %i\n", user.name, user.total);
 }
