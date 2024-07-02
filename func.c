@@ -22,7 +22,7 @@
 
 
 // standard functions
-int sum(int a, int b) {
+int add(int a, int b) {
         return a + b;
 }
 int product(int a, int b) {
@@ -86,7 +86,7 @@ typedef struct {
 } score;
 score tally(const score user, int *points, size_t length) {
         score s = {user.name, 0};
-        s.total = reduce(&sum, points, length);
+        s.total = reduce(&add, points, length);
         return s;
 }
 
@@ -105,9 +105,9 @@ int main(void) {
         printf("%c: %i %i %i %i %i\n", 'B', B[0], B[1], B[2], B[3], B[4]);
         printf("%c: %i %i %i %i %i\n\n", 'C', C[0], C[1], C[2], C[3], C[4]);
 
-        map(&sum, A, B, C, 5);
+        map(&add, A, B, C, 5);
 
-        puts("lists with sum function:");
+        puts("lists with add function:");
         printf("%c: %i %i %i %i %i\n", 'A', A[0], A[1], A[2], A[3], A[4]);
         printf("%c: %i %i %i %i %i\n", 'B', B[0], B[1], B[2], B[3], B[4]);
         printf("%c: %i %i %i %i %i\n\n", 'C', C[0], C[1], C[2], C[3], C[4]);
@@ -119,7 +119,7 @@ int main(void) {
         printf("%c: %i %i %i %i %i\n", 'B', B[0], B[1], B[2], B[3], B[4]);
         printf("%c: %i %i %i %i %i\n\n", 'C', C[0], C[1], C[2], C[3], C[4]);
 
-        printf("reduce sum of A: %i\n\n", reduce(&sum, A, 5));
+        printf("reduce add of A: %i\n\n", reduce(&add, A, 5));
 
 
         // demo game with player
