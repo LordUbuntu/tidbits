@@ -35,6 +35,11 @@ int div(int a, int b) {
 
 
 
+// ADT
+typedef void* any;
+
+
+
 // higher order functions
 void filter(bool (*f)(int), int *A, int *B, size_t length) {
         // preconditions:
