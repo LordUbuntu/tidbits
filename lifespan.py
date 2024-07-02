@@ -25,6 +25,7 @@ def parse_date(user_date):
 
 
 def main():
+    # assumes this is before the 10000's or year would be YYYYY
     birthday = parse_date(input("when were you born (YYYY-MM-DD)? "))
     age(birthday)
 
