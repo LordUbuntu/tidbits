@@ -7,8 +7,7 @@ int main(int argc, char *argv[])
         if (argc < 1) {
                 puts("~ACHU~");
         }
-        for (int i = 1; i < argc; i++) {
+        for (int i = 1; i < argc; i++)
                 printf("%sachu ", argv[i]);
-        }
         puts("*sniffle*");
 }
