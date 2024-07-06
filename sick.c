@@ -24,8 +24,10 @@ int main(int argc, char *argv[])
         bool every = false;
         string word = "achu";
         for (int i = 1; i < argc; i++) {
+                if (strcmp(argv[1], "--every") == 0 || strcmp(argv[1], "-e") == 0)
+                        every = true;
         }
-        if (strcmp(argv[1], "--every") == 0 || strcmp(argv[1], "-e") == 0) {
+        if (every) {
                 for (int i = 2; i < argc; i++)
                         printf("%sachu ", argv[i]);
         } else {
