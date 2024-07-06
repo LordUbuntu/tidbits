@@ -29,11 +29,11 @@ int main(int argc, char *argv[])
         }
         if (every) {
                 for (int i = 2; i < argc; i++)
-                        printf("%sachu ", argv[i]);
+                        printf("%s%s ", argv[i], word);
         } else {
                 for (int i = 1; i < argc - 1; i++)
                         printf("%s ", argv[i]);
-                printf("%sachu ", argv[argc - 1]);
+                printf("%s%s ", argv[argc - 1], word);
         }
         puts("*sniffle*");
 }
