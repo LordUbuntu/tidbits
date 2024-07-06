@@ -11,7 +11,6 @@ void help_info() {
         puts("");
         puts("With no OPTION, will only add an 'achu' at the end of sentence.");
         puts("  -e, --every     adds a sneeze to the end of every word");
-        return;
 }
 
 int main(int argc, char *argv[])
@@ -19,13 +18,21 @@ int main(int argc, char *argv[])
         // show help info
         if (argc <= 1 || strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
                 help_info();
+                return;
         }
         // process args
         bool every = false;
         string word = "achu";
         for (int i = 1; i < argc; i++) {
-                if (strcmp(argv[1], "--every") == 0 || strcmp(argv[1], "-e") == 0)
+                if (strcmp(argv[i], "--every") == 0 || strcmp(argv[i], "-e") == 0)
                         every = true;
+                // set new sound if defined
+                if (strcmp(argv[i], "--word") == 0 || strcmp(argv[i], "-w") == 0) {
+                        word = i + 1 < argc ? argv[i + 1] : "";
+                if (strcmp(word, "") == 0) {
+                        help_info();
+                        return;
+                }
         }
         if (every) {
                 for (int i = 2; i < argc; i++)
