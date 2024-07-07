@@ -19,20 +19,24 @@ int main(int argc, char *argv[])
         // show help info
         if (argc <= 1 || strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
                 help_info();
-                return;
+                return 1;
         }
         // process args
         bool every = false;
-        string sound = "achu";
+        char sound[2048] = "achu"; // temp solution because I fear alloc
         for (int i = 1; i < argc; i++) {
                 if (strcmp(argv[i], "--every") == 0 || strcmp(argv[i], "-e") == 0)
                         every = true;
                 // set new sound if defined
                 if (strcmp(argv[i], "--sound") == 0 || strcmp(argv[i], "-s") == 0) {
-                        sound = i + 1 < argc ? argv[i + 1] : "";
+                        if (i + 1 < argc)
+                                strcpy(sound, argv[i + 1]);
+                        else
+                                strcpy(sound, "");
+                }
                 if (strcmp(sound, "") == 0) {
                         help_info();
-                        return;
+                        return 1;
                 }
         }
         if (every) {
@@ -44,4 +48,5 @@ int main(int argc, char *argv[])
                 printf("%s%s ", argv[argc - 1], sound);
         }
         puts("*sniffle*");
+        return 0;
 }
