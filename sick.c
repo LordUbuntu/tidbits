@@ -25,22 +25,27 @@ int main(int argc, char *argv[])
         bool every = false;
         char sound[2048] = "achu"; // temp solution because I fear alloc
         for (int i = 1; i < argc; i++) {
-                if (strcmp(argv[i], "--every") == 0 || strcmp(argv[i], "-e") == 0)
+                if (strcmp(argv[i], "--every") == 0 || strcmp(argv[i], "-e") == 0) {
                         every = true;
+                        strcpy(argv[i], "");
+                }
                 // set new sound if defined
                 if (strcmp(argv[i], "--sound") == 0 || strcmp(argv[i], "-s") == 0) {
-                        if (i + 1 < argc)
+                        if (i + 1 < argc) {
                                 strcpy(sound, argv[i + 1]);
-                        else
+                                strcpy(argv[i + 1], "");
+                        } else {
                                 strcpy(sound, "");
-                }
-                if (strcmp(sound, "") == 0) {
-                        help_info();
-                        return 1;
+                        }
+                        strcpy(argv[i], "");
+                        if (strcmp(sound, "") == 0) {
+                                help_info();
+                                return 1;
+                        }
                 }
         }
         if (every) {
-                for (int i = 2; i < argc; i++)
+                for (int i = 1; i < argc; i++)
                         printf("%s%s ", argv[i], sound);
         } else {
                 for (int i = 1; i < argc - 1; i++)
