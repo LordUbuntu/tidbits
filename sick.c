@@ -46,10 +46,12 @@ int main(int argc, char *argv[])
         }
         if (every) {
                 for (int i = 1; i < argc; i++)
-                        printf("%s%s ", argv[i], sound);
+                        if (strcmp(argv[i], "") != 0)
+                                printf("%s%s ", argv[i], sound);
         } else {
                 for (int i = 1; i < argc - 1; i++)
-                        printf("%s ", argv[i]);
+                        if (strcmp(argv[i], "") != 0)
+                                printf("%s ", argv[i]);
                 printf("%s%s ", argv[argc - 1], sound);
         }
         puts("*sniffle*");
