@@ -11,6 +11,7 @@ pub fn main() {
     12 -> "...And a partridge in a pair tree!"
     13 -> "🐍 Very Lucky!"
     42 -> "⭐ you found it!"
+    96 -> "Symmetry!"
     _ -> "(Nothing Happens)"
   }
   io.println(outcome)
