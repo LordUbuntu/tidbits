@@ -8,6 +8,7 @@ pub fn main() {
   let outcome = case num {
     3 -> "I'm three!!!"
     7 -> "Lucky!"
+    11 -> "Symmetric!"
     12 -> "...And a partridge in a pair tree!"
     13 -> "🐍 Very Lucky!"
     42 -> "⭐ you found it!"
