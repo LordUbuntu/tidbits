@@ -11,6 +11,7 @@ pub fn main() {
     11 -> "Symmetric!"
     12 -> "...And a partridge in a pair tree!"
     13 -> "🐍 Very Lucky!"
+    33 -> "⭐ Super Lucky!"
     42 -> "⭐ you found it!"
     69 -> "☯️ Yin-Yang"
     96 -> "Symmetry!"
