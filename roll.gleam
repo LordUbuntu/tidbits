@@ -5,7 +5,7 @@ import gleam/int
 
 
 pub fn main() {
-  let num = int.random(1, 50)
+  let num = int.random(1, 100)
   let outcome = case num {
     3 -> "I'm three!!!"
     7 -> "Lucky!"
@@ -14,7 +14,7 @@ pub fn main() {
     12 -> "...And a partridge in a pair tree!"
     13 -> "🐍 Very Lucky!"
     33 -> "⭐ Super Lucky!"
-    42 -> "⭐ you found it!"
+    42 -> "What doth life?!"
     69 -> "☯️ Yin-Yang"
     96 -> "Symmetry!"
     _ -> "(Nothing Happens)"
