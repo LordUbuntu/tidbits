@@ -19,5 +19,5 @@ pub fn main() {
     96 -> "Symmetry!"
     _ -> "(Nothing Happens)"
   }
-  io.println(outcome)
+  io.println(num <> ": " <> outcome)
 }
