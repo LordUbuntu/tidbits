@@ -13,6 +13,7 @@ pub fn main() {
     11 -> "Symmetric!"
     12 -> "...And a partridge in a pair tree!"
     13 -> "🐍 Very Lucky!"
+    14 -> "󰱯 Very Unlucky!"
     33 -> "⭐ Super Lucky!"
     42 -> "What doth life?!"
     69 -> "☯️ Yin-Yang"
