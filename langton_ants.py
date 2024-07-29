@@ -29,7 +29,10 @@ def next_state(symbol: str, move: list):
     if rotation == 'R':   # CW
         next_move = next(DIRECTIONS)
     elif rotation == 'L': # CCW
-        for _ in range(3):  # 3 forward on a 4-cycle is the same as 1 backward
+        # there must be a better way
+        for _ in range(3):  # jump forward 3 on the 4-cycle in
+                            # DIRECTIONS to go backwards once in
+                            # the cycle
             next_move = next(DIRECTIONS)
     # return state change tuple
     return (next_symbol, next_move)
