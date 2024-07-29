@@ -1,5 +1,6 @@
 # Jacobus Burger (2022)
 # I thought about exotic ways of doing a simple evenness test in python
+from random import randint as random
 
 
 def index_even(n):
@@ -46,3 +47,11 @@ def not_odd(n):
     if n % 2 != 1:
         return "Even"
     return "Odd"
+
+
+def probably_even(n):
+    if random(0, 1) == 0:
+        return "Even"
+    else:
+        return "Odd"
+    
