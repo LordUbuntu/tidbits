@@ -4,7 +4,8 @@
 ;		One of my first programs. The very first was action-script (man I'm old).
 ;		Just a bog-standard hello world program written in assembly.
 section .data
-	msg db "你好, 世界!", 10, "Bonjour, le monde!", 10, "Hello, World!", 10, "Hola, mundo!", 10, 0
+        ; NOTE: 10 is \n, 0 is \0
+	msg db "你好, 世界!", 10, "Bonjour, le monde!", 10, "Hello, World!", 10, "Hola, mundo!", 10, 10, 0
 	len equ $ - msg
 
 section .text
