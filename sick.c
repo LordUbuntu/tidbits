@@ -7,7 +7,7 @@
 
 void help_info() {
         puts("Usage: sick [OPTION] ... [soundS] ...");
-        puts("Adds sneezing sounds to the end of a sentence or each sound.");
+        puts("Adds sneezing sounds to the end of words");
         puts("");
         puts("With no OPTION, will only add an 'achu' at the end of sentence.");
         puts("  -e, --every     adds a sneeze to the end of every sound");
