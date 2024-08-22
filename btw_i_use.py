@@ -6,7 +6,7 @@
 #   little script.
 def main():
     symbol = input() or 'arch '
-    print(f"BTW, I use {symbol} ;)")
+    print(f"I use {symbol} BTW ;)")
 
 
 if __name__ == '__main__':
