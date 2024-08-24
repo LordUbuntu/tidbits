@@ -4,4 +4,4 @@
 
 
 def reverse(msg: str) -> str:
-    pass
+    return msg[::-1]  # txet esrever ot ecils tsil
