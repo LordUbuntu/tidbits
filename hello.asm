@@ -5,7 +5,7 @@
 ;		Just a bog-standard hello world program written in assembly.
 section .data
         ; NOTE: 10 is \n, 0 is \0
-	msg db "你好, 世界!", 10, "Bonjour, le monde!", 10, "Hello, World!", 10, "Hola, mundo!", 10, 10, 0
+	msg db "你好 世界!", 10, "Bonjour le monde!", 10, "Hello world!", 10, "Hola mundo!", 10, 10, 0
 	len equ $ - msg
 
 section .text
