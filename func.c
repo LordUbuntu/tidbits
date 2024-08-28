@@ -40,6 +40,7 @@ int pow(int a, int n) {
 
 // ADT
 typedef void* any;
+typedef struct {any result; int error;} option;
 
 
 
@@ -92,7 +93,7 @@ int main(void) {
         printf("%c: %i %i %i %i %i\n", 'B', B[0], B[1], B[2], B[3], B[4]);
         printf("%c: %i %i %i %i %i\n\n", 'C', C[0], C[1], C[2], C[3], C[4]);
 
-        map(&product, A, B, C, 5);
+        map(&mul, A, B, C, 5);
 
         puts("lists with product function:");
         printf("%c: %i %i %i %i %i\n", 'A', A[0], A[1], A[2], A[3], A[4]);
