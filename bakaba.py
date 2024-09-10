@@ -9,8 +9,8 @@
 #   here is my attempt at that.
 
 
+# TODO: replace to recognize pattern using sliding window method instead
 def bakaba(repetitions, string):
-    # TODO: replace to recognize pattern using sliding window method instead
     cap = string[0:2]
     pattern = string[2 : len(string) - 2]
     return cap + (pattern * repetitions) + cap
