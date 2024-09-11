@@ -13,6 +13,10 @@
  * helpful is space is an important concern, but it does introduce some
  * esoteric boilerplate to be accomplished, so it may only find use in
  * some particular use-cases.
+ *
+ * An interesting problem to solve here is how to extend this to pack
+ * larger data types than raw bits, and how to write a wrapper for that
+ * to make it very easy to keep things orderly.
  */
 #define set_base(bases, value, offset) \
         bases = bases | ((uint8_t)value << (2 * offset))
@@ -44,7 +48,7 @@ int
 main(void)
 {
         ///// Test for bools bit-packing /////
-        int A = 0b0000;  // Frendly, Human, Wise, Shrewd - bools
+        int A = 0b0000;
         set_bool(0, &A, 1);
         set_bool(3, &A, 1);
         printf("%x : %i%i%i%i\n", A, get_bool(3, A), get_bool(2, A), get_bool(1, A), get_bool(0, A));
