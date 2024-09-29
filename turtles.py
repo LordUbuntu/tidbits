@@ -73,6 +73,9 @@ def odd(amplitude):
 
 
 def knight(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
     turtle.home()
     for i in range(steps):
         if rand(0, 1):
@@ -87,6 +90,9 @@ def knight(steps):
 
 
 def queen(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
     turtle.home()
     turtle.right(rand(0, 8) * 45)
     for i in range(steps):
@@ -95,6 +101,9 @@ def queen(steps):
 
 
 def king(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
     turtle.home()
     for i in range(steps):
         turtle.right(rand(0, 8) * 45)
