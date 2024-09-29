@@ -88,6 +88,14 @@ def knight(steps):
 
 def queen(steps):
     turtle.home()
+    turtle.right(rand(0, 8) * 45)
+    for i in range(steps):
+        turtle.forward(3)
+    turtle.exitonclick()
+
+
+def king(steps):
+    turtle.home()
     for i in range(steps):
         turtle.right(rand(0, 8) * 45)
         turtle.forward(3)
