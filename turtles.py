@@ -40,7 +40,6 @@ def spiral():
     for i in range(100):
         turtle.forward(i)
         turtle.left(15)
-    turtle.exitonclick()
 
 
 # draw a circle without using circle
@@ -49,7 +48,6 @@ def circle():
     for i in range(360):
         turtle.forward(1)
         turtle.left(1)
-    turtle.exitonclick()
 
 
 # creates patterns from cycles of unequal opposing rotation and action
@@ -69,7 +67,6 @@ def odd(amplitude):
             turtle.forward(5 * amplitude)
             turtle.left(30 * amplitude)
         turtle.forward(5)
-    turtle.exitonclick()
 
 
 def knight(steps):
@@ -86,7 +83,6 @@ def knight(steps):
             turtle.right(90)
         else:
             turtle.left(90)
-    turtle.exitonclick()
 
 
 def queen(steps):
@@ -97,7 +93,6 @@ def queen(steps):
     turtle.right(rand(0, 8) * 45)
     for i in range(steps):
         turtle.forward(3)
-    turtle.exitonclick()
 
 
 def king(steps):
@@ -108,7 +103,6 @@ def king(steps):
     for i in range(steps):
         turtle.right(rand(0, 8) * 45)
         turtle.forward(3)
-    turtle.exitonclick()
 
 
 def line():
