@@ -41,8 +41,11 @@ def k(c):
 
 
 def kg(lb):
+    """Convert from pounds to kilograms"""
     return lb * 0.45359237
 
 
 def lb(kg):
+    """Convert from kilograms to pounds"""
     return kg * 2.20462
+
