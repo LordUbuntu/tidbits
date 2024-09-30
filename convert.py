@@ -49,3 +49,12 @@ def lb(kg):
     """Convert from kilograms to pounds"""
     return kg * 2.20462
 
+
+def m(in):
+    """Convert from inches to meters"""
+    return in * 0.0254
+
+
+def in(m):
+    """Convert from meters to inches"""
+    return m * 39.3701
