@@ -51,6 +51,15 @@ def sign_disc(char: str, radius: int):
         print(" "*int(radius * sin(row)), end=f"{char}\n")
 
 
+def sign_worm(char: str, radius: int):
+    print("""
+               ##_
+   ###        #
+  #   #       #
+##     #######
+    """)
+
+
 if __name__ == '__main__':
     print("pythagoras")
     sign_pythagoras("-", 3)
