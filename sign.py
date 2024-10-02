@@ -51,12 +51,24 @@ def sign_disc(char: str, radius: int):
         print(" "*int(radius * sin(row)), end=f"{char}\n")
 
 
-def sign_worm(char: str, radius: int):
+def sign_worm():
     print("""
                ##_
    ###        #
   #   #       #
 ##     #######
+    """)
+
+
+def sign_cross():
+    print("""
+  #
+  #
+#####
+  #
+  #
+  #
+  #
     """)
 
 
