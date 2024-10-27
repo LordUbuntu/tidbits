@@ -1,7 +1,5 @@
 # Jacobus Burger (2023)
-# A demo of Langton's Ants
-
-
+# A demo of Langton's Ants using NCurses
 from random import randint
 from time import sleep
 from itertools import cycle
@@ -11,8 +9,9 @@ SYM1 = ' '
 SYM2 = '@'
 SYM3 = '+'
 SYM4 = '.'
-STATE_TRANSITIONS = {   # current state and associated state transition
-                        # see: https://en.wikipedia.org/wiki/Langton%27s_ant
+# current state and associated state transition
+# see: https://en.wikipedia.org/wiki/Langton%27s_ant
+STATE_TRANSITIONS = {
     SYM1: (SYM2, 'L'),
     SYM2: (SYM3, 'R'),
     SYM3: (SYM4, 'L'),
@@ -42,6 +41,7 @@ def ants(stdscr):
     import curses
     # begin program
     stdscr.refresh()
+    stdscr.nodelay(True)
     ant_position = [randint(0, curses.COLS), randint(0, curses.LINES)]
     move = [1, 0]
     while True:
@@ -52,12 +52,19 @@ def ants(stdscr):
         # update screen
         stdscr.addch(ant_position[1], ant_position[0], symbol)
         stdscr.refresh()
+        char = stdscr.getch()
+        if char == 'q':
+            break
         sleep(SPEED)
         # move to next position
         ant_position = [
             (ant_position[0] + move[0]) % curses.COLS,
             (ant_position[1] + move[1]) % curses.LINES,
         ]
+    # save user from curses
+    stdscr.keypad(False)
+    curses.echo()
+    curses.endwin()
 
 
 if __name__ == "__main__":
