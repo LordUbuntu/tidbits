@@ -40,6 +40,7 @@ def next_state(symbol: str, move: list):
 def ants(stdscr):
     import curses
     # begin program
+    curses.curs_set(0)
     stdscr.refresh()
     stdscr.nodelay(True)
     ant_position = [randint(0, curses.COLS), randint(0, curses.LINES)]
