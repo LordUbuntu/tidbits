@@ -37,7 +37,7 @@ def next_state(symbol: str, move: list):
     return (next_symbol, next_move)
 
 
-def ants(stdscr):
+def ants():
     # begin curses
     import curses
     stdscr = curses.initscr()
@@ -49,7 +49,12 @@ def ants(stdscr):
     stdscr.nodelay(True)
     ant_position = [randint(0, curses.COLS), randint(0, curses.LINES)]
     move = [1, 0]
+    # start main loop
     while True:
+        # check if user wants to quit
+        c = stdscr.getch()
+        if c == ord('q'):
+            break
         # get current character
         symbol = chr(stdscr.inch(ant_position[1], ant_position[0]) & 0xFF)
         # update state of automata
@@ -57,16 +62,14 @@ def ants(stdscr):
         # update screen
         stdscr.addch(ant_position[1], ant_position[0], symbol)
         stdscr.refresh()
-        char = stdscr.getch()
-        if char == 'q':
-            break
+        # wait until next frame
         sleep(SPEED)
         # move to next position
         ant_position = [
             (ant_position[0] + move[0]) % curses.COLS,
             (ant_position[1] + move[1]) % curses.LINES,
         ]
-    # save user from curses
+    # end curses
     stdscr.keypad(False)
     curses.echo()
     curses.endwin()
