@@ -38,6 +38,7 @@ def next_state(symbol: str, move: list):
 
 
 def ants():
+    global SPEED
     # begin curses
     import curses
     stdscr = curses.initscr()
@@ -51,10 +52,14 @@ def ants():
     move = [1, 0]
     # start main loop
     while True:
-        # check if user wants to quit
+        # receive user interrupts
         c = stdscr.getch()
         if c == ord('q'):
-            break
+            break  # quit
+        if c == ord('+'):
+            SPEED = max(SPEED - 0.1, 0.1)
+        if c == ord('-'):
+            SPEED = min(SPEED + 0.1, 3)
         # get current character
         symbol = chr(stdscr.inch(ant_position[1], ant_position[0]) & 0xFF)
         # update state of automata
