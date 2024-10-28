@@ -38,9 +38,13 @@ def next_state(symbol: str, move: list):
 
 
 def ants(stdscr):
+    # begin curses
     import curses
-    # begin program
+    stdscr = curses.initscr()
+    curses.noecho()
+    curses.cbreak()
     curses.curs_set(0)
+    # init application
     stdscr.refresh()
     stdscr.nodelay(True)
     ant_position = [randint(0, curses.COLS), randint(0, curses.LINES)]
@@ -69,5 +73,4 @@ def ants(stdscr):
 
 
 if __name__ == "__main__":
-    from curses import wrapper
-    wrapper(ants)
+    ants()
