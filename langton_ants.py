@@ -57,9 +57,9 @@ def ants():
         if c == ord('q'):
             break  # quit
         if c == ord('='):
-            SPEED = max(SPEED - 0.1, 0.1)
+            SPEED = max(SPEED - 0.01, 0.01)
         if c == ord('-'):
-            SPEED = min(SPEED + 0.1, 2)
+            SPEED = min(SPEED + 0.1, 0.1)
         # get current character
         symbol = chr(stdscr.inch(ant_position[1], ant_position[0]) & 0xFF)
         # update state of automata
