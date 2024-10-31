@@ -1,6 +1,8 @@
 # TidBits
 
-If programming were doodling...
+Also known as:
+* My Coding Crucible
+* My Doodle Page of Code
 
 ## Description
 
@@ -12,7 +14,7 @@ This repository is my personal wilderness of code.
 * Programming experiments.
 * And more.
 
-This repository acts like a doodle page of programming. For programs that aren't big enough for their own repository or that I haven't figured out a better place for yet. This repository is not a complete collection of all the code I've ever written, but it is a great opportunity to see what I've done and peer into my mind. Please, have a browse and enjoy!
+This repository acts like a doodle page of programming. A crucible to develop and test ideas that might not yet deserve their own repository. A place for programs that aren't big enough for their own repository or that I haven't figured out a better place for yet. This repository is not a complete collection of all the code I've ever written, but it is a great opportunity to see what I've done and peer into my mind. Please, have a browse and enjoy!
 
 ## Notes
 
