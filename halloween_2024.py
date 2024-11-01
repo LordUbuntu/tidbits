@@ -7,7 +7,7 @@ from time import sleep
 from os import system, name
 
 
-lyrics = [
+lyric = [
     "(It did the mash)",
     "It did the ~monster mash~",
     "(A graveyard smash)",
@@ -32,3 +32,16 @@ animation = [
 
 def clear():
     system("cls" if name == "nt" else "clear")
+
+
+def main():
+    while True:
+        for a in range(4):
+            for b in range(4):
+                clear()
+                print(f"{lyric[a]}\n\n{animation[b]}\n\n\nHappy Halloween 2024!")
+                sleep(0.5)
+
+
+if __name__ == "__main__":
+    main()
