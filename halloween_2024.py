@@ -4,6 +4,7 @@
 # This year, the "Monster Mash" song inspired me to make a cute little
 #   dance and lyrics thing for it from ascii
 from time import sleep
+from os import system, name
 
 
 lyrics = [
@@ -27,3 +28,7 @@ animation = [
     <(._.)>
     """
 ]
+
+
+def clear():
+    system("cls" if name == "nt" else "clear")
