@@ -40,7 +40,7 @@ def main():
             for b in range(4):
                 clear()
                 print(f"{lyric[a]}\n\n{animation[b]}\n\n\nHappy Halloween 2024!")
-                sleep(0.5)
+                sleep(0.4)
 
 
 if __name__ == "__main__":
