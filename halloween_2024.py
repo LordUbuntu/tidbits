@@ -5,13 +5,16 @@
 #   dance and lyrics thing for it from ascii
 from time import sleep
 from os import system, name
+import termcolor
 
 
+monster_mash = termcolor.colored("~monster mash~", "red", attrs=["reverse", "blink"])
+graveyard_smash = termcolor.colored("~graveyard smash~", "red", attrs=["reverse", "blink"])
 lyric = [
     "(It did the mash)",
-    "It did the ~monster mash~",
+    f"It did the {monster_mash}",
     "(A graveyard smash)",
-    "It was a ~graveyard smash~"
+    f"It was a {graveyard_smash}"
 ]
 
 animation = [
