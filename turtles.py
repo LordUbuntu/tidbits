@@ -57,7 +57,10 @@ def circle():
 # - others (especially primes) create spikey flowers
 # - by 25 the direction of the circles created reverses
 # - after 25 the cycle of patterns repeats
-def odd(amplitude):
+def odd(amplitude, fast=False):
+    turtle.hideturtle()
+    if fast:
+        turtle.speed(0)
     turtle.home()
     for i in range(360):
         if i % 2 == 0:
