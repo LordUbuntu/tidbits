@@ -85,6 +85,17 @@ def knight(steps):
             turtle.left(90)
 
 
+def bishop(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
+    turtle.home()
+    turtle.right(45)
+    for i in range(steps):
+        turtle.right(90 * rand(0, 4))
+        turtle.forward(3)
+
+
 def queen(steps):
     turtle.hideturtle()
     if steps > 100:
