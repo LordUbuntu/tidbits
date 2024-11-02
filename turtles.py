@@ -59,17 +59,17 @@ def circle():
 # - after 25 the cycle of patterns repeats
 def odd(amplitude, fast=False):
     turtle.hideturtle()
-    if fast:
-        turtle.speed(0)
+    turtle.speed(0)
     turtle.home()
     for i in range(360):
         if i % 2 == 0:
-            turtle.forward(5 * amplitude)
+            turtle.forward(10)
             turtle.right(15 * amplitude)
         else:
-            turtle.forward(5 * amplitude)
+            turtle.forward(10)
             turtle.left(30 * amplitude)
-        turtle.forward(5)
+        turtle.forward(10)
+        # TODO: figure out a way to stop the loop early when the shape is drawn!
 
 
 def knight(steps):
