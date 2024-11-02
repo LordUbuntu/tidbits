@@ -91,7 +91,7 @@ def bishop(steps):
     turtle.hideturtle()
     if steps > 100:
         turtle.speed(0)
-    turtle.right(45)
+    turtle.setheading(45)
     for i in range(steps):
         turtle.right(90 * rand(0, 4))
         turtle.forward(3)
