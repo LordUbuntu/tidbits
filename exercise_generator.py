@@ -16,6 +16,8 @@ EXERCISES = [
     "Bulgarian Split Squat",
     "Sumo Squat",
     "Romanian Squat",
+    "Laying Hamstring Curl",
+    "Quadracep Extension",
     # Arms
     "Diamond Pushup",
     "Tricep Dips",
