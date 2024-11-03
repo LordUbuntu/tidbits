@@ -22,6 +22,7 @@ EXERCISES = [
     "Archer Pushup",
     "Handstand Pushup",
     "Handstand Shoulder Dip",
+    "Spider Curls",
     # Core
     "RDL Plank",
     "V Sit",
