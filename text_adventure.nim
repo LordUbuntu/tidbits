@@ -3,6 +3,7 @@
 #   A demo text adventure game with practically no content that I created to
 #   explore an idea I had. For some reason it doesn't work now but it used
 #   to work.
+# TODO: revisit and repair to functionality
 import strutils
 
 
