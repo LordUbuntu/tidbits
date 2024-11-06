@@ -97,6 +97,16 @@ def bishop(steps):
         turtle.forward(3)
 
 
+def rook(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
+    turtle.setheading(0)
+    for i in range(steps):
+        turtle.right(90 * rand(0, 4))
+        turtle.forward(3)
+
+
 def queen(steps):
     turtle.hideturtle()
     if steps > 100:
