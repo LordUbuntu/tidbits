@@ -35,11 +35,11 @@ def simulate(n):
 
 
 # draw a spiral going out from the inside
-def spiral():
+def spiral(delta_theta=15):
     turtle.home()
     for i in range(100):
         turtle.forward(i)
-        turtle.left(15)
+        turtle.left(delta_theta)
 
 
 # draw a circle without using circle
