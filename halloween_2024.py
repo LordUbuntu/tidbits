@@ -1,4 +1,4 @@
-# Jacobus Burger (Oct 30, 2024)
+# Jacobus Burger (2024-10-30)
 # A fun tradition I do every Halloween, like how "Grinch's Ultimatum" is
 #   a tradition for Christmas.
 # This year, the "Monster Mash" song inspired me to make a cute little
