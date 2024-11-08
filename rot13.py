@@ -19,8 +19,8 @@ def rot_rand(data: str) -> str:
     return ''.join(ascii_lowercase[(i + N) % 26] for i in map(ascii_lowercase.index, data.lower()))
 
 
-def rot_chaos(data: str) -> str:
-    return ''.join(ascii_lowercase[(i + random(1, 100)) % 26] for i in map(ascii_lowercase.index, data.lower()))
+def rot_chaos(s: str) -> str:
+    return ''.join(ascii_lowercase[(i + random(1, 100)) % 26] for i in map(ascii_lowercase.index, s.lower()))
 
 
 def rot(data: str, n: int = 13) -> str:
