@@ -111,8 +111,9 @@ def queen(steps):
     turtle.hideturtle()
     if steps > 100:
         turtle.speed(0)
-    turtle.right(rand(0, 8) * 45)
+    turtle.setheading(0)
     for i in range(steps):
+        turtle.right(rand(0, 8) * 45)
         turtle.forward(3)
 
 
