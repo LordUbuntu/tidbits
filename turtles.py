@@ -127,8 +127,8 @@ def king(steps):
 
 
 def line():
-#   This is it, somebody has to draw the line somewhere!!1! >:(
-#   Sorry :^) (not sorry).
+    #   This is it, somebody has to draw the line somewhere!!1! >:(
+    #   Sorry :^) (not sorry).
     turtle.hideturtle()
     turtle.pencolor("red")
     turtle.forward(100)
