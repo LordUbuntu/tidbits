@@ -18,6 +18,7 @@
  * larger data types than raw bits, and how to write a wrapper for that
  * to make it very easy to keep things orderly.
  */
+// TODO: reexamine and move to LordUbuntu/algorithms
 #define set_base(bases, value, offset) \
         bases = bases | ((uint8_t)value << (2 * offset))
 
