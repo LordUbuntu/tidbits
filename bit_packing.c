@@ -44,15 +44,6 @@ void toggle_bool(int offset, int *pack)
 }
 
 
-
-// gets packed data of any type from a register of any size
-void* get_data(size_t offset, void mask)
-{
-        return 0;
-}
-
-
-
 int
 main(void)
 {
