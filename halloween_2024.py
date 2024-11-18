@@ -9,7 +9,7 @@ import termcolor
 
 
 monster_mash = termcolor.colored("~monster mash~", "red", attrs=["reverse", "blink"])
-graveyard_smash = termcolor.colored("~graveyard smash~", "red", attrs=["reverse", "blink"])
+graveyard_smash = termcolor.colored("~graveyard smash~", "red", attrs=["reverse"])
 lyric = [
     "(It did the mash)",
     f"It did the {monster_mash}",
