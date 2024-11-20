@@ -19,7 +19,8 @@ cards = [
     "10",
     "Jack",
     "Queen",
-    "King"
+    "King",
+    "Joker"
 ]
 suits = ["Club", "Heart", "Clover", "Diamond"]
 
