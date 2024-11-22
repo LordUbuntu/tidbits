@@ -6,7 +6,7 @@ from random import choice
 
 roll_names = {
     (1, 1): "snake eyes 🐍",
-    (1, 2): "ace deuce",
+    (1, 2): "ace deuce 🂡🂡",
     (2, 2): "hard four",
     (1, 3): "easy four",
     (2, 3): "fever five 🕺",
