@@ -5,6 +5,7 @@
 #   is encoded using a repeatedly shifting rotating encoder or
 #   some other dynamically shifting encoding but that's just an
 #   opinion until proven otherwise.
+# TODO: move this to LordUbuntu/algorithms
 from random import randint as random
 from string import ascii_lowercase
 
