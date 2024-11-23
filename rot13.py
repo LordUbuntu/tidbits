@@ -10,8 +10,9 @@ from string import ascii_lowercase
 
 
 # note: only takes strings with no spaces or any non-letter ascii
-def rot13(data: str) -> str:
-    return ''.join(ascii_lowercase[(i + 13) % 26] for i in map(ascii_lowercase.index, data.lower()))
+def rot13(s: str) -> str:
+    string = map(ascii_lowercase.index, s.lower())
+    return ''.join(ascii_lowercase[(i + 13) % 26] for i in string)
 
 
 def rot_rand(s: str) -> str:
