@@ -7,6 +7,7 @@ import gleam/int
 pub fn main() {
   let num = int.random(1, 100)
   let outcome = case num {
+    1 -> "There's only one 1"
     3 -> "I'm three!!!"
     7 -> "Lucky!"
     9 -> "three threes!"
