@@ -15,6 +15,7 @@ pub fn main() {
     12 -> "...And a partridge in a pair tree!"
     13 -> "🐍 Very Lucky!"
     14 -> "☣️ Very Unlucky!"
+    31 -> "!ykculnU yreV 🐍"
     33 -> "⭐ Super Lucky!"
     42 -> "What doth life?!"
     69 -> "☯️ Yin-Yang"
