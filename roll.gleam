@@ -20,7 +20,7 @@ pub fn main() {
     42 -> "What doth life?!"
     69 -> "☯️ Yin-Yang"
     88 -> "Eightball! 🎱"
-    96 -> "Symmetry!"
+    96 -> "I'm gonna roll like a dummy!"
     _ -> "(Nothing Happens)"
   }
   io.println(num <> ": " <> outcome)
