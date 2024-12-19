@@ -35,6 +35,11 @@
    4-base nucleotide subsequences.
 
    Note that with this current packing scheme the estimated byte to base pair ratio would be 4bp:1byte. So that means roughly 4kbp in 1kb (not bad).
+
+   There should be future potential optimizations in both space
+   complexity and time complexity. For instance, knowing there is
+   a set number of codons, its possible to skip representing bases
+   entirely and represent entire sequences in 1/3 the space.
  */
 
 
