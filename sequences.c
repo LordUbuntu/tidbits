@@ -1,8 +1,12 @@
 /* Created by Jacobus Burger (2017)
  *
- * Info:
+ * INFO:
  *   A small experiment I wanted to try with representing CATG in a
  *   space-efficient manner.
+ * TODO:
+ *  Change this into a larger information dense sequencing program to
+ *  understand and hopefully improve upon bioinformatic workflows (and
+ *  write a paper about it potentially).
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,7 +25,7 @@
    110110|110100|110000|000110
 
 
-   Thanks to T for inspiring the idea to represent each codon with
+   Thanks to Tia for inspiring the idea to represent each codon with
    a binary value.
 
    The design I've improved on is to have 4 bases represented as
