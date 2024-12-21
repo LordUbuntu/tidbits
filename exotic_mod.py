@@ -54,4 +54,7 @@ def probably_even(n):
         return "Even"
     else:
         return "Odd"
-    
+
+
+def guess_even(n):
+    return "Even"  # This will be right 50% of the time!
