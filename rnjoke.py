@@ -6,6 +6,7 @@ from random import choice
 
 
 def rng():
+    """ generates random numbers by randomly picking digits of pi """
     digits = [
         int(digit)
         if digit != '.' else 0
@@ -15,6 +16,7 @@ def rng():
 
 
 def randomness():
+    """ returns a totally random number that can't be predicted! """
     return 13
 
 
