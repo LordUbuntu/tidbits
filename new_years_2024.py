@@ -57,5 +57,7 @@ while True:
             if row[i] == len(heat) - 1:
                 row[i] = -1
     
+    # add the new years message
+    print("HAPPY NEW YEARS 2024 -> 2025")
     # pause until next frame
     sleep(DELAY)
