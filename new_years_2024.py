@@ -13,9 +13,12 @@ from random import randint
 
 DELAY = 0.3  # number of seconds between each frame
 
-grid = deque([], 8)  # 16 rows maximum
 width, height = os.get_terminal_size()
-heat = ["$", "@", "%", "&", "#", "*", "a", "?", "+", "~", "!", ";", "^", "'", "."]
+grid = deque([], 32)  # 32 rows max
+heat = ["$", "@", "%", "&",
+        "#", "*", "a", "?",
+        "+", "~", "!", ";",
+        "^", "'", ".", " "]
 
 
 def clear(): 
@@ -32,6 +35,7 @@ while True:
     display = ""
     for row in grid:
         display += "".join([heat[value] for value in row]) + "\n"
+    display = display.strip("\n")
     print(display, end="")
 
     # insert a new layer of fire at the bottom (reason for using a queue)
