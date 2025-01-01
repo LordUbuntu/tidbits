@@ -14,7 +14,7 @@ DELAY = 0.3  # number of seconds between each frame
 
 grid = deque([], 8)  # 16 rows maximum
 width, height = os.get_terminal_size()
-flame = ["#", "@", "&", "?", "-", "^", "'", " "]
+heat = ["#", "@", "&", "?", "-", "^", "'", " "]
 
 
 def clear(): 
@@ -32,10 +32,21 @@ while True:
     for row in grid:
         display += "".join(row) + "\n"
     print(display, end="")
-    # add a row on the back of the grid queue (bottom of display)
-    #   in that row, add elements in a normal (bell curve) distribution
-    #   across the terminal width (more likely in middle than edges)
-    # iterate through each row
-    #   update "pixel" to be "colder" as it gets higher
+
+    # insert a new layer of fire at the bottom (reason for using a queue)
+    # I'll skip on the idea of a normal distribution of the flames (KISS)
+    # I'll represent flame heat by a number
+    row = []
+    for _ in range(width):
+        if random.randint(0, 1):
+            row.append(0)  # values 0 through 7 are heat level of cinder
+    grid.append(row)  # put on bottom of screen
+
+    # update past cinders by "cooling" them by 1 value
+    for row in grid:
+        for i in range(len(row)):
+            if row[i] < 7:
+                row[i] += 1
+    
     # pause until next frame
     sleep(DELAY)
