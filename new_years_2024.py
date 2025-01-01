@@ -3,9 +3,18 @@
 #   principle to the winter snowfall program `snow.py`. Inspired by
 #   a desire to come on a year anew like a phoenix (🐦‍🔥) and
 #   "keep that fire alive"
+# Next time I could do this with ncurses and have the characters move
+#   asyncronously with variant colour and more.
 import os
 from time import sleep
 from collections import deque
+
+
+DELAY = 0.3  # number of seconds between each frame
+
+grid = deque([], 8)  # 16 rows maximum
+width, height = os.get_terminal_size()
+flame = ["#", "@", "&", "?", "-", "^", "'", " "]
 
 
 def clear(): 
@@ -20,3 +29,5 @@ while True:
     #   across the terminal width (more likely in middle than edges)
     # iterate through each row
     #   update "pixel" to be "colder" as it gets higher
+    # pause until next frame
+    sleep(DELAY)
