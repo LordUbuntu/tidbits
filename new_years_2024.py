@@ -31,7 +31,7 @@ while True:
     # display fire from top to bottom
     display = ""
     for row in grid:
-        display += "".join(row) + "\n"
+        display += "".join([heat[value] for value in row]) + "\n"
     print(display, end="")
 
     # insert a new layer of fire at the bottom (reason for using a queue)
