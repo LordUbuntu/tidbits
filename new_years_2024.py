@@ -24,6 +24,14 @@ def clear():
 # I want this to run whether imported or called as a script
 while True:
     # clear screen
+    clear()
+    print("\033[?25l")  # hide cursor with ANSI code
+
+    # display fire from top to bottom
+    display = ""
+    for row in grid:
+        display += "".join(row) + "\n"
+    print(display, end="")
     # add a row on the back of the grid queue (bottom of display)
     #   in that row, add elements in a normal (bell curve) distribution
     #   across the terminal width (more likely in middle than edges)
