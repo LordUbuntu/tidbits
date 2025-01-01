@@ -8,6 +8,7 @@
 import os
 from time import sleep
 from collections import deque
+from random import randint
 
 
 DELAY = 0.3  # number of seconds between each frame
@@ -38,15 +39,19 @@ while True:
     # I'll represent flame heat by a number
     row = []
     for _ in range(width):
-        if random.randint(0, 1):
+        if randint(0, 1):
             row.append(0)  # values 0 through 7 are heat level of cinder
+        else:
+            row.append(-1) # values < 0 are ignored
     grid.append(row)  # put on bottom of screen
 
     # update past cinders by "cooling" them by 1 value
     for row in grid:
         for i in range(len(row)):
-            if row[i] < 7:
+            if row[i] >= 0:
                 row[i] += 1
+            if row[i] == 7:
+                row[i] = -1
     
     # pause until next frame
     sleep(DELAY)
