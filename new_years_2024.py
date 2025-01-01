@@ -15,7 +15,7 @@ DELAY = 0.3  # number of seconds between each frame
 
 grid = deque([], 8)  # 16 rows maximum
 width, height = os.get_terminal_size()
-heat = ["#", "@", "&", "?", "-", "^", "'", " "]
+heat = ["$", "@", "%", "&", "#", "*", "a", "?", "+", "~", "!", ";", "^", "'", "."]
 
 
 def clear(): 
@@ -50,7 +50,7 @@ while True:
         for i in range(len(row)):
             if row[i] >= 0:
                 row[i] += 1
-            if row[i] == 7:
+            if row[i] == len(heat) - 1:
                 row[i] = -1
     
     # pause until next frame
