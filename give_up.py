@@ -6,7 +6,7 @@ from random import choice
 
 def never_give_up():
     inspiration = [
-        "Was mich nicht umbringt, macht mich stärker\n(What does not kill me, makes me stronger)",
+        "Aus der Kriegsschule des Lebens - Was mich nicht umbringt, macht mich stärker\n(Out of life’s school of war - What does not kill me, makes me stronger)\n- Aphorism 8 from \"Maxims and Arrows\" in \"Twilight of the Idols\", Freidrich Nietzsche",
         "七転び八起き\n(fall down seven times, get up eight)",
         "走得慢不要緊，最重要的是不要停。\n(It doesn't matter if you walk slowly, the most important thing is not to stop)",
         "Aut inveniam viam aut faciam\n(Either I will find a way or I will make one)",
