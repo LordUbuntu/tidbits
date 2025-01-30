@@ -32,6 +32,16 @@ banner = [
 
 Home of SciFi Brutalist Architecture
         """,
+        """
+ ____  _____ _   _
+/ ___||  ___| | | |
+\___ \| |_  | | | |
+ ___) |  _| | |_| |
+|____/|_|    \___/
+
+Home of SciFi Brutalist Architecture
+(and lucky golden koi fish)
+        """,
 ]
 
 
