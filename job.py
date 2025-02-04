@@ -6,3 +6,6 @@ while True:
     sleep(1)
     print("GET")
     sleep(1)
+
+# Jacobus Burger (2025-02-03)
+# Signed contracts and started
