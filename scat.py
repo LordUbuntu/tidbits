@@ -7,11 +7,14 @@
 
 def scat(string: str) -> str:
     scats = {
+        'a': "aah",
         'b': "bap",
         'd': "do",
         'e': "ee",
         'f': "fee",
+        'g': "gah",
         'h': "hee",
+        'i': "idi",
         'j': "jack",
         'k': "kap",
         'l': "lee",
@@ -19,11 +22,14 @@ def scat(string: str) -> str:
         'n': "nap",
         'o': "oo",
         'p': "pah",
+        'q': "quick",
         'r': "rum",
         's': "scat",
         't': "tat",
+        'u': "udu",
         'v': "vee",
         'w': "wee",
+        'x': "zee",
         'z': "zap"
     }
     result = []
