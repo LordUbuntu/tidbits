@@ -12,3 +12,6 @@ while True:
 
 # Jacobus Burger (2025-02-07)
 # First week finished. Nice
+
+# Jacobus Burger (???)
+# Wrote a script in first week that's very helpful, multiprocessing
