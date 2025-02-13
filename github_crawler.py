@@ -11,4 +11,7 @@
 # - visualize graphs
 # - parallelism for fast performance
 # - basic API interaction with GitHub to be easy to use and change
-
+import argparse
+import multiprocessing as mp
+# TODO: need a graph visualization module
+# TODO: need modules for parsing the site, BeautifulSoup? http?
