@@ -13,5 +13,15 @@
 # - basic API interaction with GitHub to be easy to use and change
 import argparse
 import multiprocessing as mp
+# I'll use graphviz for visualization
 # TODO: need a graph visualization module
 # TODO: need modules for parsing the site, BeautifulSoup? http?
+
+
+# I'll need to convert the adjacency list into a `.dot` file
+# 
+# digraph network {
+#   layout=sfdp
+#   a -> {b, c, d}
+#   b -> {a, d, e}
+# }
