@@ -13,7 +13,9 @@
 # - basic API interaction with GitHub to be easy to use and change
 import argparse                 # CLI
 import multiprocessing as mp    # multiprocessing for faster execution
-import graphviz as gv           # visualize connections
+# consider other options for interactive and fast graph network
+#   visualizations, like pyviz, networkx, sigma.js, etc
+import graphviz as gv
 import requests as req          # getting requests from site
 import bs4                      # parsing site
 
