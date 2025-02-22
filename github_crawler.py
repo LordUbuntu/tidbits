@@ -26,3 +26,25 @@ import multiprocessing as mp    # multiprocessing for faster execution
 import graphviz as gv           # generate .gv and .svg files to render graph
 import requests as req          # getting requests from site
 import bs4                      # parsing site
+
+
+# graphviz
+# G = gz.DiGraph()
+# recursively:
+#   G.node(root)
+#   G.node(neighbour1)
+#   G.edge(root, neighbour1)
+#   ...
+#   G.node(neighbourN)
+#   G.edge(root, neighbourN)
+# at the end:
+#   G.render(filename=output_name_arg, format=format_arg)
+
+# algorithm:
+# - start at current node URL (top of multiprocessing pool queue) (a queue is used to avoid a runaway process)
+# - wait for 50ms or so
+# - scrape its page for current node username, add this node to graphviz with that name
+# - scrape its page for followers / following URLs
+# - test connection to that URL and ignore if it fails, otherwise add to queue
+# - also add each connected neighbour name to graphviz, and add an edge from current node towards those neighbours
+# - explore breadth first search, keeping below a limit defined by the depth argument (or not if an argument of -1 is given)
