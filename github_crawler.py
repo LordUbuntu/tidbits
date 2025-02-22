@@ -4,7 +4,11 @@
 #   for faster performance.
 # The start of a larger project that will get it's own repo once I figure
 #   out a better name for it and have more time.
-# TODO: I really need to come up with a name for this program
+
+# Name Ideas:
+# - "neighbourhood"
+# - "git net"
+# - "github graph"
 
 # This version will be just a CLI tool to scan and visualize connections rapidly,
 #   but in the future I'll do an interactive version with jupyter notebooks
