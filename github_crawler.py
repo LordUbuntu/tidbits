@@ -28,6 +28,11 @@ import requests as req          # getting requests from site
 import bs4                      # parsing site
 
 
+# some properties are known about the graph G of GitHub user relations:
+# 1. it is a digraph
+# 2. it may be cyclical on some subgraphs
+# 3. each vertex may be isolated or in some subgraph
+
 # graphviz
 # G = gz.DiGraph()
 # recursively:
