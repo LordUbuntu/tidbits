@@ -16,5 +16,8 @@ class StackMacine:
     def PUSH(self, value):
         self.stack.append(value)
 
+    def POP(self):
+        print(self.stack.pop())
+
 
 interpreter = StackMachine()
