@@ -4,7 +4,7 @@
 # I'll make this a stack machine interpreter to calculate maths in
 #   polish (prefix) notation. (remember shunting yard to show as infix)
 
-class StackMacine:
+class StackMachine:
     def __init__(self):
         self.stack = []
 
@@ -27,3 +27,12 @@ class StackMacine:
 
 
 interpreter = StackMachine()
+
+interpreter.PUSH(6)
+interpreter.PUSH(7)
+interpreter.PUSH(interpreter.ADD)
+interpreter.POP()
+
+interpreter.DEBUG()
+interpreter.ADD()
+interpreter.DEBUG()
