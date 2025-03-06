@@ -21,3 +21,5 @@ while True:
 
 # Jacobus Burger (2025-03-04)
 # LST WK
+
+# TODO: move to resume, better place for this
