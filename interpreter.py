@@ -13,5 +13,8 @@ class StackMacine:
         b = self.stack.pop()
         self.stack.append(a + b)
 
+    def LOAD(self, value):
+        self.stack.append(value)
+
 
 interpreter = StackMachine()
