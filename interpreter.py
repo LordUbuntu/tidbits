@@ -8,5 +8,10 @@ class StackMacine:
     def __init__(self):
         self.stack = []
 
+    def ADD(self):
+        a = self.stack.pop()
+        b = self.stack.pop()
+        self.stack.append(a + b)
+
 
 interpreter = StackMachine()
