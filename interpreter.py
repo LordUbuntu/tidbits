@@ -20,7 +20,10 @@ class StackMacine:
         print(self.stack.pop())
 
     def PEEK(self):
-        print("peek: {}".format(self.stack[-1])
+        print("peek: {}".format(self.stack[-1]))
+
+    def DEBUG(self):
+        print(self.stack)
 
 
 interpreter = StackMachine()
