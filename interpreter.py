@@ -19,5 +19,8 @@ class StackMacine:
     def POP(self):
         print(self.stack.pop())
 
+    def PEEK(self):
+        print("peek: {}".format(self.stack[-1])
+
 
 interpreter = StackMachine()
