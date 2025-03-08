@@ -31,13 +31,16 @@ class StackMachine:
         print(self.stack)
 
 
-interpreter = StackMachine()
+sm = StackMachine()
 
-interpreter.PUSH(6)
-interpreter.PUSH(7)
-interpreter.PUSH(interpreter.ADD)
-interpreter.POP()
-
-interpreter.DEBUG()
-interpreter.ADD()
-interpreter.DEBUG()
+sm.PUSH(6)
+sm.PUSH(7)
+sm.PUSH('+')    # need some way to add symbols that can be executed
+                #   and modified (metaprogramming)
+sm.DEBUG()
+while sm.stack:
+    if sm.POP() == '+':
+        sm.ADD()
+    else:
+        sm.POP()
+sm.DEBUG()
