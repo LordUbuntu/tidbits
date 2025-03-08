@@ -3,6 +3,10 @@
 #   interpreter inferface.
 # I'll make this a stack machine interpreter to calculate maths in
 #   polish (prefix) notation. (remember shunting yard to show as infix)
+# This should be built upon and given it's own repo. I will make a very
+#   simple stack based programming language as a subset of some Python
+#   with a couple of neat features. Name to be decided. Serpet? Egg?
+#   something to indicate the snakishness and a beginning.
 
 class StackMachine:
     def __init__(self):
