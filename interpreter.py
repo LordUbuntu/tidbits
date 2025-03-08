@@ -7,6 +7,7 @@
 #   simple stack based programming language as a subset of some Python
 #   with a couple of neat features. Name to be decided. Serpet? Egg?
 #   something to indicate the snakishness and a beginning.
+# I'll share this project once I've gotten it to a stable basic state
 
 class StackMachine:
     def __init__(self):
