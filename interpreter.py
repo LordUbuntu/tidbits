@@ -22,7 +22,10 @@ class StackMachine:
         self.stack.append(value)
 
     def POP(self):
-        print(self.stack.pop())
+        if self.stack:
+            print(self.stack.pop())
+        else:
+            print(None)
 
     def PEEK(self):
         print("peek: {}".format(self.stack[-1]))
