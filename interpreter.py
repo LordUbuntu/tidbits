@@ -23,9 +23,8 @@ class StackMachine:
 
     def POP(self):
         if self.stack:
-            print(self.stack.pop())
-        else:
-            print(None)
+            return self.stack.pop()
+        return None
 
     def PEEK(self):
         print("peek: {}".format(self.stack[-1]))
@@ -40,10 +39,12 @@ sm.PUSH(6)
 sm.PUSH(7)
 sm.PUSH('+')    # need some way to add symbols that can be executed
                 #   and modified (metaprogramming)
-sm.DEBUG()
 while sm.stack:
-    if sm.POP() == '+':
+    sm.DEBUG()
+    input()
+    symbol = sm.POP()
+    if symbol == '+':
         sm.ADD()
     else:
-        sm.POP()
+        print(symbol)
 sm.DEBUG()
