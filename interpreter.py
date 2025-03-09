@@ -32,13 +32,30 @@ class StackMachine:
     def DEBUG(self):
         print(self.stack)
 
+    # NOTE:
+    # - minimal basic instruction set
+    # - easy metaprogramming to build upon and modify instructions
+    # - written very simply
+    # TODO:
+    # - write a list of (mutable) instructions
+    # - write a parser for the basic starting instructions
+    # - write a runner
+
+    def parse(self):
+        pass
+
+    def run(self, instructions):
+        pass
+
+
+
+
 
 sm = StackMachine()
 
 sm.PUSH(6)
 sm.PUSH(7)
-sm.PUSH('+')    # need some way to add symbols that can be executed
-                #   and modified (metaprogramming)
+sm.PUSH('+')
 while sm.stack:
     sm.DEBUG()
     input()
