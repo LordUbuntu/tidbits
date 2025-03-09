@@ -51,8 +51,9 @@ class StackMachine:
 
 
 
+# potential instruction set
+# + - * / // %
 sm = StackMachine()
-
 sm.PUSH(6)
 sm.PUSH(7)
 sm.PUSH('+')
