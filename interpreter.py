@@ -11,6 +11,9 @@
 # This initial version is made based on "500 Lines or Less: A Python
 #   Interpreter in Python"
 #   https://aosabook.org/en/500L/a-python-interpreter-written-in-python.html
+# I think among egg, drake, serpent, and snek that I'll settle of snek
+#   as the name and .snk as the file extension because the name evokes
+#   tinyness/cuteness and simplicity which is the ethos of this language
 
 class StackMachine:
     def __init__(self):
