@@ -8,6 +8,9 @@
 #   with a couple of neat features. Name to be decided. Serpet? Egg?
 #   something to indicate the snakishness and a beginning.
 # I'll share this project once I've gotten it to a stable basic state
+# This initial version is made based on "500 Lines or Less: A Python
+#   Interpreter in Python"
+#   https://aosabook.org/en/500L/a-python-interpreter-written-in-python.html
 
 class StackMachine:
     def __init__(self):
