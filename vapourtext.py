@@ -2,6 +2,7 @@
 # Created by Jacobus Burger (2022)
 # Info:
 #   Code golf to print vapour-ware strings eg "h e l l o"
+# TODO: merge into text effects library
 from random import randint as rnd
 
 
