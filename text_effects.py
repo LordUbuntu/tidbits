@@ -10,5 +10,5 @@ def vapourwave(sentence):
     return ' '.join([*sentence])
 
 
-def rcaps(sentence):
+def randcaps(sentence):
     return ''.join([char.upper() if randint(0, 1) else char for char in sentence])
