@@ -6,12 +6,6 @@
 from random import randint as rnd
 
 
-def vapourize(sentence):
-    return ' '.join([*sentence])
-
-
-def VAPOURIZE(sentence):
-    return ' '.join([*sentence.upper()])
 
 
 def VaPoUrIzE(sentence):

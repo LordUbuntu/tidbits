@@ -4,3 +4,6 @@
 #   and others and combine them, add new ones, and more
 # This will become a library for TUI. I'll make it's own repo later
 
+
+def vapourwave(sentence):
+    return ' '.join([*sentence])
