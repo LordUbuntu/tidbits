@@ -12,3 +12,7 @@ def vapourwave(sentence: str) -> str:
 
 def randomcaps(sentence: str) -> str:
     return ''.join([char.upper() if randint(0, 1) else char for char in sentence])
+
+
+def abbreviate(sentence: str) -> str:
+    return '.'.join([word[0].upper() for word in sentence.split(" ,-")])
