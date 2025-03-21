@@ -38,6 +38,8 @@ composure = [
     "sly",
     "clever",
     "mischevious",
+    "mathematical",
+    "calculating",
 ]
 
 creature = [
@@ -80,6 +82,7 @@ creature = [
     "guitar",
     "trumpet",
     "mutant",
+    "phenomenon",
 ]
 
 occupation = [
@@ -128,12 +131,13 @@ occupation = [
     "bank teller",
     "mechanic",
     "office worker",
+    "watcher",
 ]
 
 strength = [
     "Nuke",
-    "Stick of Dynamite",
     "Gunpowder Keg",
+    "Stick of Dynamite",
     "Mountain",
     "Collosus",
     "Bear",
@@ -180,6 +184,7 @@ quest = [
     "the sun",
     "a serpinsky triangle",
     "reverse polish notation",
+    "the consequences of the collatz conjecture",
 ]
 
 def describe():
