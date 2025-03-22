@@ -6,6 +6,7 @@ from random import choice
 
 composure = [
     "adventurous",
+    "excited",
     "angry",
     "anxious",
     "artistic",
@@ -56,6 +57,7 @@ creature = [
     "eraser with a face drawn on it",
     "flamingo",
     "flea",
+    "river",
     "flying tree",
     "gingerbread man",
     "human",
@@ -98,6 +100,7 @@ occupation = [
     "hole digger",
     "hole filler",
     "librarian",
+    "cultist",
     "linguist",
     "mathematician",
     "mecha mechanic",
