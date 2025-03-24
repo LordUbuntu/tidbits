@@ -5,6 +5,7 @@
 from random import choice
 
 composure = [
+    "sad",
     "adventurous",
     "excited",
     "angry",
@@ -44,8 +45,8 @@ composure = [
 ]
 
 creature = [
-    "balrog",
     "basilisk",
+    "balrog",
     "bee",
     "bird",
     "bottle of water",
@@ -88,6 +89,8 @@ creature = [
 ]
 
 occupation = [
+    "dancer",
+    "mad scientist",
     "EVA Pilot",
     "astrofreighter",
     "astronaught",
