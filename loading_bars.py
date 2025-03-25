@@ -6,7 +6,7 @@ from time import sleep
 from os import get_terminal_size as term_size
 from string import ascii_letters
 from itertools import cycle
-from random import choices
+from random import choices, rand_int, choice
 
 
 def percent(speed):
@@ -139,6 +139,15 @@ def parade(speed, animal='🐧'):
 def banana(speed):
     for i in range(0, 101):
         print(' ' * (term_size()[0] - (i + 1)) + animal, end='\r')
+        sleep(1 / speed)
+    print()
+
+
+# randomness across the screen
+def noise(speed):
+    arr = ' ' * term_size()[0]
+    for i in range(0, 101):
+        arr[rand_int(0, len(arr) - 1)] = choice(['@', '.', '*'])
         sleep(1 / speed)
     print()
 
