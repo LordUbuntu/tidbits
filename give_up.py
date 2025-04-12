@@ -1,7 +1,8 @@
 # Jacobus Burger (2025-01-20)
 # Life can feel like a lot sometimes, like it's beating you down.
 # But life is a gift, a dance and process we experience for ourselves.
-# So be stubborn like me 🐍. Don't let trouble weigh you down, but fly!
+# So be stubborn like me 🐍. Don't let trouble weigh you down, but adapt and
+#   transform!
 from random import choice
 
 def never_give_up():
@@ -13,7 +14,7 @@ def never_give_up():
         "On m'a appris que le chemin du progrès n'est ni rapide ni facile\n(I was taught that the path to progress is neither quick nor easy)\n- Marie Curie",
         "The capacity to learn is a gift. The ability to learn is a skill. The willingness to learn is a choice. - Brian Herbert",
         "諦めんな絶対にがんばれ積極的にポジティブにがんばれがんばれ！.\n(Don't give up, always do your best, be positive and do your best!)\n- Matsuoka Shuzo",
-        "ἐν τῷ κόσμῳ θλῖψιν ἔχετε. ἀλλὰ θαρσεῖτε; ἐγὼ νενίκηκα τὸν κόσμο\n(In the world you will have tribulation. But take heart; I have overcome the world)\n- John 16:33"
+        "ἐν τῷ κόσμῳ θλῖψιν ἔχετε. ἀλλὰ θαρσεῖτε; ἐγὼ νενίκηκα τὸν κόσμο\n(In the world you will have tribulation. But take heart; I have overcome the world)\n- Christ in John 16:33"
     ]
     print(choice(inspiration))
 
