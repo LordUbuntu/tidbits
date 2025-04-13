@@ -1,3 +1,6 @@
+# move this to someplace else like a resume. Good run, but made a
+#   decision to strive for greater instead of settling
+
 # Jacobus Burger (2025-01-30)
 # Got an internship today!
 
@@ -17,5 +20,3 @@
 
 # Jacobus Burger (2025-03-06)
 # Fin
-
-# TODO: move to resume, better place for this
