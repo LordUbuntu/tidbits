@@ -2,3 +2,4 @@
 - ncurses, raylib, what to use for a better langton ants?
 - research and add new cellular automata (especially ones that are fresh off research) (https://arxiv.org/)
 - all these people making lazy AI generated Studio Ghibli imitations got me thinking that there's probably an algorithm I could make to convert any picture/drawing into a cell-shaded simplified version of itself. Then it becomes a part of the process if people want to use it like in a game engine or otherwise, instead of a shortcut to skip the process of drawing and making art. (2025-04-20)
+- turtle into turtlebot?
