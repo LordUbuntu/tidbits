@@ -3,7 +3,75 @@
 #   A bunch of turtle graphics goofing
 from math import sqrt
 from random import randint as rand
+from random import choice
 import turtle
+
+
+# CHESS
+def knight(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
+    for i in range(steps):
+        if rand(0, 1):
+            turtle.forward(3)
+        else:
+            turtle.backward(3)
+        if rand(0, 1):
+            turtle.right(90)
+        else:
+            turtle.left(90)
+
+
+def bishop(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
+    turtle.setheading(45)
+    for i in range(steps):
+        turtle.right(90 * rand(0, 4))
+        turtle.forward(3)
+
+
+def rook(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
+    turtle.setheading(0)
+    for i in range(steps):
+        turtle.right(90 * rand(0, 4))
+        turtle.forward(3)
+
+
+def queen(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
+    turtle.setheading(0)
+    for i in range(steps):
+        turtle.right(rand(0, 8) * 45)
+        turtle.forward(3)
+
+
+def king(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
+    for i in range(steps):
+        turtle.right(rand(0, 8) * 45)
+        turtle.forward(3)
+
+
+def random_chess(steps):
+    pieces = [king, queen, rook, knight, bishop]
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
+    for i in range(steps):
+        f = choice(pieces)
+        f(1)
+
+
 
 
 # monte carlo turtle simulation
@@ -70,60 +138,6 @@ def odd(amplitude, fast=False):
             turtle.left(30 * amplitude)
         turtle.forward(10)
         # TODO: figure out a way to stop the loop early when the shape is drawn!
-
-
-def knight(steps):
-    turtle.hideturtle()
-    if steps > 100:
-        turtle.speed(0)
-    for i in range(steps):
-        if rand(0, 1):
-            turtle.forward(3)
-        else:
-            turtle.backward(3)
-        if rand(0, 1):
-            turtle.right(90)
-        else:
-            turtle.left(90)
-
-
-def bishop(steps):
-    turtle.hideturtle()
-    if steps > 100:
-        turtle.speed(0)
-    turtle.setheading(45)
-    for i in range(steps):
-        turtle.right(90 * rand(0, 4))
-        turtle.forward(3)
-
-
-def rook(steps):
-    turtle.hideturtle()
-    if steps > 100:
-        turtle.speed(0)
-    turtle.setheading(0)
-    for i in range(steps):
-        turtle.right(90 * rand(0, 4))
-        turtle.forward(3)
-
-
-def queen(steps):
-    turtle.hideturtle()
-    if steps > 100:
-        turtle.speed(0)
-    turtle.setheading(0)
-    for i in range(steps):
-        turtle.right(rand(0, 8) * 45)
-        turtle.forward(3)
-
-
-def king(steps):
-    turtle.hideturtle()
-    if steps > 100:
-        turtle.speed(0)
-    for i in range(steps):
-        turtle.right(rand(0, 8) * 45)
-        turtle.forward(3)
 
 
 def line():
