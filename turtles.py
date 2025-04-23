@@ -147,3 +147,12 @@ def line():
     turtle.pencolor("red")
     turtle.forward(100)
     turtle.exitonclick()
+
+
+def random(steps):
+    turtle.hideturtle()
+    if steps > 100:
+        turtle.speed(0)
+    for i in range(steps):
+        turtle.right(rand(0, 360))
+        turtle.forward(rand(1, 10))
