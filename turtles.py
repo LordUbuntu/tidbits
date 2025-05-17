@@ -72,6 +72,17 @@ def random_chess(steps):
         f(1)
 
 
+def random_turtle(steps):
+    turtle.penup()
+    turtle.hideturtle()
+    turtle.home()
+    turtle.speed(0)
+    for _ in range(steps):
+        turtle.setpos(rand(-100, 100), rand(-100, 100))
+        turtle.dot(5, "red")
+
+
+
 
 
 # monte carlo turtle simulation
