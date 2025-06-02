@@ -1,21 +1,37 @@
 #!/bin/python3
 # Created by Jacobus Burger (2018)
-# Info:
-#   A collection of various math-specific functions and programs
-#   written for discrete mathematics to better understand concepts.
-#   Everything herein was written for fun and practice.
-#   I stand on the shoulders of giants, so I claim none of it as my own.
-#
+# Prologue:
+#   This was originally written in 2018/2022 to better understand 
+#   and learn discrete math. This was done for fun and practice,
+#   and i was inspired by the great influence of my discrete math
+#   Professors Richard J Sutcliffe.
 #
 #   Thank you to Professor Richard J. Sutcliffe for being such an awesome
-#   teacher and inspiration for both my discrete math courses.
-#   I had a lot of fun taking that course (though it was hard) and hope to
-#   carry this knowledge into my future, and continue to learn and improve
-#   because of it. Hopefully I will grow and transform.
+#   teacher and inspiration in both my discrete math courses.
+#   I had a lot of fun taking those courses (though it was hard) and
+#   through taking them I developed a better understanding and love
+#   for mathematics that I hope to carry into my future. I hope to
+#   continue to learn and improve because of it. I will grow and
+#   transform.
+# Info:
+#   This is a collection of various math-specific functions and programs
+#   written for discrete mathematics to better understand concepts.
+#   Everything herein was written for fun and practice.
+#
+#   I stand on the shoulders of giants, so I claim none of it as my own.
+#
 import math
 import operator as op
 from functools import cache
 from sys import maxsize as maxsize
+
+
+# euclidean division (modulo)
+# a = bq + r, => r = a - bq
+def mod(a: int, b: int) -> int:
+    if a == 0 or b == 0:
+        return math.nan
+    return a - (b * (a // b))
 
 
 # this shows the steps taken by GCD as it runs
