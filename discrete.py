@@ -13,6 +13,9 @@
 #   for mathematics that I hope to carry into my future. I hope to
 #   continue to learn and improve because of it. I will grow and
 #   transform.
+#
+#   I had a great time and formed some good memories. I hope for more.
+#
 # Info:
 #   This is a collection of various math-specific functions and programs
 #   written for discrete mathematics to better understand concepts.
