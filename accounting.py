@@ -1,6 +1,7 @@
 # Jacobus Burger (2022)
 # Interactive calculators and various functions for financial accounting.
-# Made for the fun of learning and conveneince.
+# Made for the fun of learning and conveneince during an accounting
+#   course since the accounting itself wasn't very fun.
 from collections import deque
 
 # TODO: More to add
