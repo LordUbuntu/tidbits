@@ -9,7 +9,7 @@ def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
 width, height = os.get_terminal_size()
-CHARACTER = "*"
+BALL = "*"
 TIMEOUT = 1
 
 
@@ -23,7 +23,7 @@ try:
         # note: this could be generalized for a TUI renderer
         print((' ' * width) * (y - 1))
         # print character line
-        print((' ' * (x - 1)) + CHARACTER + (' ' * (width - (x - 1))))
+        print((' ' * (x - 1)) + BALL + (' ' * (width - (x - 1))))
         # print remaining space (vertical)
         print(' ' * (height - (y - 1)))
         sleep(TIMEOUT)
