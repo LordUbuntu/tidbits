@@ -13,15 +13,20 @@ CHARACTER = "*"
 TIMEOUT = 1
 
 
-while True:
+try:
+    print('\033[?25l', end='')  # hide cursor
+    while True:
+        clear()
+        x = random.randint(0, width)
+        y = random.randint(0, height)
+        # print preceding space (vertical)
+        # note: this could be generalized for a TUI renderer
+        print((' ' * width) * (y - 1))
+        # print character line
+        print((' ' * (x - 1)) + CHARACTER + (' ' * (width - (x - 1))))
+        # print remaining space (vertical)
+        print(' ' * (height - (y - 1)))
+        sleep(TIMEOUT)
+except KeyboardInterrupt:
+    print('\033[?25h', end='')  # reveal cursor again
     clear()
-    x = random.randint(0, width)
-    y = random.randint(0, height)
-    # print preceding space (vertical)
-    # note: this could be generalized for a TUI renderer
-    print((' ' * width) * (y - 1))
-    # print character line
-    print((' ' * (x - 1)) + CHARACTER + (' ' * (width - (x - 1))))
-    # print remaining space (vertical)
-    print(' ' * (height - (y - 1)))
-    sleep(TIMEOUT)
