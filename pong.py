@@ -4,14 +4,29 @@
 #   Play the game Pong in terminal!
 # See:
 #   https://en.wikipedia.org/wiki/Pong
+from time import sleep
 from sys import argv
 from os import system
-from random import randint as rand
+from random import choice
 import curses
 
 
 def pong():
-    pass
+    scores = [0, 0]
+    game = True
+    while game:
+        # set initial position and direction at start of each round
+        x, y = width // 2, height // 2
+        dx = choice([-1, 1])
+        dy = choice([-1, 1])
+
+        scored = False
+        while not scored:
+            # score when on left or right walls
+            # bounce against floor and ceiling
+            # bounce against paddle
+            # move paddle up or down based on player input
+            # note: a bounce is dx * -1 or dy * -1
 
 
 if __name__ == '__main__':
