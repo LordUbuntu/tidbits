@@ -7,6 +7,7 @@
 #   animated banner to comemorate.
 from time import sleep
 from os import name, system
+from random import randint
 
 
 def clear():
@@ -50,5 +51,5 @@ while True:
     print(banner[0])
     sleep(1)
     clear()
-    print(banner[1])
+    print(banner[randint(1, 2)])
     sleep(1)
