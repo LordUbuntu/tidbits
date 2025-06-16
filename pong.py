@@ -20,10 +20,12 @@ def pong():
         dx = choice([-1, 1])
         dy = choice([-1, 1])
 
-        scored = False
-        while not scored:
+        round = True
+        while round:
             # score when on left or right walls
             # bounce against floor and ceiling
+            if y + dy <= 1 or y + dy >= height - 1:
+                dy = dy * -1
             # bounce against paddle
             # move paddle up or down based on player input
             # note: a bounce is dx * -1 or dy * -1
