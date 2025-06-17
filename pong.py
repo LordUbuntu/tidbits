@@ -22,11 +22,21 @@ def pong():
 
         round = True
         while round:
+            # render
+            win.addch(int(y), int(x), ord(ball_char), curses.color_pair(ball_color))
+            win.refresh()
+            key = win.getch()
+            # update position
+            y = y + dy
+            x = x + dx
             # score when on left or right walls
             # bounce against floor and ceiling
             if y + dy <= 1 or y + dy >= height - 1:
                 dy = dy * -1
             # bounce against paddle
+            # for now: just bounce against wall
+            if x + dx <= 1 or  + dx > width - 1:
+                dx = dx * -1
             # move paddle up or down based on player input
             # note: a bounce is dx * -1 or dy * -1
 
