@@ -50,14 +50,19 @@ def pong():
                 opponent_paddle[0] += 1
 
             # update pong
+            #   update ball position
             y = y + dy
             x = x + dx
-            # bounce against floor and ceiling
+            # bounce ball against floor and ceiling
             if y + dy <= 1 or y + dy >= height - 1:
                 dy = dy * -1
-            # bounce against paddle
+            # bounce against paddles
             #   bounce from player paddle
+            if x == player_paddle[1] and y in [*range(player_paddle[0] - 1, player_paddle[0] + 2)]:
+                dx = dx * -1
             #   bounce from opponent paddle
+            if x == opponent_paddle[1] and y in [*range(opponent_paddle[0] - 1, opponent_paddle[0] + 2)]:
+                dx = dx * -1
             # update scores and start next round when hitting walls
             #   if on left wall (player, score to opponent)
             if x <= 1:
