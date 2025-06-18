@@ -35,11 +35,19 @@ def pong():
             if key == ord('q'):
                 game = False
                 break
-            # move paddle up or down based on player input
-            if key == curses.KEY_UP:
-                pass
-            if key == curses.KEY_DOWN:
-                pass
+            # move paddle up or down based on input
+            #   move player paddle up
+            if key == ord('w'):
+                player_paddle[0] -= 1
+            #   move player paddle down
+            if key == ord('s'):
+                player_paddle[0] += 1
+            #   move opponent paddle up
+            if key == ord('i'):
+                opponent_paddle[0] -= 1
+            #   move opponent paddle down
+            if key == ord('k'):
+                opponent_paddle[0] += 1
 
             # update pong
             y = y + dy
@@ -51,11 +59,11 @@ def pong():
             #   bounce from player paddle
             #   bounce from opponent paddle
             # update scores and start next round when hitting walls
-            #   if on left wall (player)
-            #   if on right wall (opponent)
+            #   if on left wall (player, score to opponent)
             if x <= 1:
                 scores[1] += 1
                 break
+            #   if on right wall (opponent, score to player)
             if x >= width - 1:
                 scores[0] += 1
                 break
