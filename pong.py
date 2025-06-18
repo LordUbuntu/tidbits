@@ -29,8 +29,8 @@ def pong():
             key = win.getch()
             # quit on q key
             if key == ord('q'):
-                round = False
                 game = False
+                break
             # move paddle up or down based on player input
             if key == curses.KEY_UP:
                 pass
@@ -57,9 +57,15 @@ def pong():
                 break
 
             # render
+            #   clear and draw window
             win.clear()
             win.border()
+            #   draw ball
             win.addch(int(y), int(x), ord(ball_char), curses.color_pair(ball_color))
+            #   write scores
+            win.addstr(int(height // 2), int(width // 4), "player: {}".format(scores[0]), curses.color_pair(player_color))
+            win.addstr(int(height // 2), int(width // 4 * 3), "opponent: {}".format(scores[1]), curses.color_pair(opponent_color))
+            #   show visuals
             win.refresh()
 
 
@@ -79,13 +85,13 @@ if __name__ == '__main__':
     blank_char = " "
     ball_color = 2
     ball_char = "*"
-    paddle_color_A = 3
-    paddle_color_B = 4
+    player_color = 3
+    opponent_color = 4
     paddle_char = "I"
     curses.init_pair(blank_color, curses.COLOR_BLACK, curses.COLOR_BLACK)
     curses.init_pair(ball_color, curses.COLOR_WHITE, curses.COLOR_BLACK)
-    curses.init_pair(paddle_color_A, curses.COLOR_RED, curses.COLOR_BLACK)
-    curses.init_pair(paddle_color_B, curses.COLOR_BLUE, curses.COLOR_BLACK)
+    curses.init_pair(player_color, curses.COLOR_RED, curses.COLOR_BLACK)
+    curses.init_pair(opponent_color, curses.COLOR_BLUE, curses.COLOR_BLACK)
 
     # initialize game window
     height, width = stdscr.getmaxyx()
