@@ -28,11 +28,18 @@ def pong():
             win.border()
             win.addch(int(y), int(x), ord(ball_char), curses.color_pair(ball_color))
             win.refresh()
+
+            # get input
             key = win.getch()
-            # update position
+            # quit on q key
+            if key == ord('q'):
+                round = False
+                game = False
+            # move paddle up or down based on player input
+
+            # update pong
             y = y + dy
             x = x + dx
-            # score when on left or right walls
             # bounce against floor and ceiling
             if y + dy <= 1 or y + dy >= height - 1:
                 dy = dy * -1
@@ -40,8 +47,7 @@ def pong():
             # for now: just bounce against wall
             if x + dx <= 1 or x + dx >= width - 1:
                 dx = dx * -1
-            # move paddle up or down based on player input
-            # note: a bounce is dx * -1 or dy * -1
+            # update scores and start next round when hitting walls
 
 
 if __name__ == '__main__':
