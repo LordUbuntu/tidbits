@@ -4,6 +4,8 @@
 #   Play the game Pong in terminal!
 # See:
 #   https://en.wikipedia.org/wiki/Pong
+# TODO: add music and sfx to make it nicer
+# probably move this to its own repository at some point...
 from time import sleep
 from sys import argv
 from os import system
@@ -36,6 +38,10 @@ def pong():
                 round = False
                 game = False
             # move paddle up or down based on player input
+            if key == curses.KEY_UP:
+                pass
+            if key == curses.KEY_DOWN:
+                pass
 
             # update pong
             y = y + dy
@@ -48,6 +54,10 @@ def pong():
             if x + dx <= 1 or x + dx >= width - 1:
                 dx = dx * -1
             # update scores and start next round when hitting walls
+            #   bounce from player paddle
+            #   bounce from opponent paddle
+            #   if on left wall (player)
+            #   if on right wall (opponent)
 
 
 if __name__ == '__main__':
