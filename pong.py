@@ -24,6 +24,8 @@ def pong():
         round = True
         while round:
             # render
+            win.clear()
+            win.border()
             win.addch(int(y), int(x), ord(ball_char), curses.color_pair(ball_color))
             win.refresh()
             key = win.getch()
