@@ -13,6 +13,11 @@ from random import choice
 import curses
 
 
+# TODO:
+# - add variable for paddle height
+# - interestingly, logic lets paddles move on x too. So maybe as a bonus feature add that mode (konami code activation?)
+
+
 def pong():
     # [player, opponent]
     scores = [0, 0]
