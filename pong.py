@@ -23,6 +23,10 @@ def pong():
         dx = choice([-1, 1])
         dy = choice([-1, 1])
 
+        # y, x
+        player_paddle = [height // 2, 2]
+        opponent_paddle = [height // 2, width - 2]
+
         # each round
         while True:
             # get input
@@ -60,11 +64,16 @@ def pong():
             #   clear and draw window
             win.clear()
             win.border()
+            #   write scores
+            win.addstr(int(height // 2), int(width // 8), "player: {}".format(scores[0]), curses.color_pair(player_color))
+            win.addstr(int(height // 2), int(width // 4 * 3), "opponent: {}".format(scores[1]), curses.color_pair(opponent_color))
             #   draw ball
             win.addch(int(y), int(x), ord(ball_char), curses.color_pair(ball_color))
-            #   write scores
-            win.addstr(int(height // 2), int(width // 4), "player: {}".format(scores[0]), curses.color_pair(player_color))
-            win.addstr(int(height // 2), int(width // 4 * 3), "opponent: {}".format(scores[1]), curses.color_pair(opponent_color))
+            #   draw paddles
+            for player_y in range(player_paddle[0] - 1, player_paddle[0] + 2):
+                win.addch(int(player_y), int(player_paddle[1]), ord(paddle_char), curses.color_pair(player_color))
+            for opponent_y in range(opponent_paddle[0] - 1, opponent_paddle[0] + 2):
+                win.addch(int(opponent_y), int(opponent_paddle[1]), ord(paddle_char), curses.color_pair(opponent_color))
             #   show visuals
             win.refresh()
 
