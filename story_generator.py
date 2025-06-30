@@ -47,7 +47,9 @@ composure = [
 
 creature = [
     "basilisk",
-    "balrog",
+    "bandersnatch",
+    "balrog",   # cool name, not sure what it is
+    "bahamut",  # cool name, not sure what it is
     "bee",
     "bird",
     "bottle of water",
