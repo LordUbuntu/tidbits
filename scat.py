@@ -8,8 +8,8 @@
 def scat(string: str) -> str:
     scats = {
         'a': "aah",
-        'b': "bap",
-        'd': "do",
+        'b': "bi",
+        'd': "dee",
         'e': "ee",
         'f': "fee",
         'g': "gah",
@@ -23,8 +23,8 @@ def scat(string: str) -> str:
         'o': "oo",
         'p': "pah",
         'q': "quick",
-        'r': "rum",
-        's': "scat",
+        'r': "rat",
+        's': "ski",
         't': "tat",
         'u': "udu",
         'v': "vee",
