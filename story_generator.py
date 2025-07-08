@@ -52,6 +52,9 @@ creature = [
     "bahamut",  # cool name, not sure what it is
     "bee",
     "bird",
+    "nudibranch",
+    "android",
+    "cyborg",
     "bottle of water",
     "calculus textbook",
     "cat",
