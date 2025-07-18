@@ -1,6 +1,4 @@
-# Jacobus
-# Burger
-# (2024-08-03)
+# Jacobus Burger (2024-08-03)
 # Desc:
 #   I was inspired by the esoteric beauty when visiting SFU with the TWU
 #   research lab teams for an outing. Decided to make this cute little
