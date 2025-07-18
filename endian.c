@@ -38,12 +38,12 @@ int main(void) {
         else
                 puts("Biggle Endian!");
         
-        // or made a function
+        // or done with a function
         if (little_endian())
                 puts("Little Endian!");
         else
                 puts("Biggle Endian!");
 
-        // or made a macro
+        // or done with a macro
         END(i) ? puts("Little Endian!") : puts("Biggle Endian!");
 }
