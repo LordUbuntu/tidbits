@@ -50,6 +50,8 @@ creature = [
     "bandersnatch",
     "balrog",   # cool name, not sure what it is
     "bahamut",  # cool name, not sure what it is
+    "leviathan",
+    "behemoth",
     "bee",
     "bird",
     "nudibranch",
