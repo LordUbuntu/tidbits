@@ -14,3 +14,7 @@ def flatten(L: list) -> list:
 def rotate(L: list) -> list:
     """Rotates the list forwards by one element"""
     return [L[-1], *L[:len(L) - 1]]
+
+
+def interleave(A: list, B: list) -> list:
+    pass
