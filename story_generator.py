@@ -94,7 +94,9 @@ creature = [
     "guitar",
     "trumpet",
     "mutant",
+    "monster",
     "phenomenon",
+    "void entity",
 ]
 
 occupation = [
