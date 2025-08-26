@@ -198,6 +198,11 @@ quest = [
     "the number 42",
     "the platonic forms",
     "the towers of hanoi",
+    "the m&m secret formula",
+    "the world pillars",
+    "the name",
+    "the ouroboros",
+    "oppenheimer",
     "the world",
     "their long lost nickel",
     "their long lost twin",
@@ -209,16 +214,16 @@ quest = [
     "the consequences of the collatz conjecture",
 ]
 
-def describe():
+
+def story():
     print(
-        "A {} {} working as a {} and built like a {} on a quest to save {}".format(
+        "An {} {} working as an {} and built like an {} on a quest to save {}".format(
             choice(composure),
             choice(creature),
             choice(occupation),
             choice(strength),
             choice(quest)
-        ),
-        end=' '
+        )
     )
 
 
@@ -228,4 +233,4 @@ if __name__ == '__main__':
     while True:
         if input() == "q":
             exit(0)
-        describe()
+        story()
