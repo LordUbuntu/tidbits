@@ -13,10 +13,8 @@ def main():
     i = 0
     while True:
         if i % 13 == 0:
-            print(termcolor.colored(i, "red", attrs=["blink"]))
-        else:
-            print(i)
-        sleep(1)
+            print(termcolor.colored(i, "red"))
+            sleep(0.5)
         i += 1
 
 
