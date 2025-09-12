@@ -5,7 +5,10 @@
 
 
 def ssspeak(phrase: str) -> str:
-    return phrase.replace('s', "ssss").replace('x', "sss")
+    return phrase \
+        .replace('s', "ssss") \
+        .replace('x', "sss") \
+        .replace('z', "ss")
 
 
 if __name__ == "__main__":
