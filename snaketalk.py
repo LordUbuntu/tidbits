@@ -12,5 +12,4 @@ def ssspeak(phrase: str) -> str:
 
 
 if __name__ == "__main__":
-    phrase = input()
-    print(ssspeak(phrase))
+    print(ssspeak(input()))
