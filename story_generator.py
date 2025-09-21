@@ -47,6 +47,8 @@ composure = [
     "mischevious",
     "mathematical",
     "calculating",
+    "quick",
+    "angry",
 ]
 
 creature = [
