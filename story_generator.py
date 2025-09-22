@@ -167,6 +167,7 @@ strength = [
     "Bear",
     "Strongman",
     "Serpent",
+    "Fighter",
     "Athlete",
     "Steel Rod",
     "Dry Twig",
