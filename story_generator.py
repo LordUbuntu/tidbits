@@ -159,6 +159,7 @@ occupation = [
 ]
 
 strength = [
+    "Black Hole",
     "Nuke",
     "Gunpowder Keg",
     "Stick of Dynamite",
