@@ -10,6 +10,7 @@ composure = [
     "adventurous",
     "curious",
     "recalcitrant",
+    "commanding",
     "bold",
     "loving",
     "excited",
