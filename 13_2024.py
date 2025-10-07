@@ -14,7 +14,7 @@ def main():
     while True:
         if i % 13 == 0:
             print(termcolor.colored(i, "red"))
-            sleep(0.5)
+            sleep(0.2)
         i += 1
 
 
