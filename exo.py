@@ -1,5 +1,6 @@
 # Jacobus Burger (2025-09-03)
 # Fever The Ghost x Lealani
+import termcolor
 
 
 if __name__ == "__main__":
@@ -9,5 +10,5 @@ if __name__ == "__main__":
     for _ in range(7):
         print("EX", end='')
     print("-")
-    print("EXOFLASH!!")
+    print(termcolor.colored("EXOFLASH!!", "red", attrs=["blink"]))
     print("REVELATION!!!")
