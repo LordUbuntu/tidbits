@@ -219,6 +219,10 @@ quest = [
     "the consequences of the collatz conjecture",
 ]
 
+tool = [
+    "stick",
+]
+
 
 def story():
     print(
