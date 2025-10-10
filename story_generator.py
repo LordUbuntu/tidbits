@@ -221,17 +221,21 @@ quest = [
 
 tool = [
     "stick",
+    "rock",
+    "master sword",
+    "glokenspiel",
 ]
 
 
 def story():
     print(
-        "An {} {} working as an {} and built like an {} on a quest to save {}".format(
+        "An {} {} working as an {} and built like an {} on a quest to save {} using a {}".format(
             choice(composure),
             choice(creature),
             choice(occupation),
             choice(strength),
-            choice(quest)
+            choice(quest),
+            choice(tool)
         )
     )
 
