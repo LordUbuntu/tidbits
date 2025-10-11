@@ -224,6 +224,12 @@ tool = [
     "rock",
     "master sword",
     "glokenspiel",
+    "proton gun",
+    "excalibur",
+    "Scented Candle",
+    "Flashlight",
+    "3D printer",
+    "magnetron",
 ]
 
 
