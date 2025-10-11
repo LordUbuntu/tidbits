@@ -230,6 +230,8 @@ tool = [
     "Flashlight",
     "3D printer",
     "magnetron",
+    "particle accelerator",
+    "drones",
 ]
 
 
