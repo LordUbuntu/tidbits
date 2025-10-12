@@ -232,6 +232,10 @@ tool = [
     "magnetron",
     "particle accelerator",
     "drones",
+    "nukes",
+    "bees",
+    "RPN calculator",
+    "group theory"
 ]
 
 
