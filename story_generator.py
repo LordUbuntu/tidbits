@@ -235,7 +235,9 @@ tool = [
     "nukes",
     "bees",
     "RPN calculator",
-    "group theory"
+    "group theory",
+    "taylor series",
+    "integrals and derivatives",
 ]
 
 
