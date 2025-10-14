@@ -238,6 +238,10 @@ tool = [
     "group theory",
     "taylor series",
     "integrals and derivatives",
+    "fundamental theorem of calculus",
+    "dice",
+    "blank canvas",
+    "general relativity",
 ]
 
 
