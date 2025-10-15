@@ -242,6 +242,9 @@ tool = [
     "dice",
     "blank canvas",
     "general relativity",
+    "hip hop",
+    "rock",
+    "category theory",
 ]
 
 
