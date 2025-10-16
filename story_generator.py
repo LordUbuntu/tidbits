@@ -245,6 +245,10 @@ tool = [
     "hip hop",
     "rock",
     "category theory",
+    "record player",
+    "mitochondria",
+    "the power of friendship",
+    "the league of super evil",
 ]
 
 
