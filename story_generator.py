@@ -51,6 +51,7 @@ composure = [
     "calculating",
     "quick",
     "angry",
+    "beep bop boop",
 ]
 
 creature = [
@@ -105,6 +106,7 @@ creature = [
     "monster",
     "phenomenon",
     "void entity",
+    "lealani",
 ]
 
 occupation = [
@@ -158,6 +160,7 @@ occupation = [
     "mechanic",
     "office worker",
     "watcher",
+    "musician",
 ]
 
 strength = [
@@ -218,6 +221,7 @@ quest = [
     "a serpinsky triangle",
     "reverse polish notation",
     "the consequences of the collatz conjecture",
+    "fantastic planet",
 ]
 
 tool = [
@@ -257,6 +261,7 @@ tool = [
     "the meaning of life",
     "a map",
     "a strange creature",
+    "electronic music",
 ]
 
 
